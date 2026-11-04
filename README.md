@@ -45,10 +45,11 @@ The index maps ROM hashes and exact catalogue names to physical models and label
 surfaces. No game artwork is included in the base firmware.
 
 ```sh
+INDEX=https://github.com/jkingston/trimui-brick-cartridge-assets/releases/download/v0.1.1/artwork-index.json
 uv run python tools/sync_library_assets.py /run/media/$USER/brick-data \
-  --index /path/to/release/artwork-index.json --dry-run
+  --index "$INDEX" --dry-run
 uv run python tools/sync_library_assets.py /run/media/$USER/brick-data \
-  --index /path/to/release/artwork-index.json --prune
+  --index "$INDEX" --prune
 ```
 
 The synchroniser reads single-ROM ZIP files without extracting them, normalises
@@ -65,10 +66,12 @@ back and atomically swapped into place.
 
 ```sh
 uv run python tools/sync_ssh_assets.py root@BRICK_USB_ADDRESS \
-  --index /path/to/release/artwork-index.json --dry-run
+  --index "$INDEX" --dry-run
 uv run python tools/sync_ssh_assets.py root@BRICK_USB_ADDRESS \
-  --index /path/to/release/artwork-index.json
+  --index "$INDEX"
 ```
+
+Both workflows run from the host and require no wireless service on the Brick.
 
 ## Build
 
