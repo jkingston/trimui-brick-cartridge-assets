@@ -29,12 +29,22 @@ SYSTEMS = {
     "ngpc": ({"ngp", "ngpc"}, {".ngp", ".ngc"}),
 }
 ARCHIVES = {".zip", ".7z"}
-REGION_WORDS = ("usa|europe|japan|world|canada|australia|korea|asia|en|fr|de|es|it|pt|nl|sv|no|da|"
-                "unl|proto|beta|demo|rev(?:ision)?[^)]*|v(?:ersion)?[^)]*|disc[^)]*|disk[^)]*|side[^)]*")
-NAME_TAG = re.compile(rf"\s*[\[(](?:{REGION_WORDS})[\])]", re.I)
+REGION_WORDS = ("usa|europe|japan|world|canada|australia|korea|asia|en|ja|fr|de|es|it|pt|nl|sv|no|da|"
+                "unl|proto|beta|demo|rev(?:ision)?|v(?:ersion)?|disc|disk|side")
+# No-Intro tags commonly combine regions and languages, for example
+# ``(USA, Europe) (En,Ja)``. Remove a whole bracketed group when it contains a
+# tag word, while preserving ordinary title parentheses.
+NAME_TAG = re.compile(rf"\s*[\[(](?=[^\])]*\b(?:{REGION_WORDS})\b)[^\])]*[\])]", re.I)
 NON_WORD = re.compile(r"[^a-z0-9]+")
 REGIONS = {"usa": "US", "us": "US", "canada": "CA", "europe": "EU", "eu": "EU",
            "japan": "JP", "jp": "JP", "australia": "AU", "au": "AU"}
+
+DEFAULT_MODELS = {
+    "nes": "nes", "gb": "gb", "gbc": "gbc", "gba": "gba",
+    "mastersystem": "mastersystem", "gamegear": "gamegear",
+    "megadrive": "megadrive", "snes": "snes", "psx": "psx",
+    "neogeo": "neogeo", "ngpc": "ngpc",
+}
 
 
 def normal_name(value):
@@ -297,6 +307,10 @@ def sync(root, index_source, output=None, cache=None, dry_run=False, prune=False
             required_models.add(game["model"])
         else:
             row.update({"title": rom["title"], "note": rom["scan_note"]})
+            model = DEFAULT_MODELS.get(rom["platform"])
+            if model:
+                row.update({"model": model, "surfaces": {}})
+                required_models.add(model)
             missing.append(row)
         rows.append(row)
     object_paths = {}
@@ -373,8 +387,10 @@ def main(argv=None):
                                  args.dry_run, args.prune, inventory, args.models_index)
     except (OSError, ValueError, urllib.error.URLError) as error:
         parser.exit(1, str(error) + "\n")
-    matched = sum("surfaces" in row for row in manifest["games"])
-    print(f"Scanned {len(manifest['games'])} games: {matched} matched, {len(missing)} missing")
+    matched = sum(bool(row.get("surfaces")) for row in manifest["games"])
+    modelled = sum("model" in row for row in manifest["games"])
+    print(f"Scanned {len(manifest['games'])} games: {matched} labelled, "
+          f"{modelled} modelled, {len(missing)} using neutral artwork")
     for row in missing:
         print(f"missing\t{row['platform']}\t{row['rom']}\t{row['match']}")
     return 2 if missing else 0

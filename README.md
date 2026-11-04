@@ -42,10 +42,12 @@ Embedded artwork retains its original ownership; no blanket licence is asserted 
 
 An artwork release stores prepared images once by SHA-256 in bounded pack files.
 The index maps ROM hashes and exact catalogue names to physical models and label
-surfaces. No game artwork is included in the base firmware.
+surfaces. Games without a curated label use the neutral model for their platform,
+so a partial artwork catalogue still produces a complete cartridge shelf. No game
+artwork is included in the base firmware.
 
 ```sh
-INDEX=https://github.com/jkingston/trimui-brick-cartridge-assets/releases/download/v0.2.0/artwork-index.json
+INDEX=https://github.com/jkingston/trimui-brick-cartridge-assets/releases/download/v0.2.1/artwork-index.json
 uv run python tools/sync_library_assets.py /run/media/$USER/brick-data \
   --index "$INDEX" --dry-run
 uv run python tools/sync_library_assets.py /run/media/$USER/brick-data \
@@ -71,6 +73,7 @@ python3 tools/sync_ssh_assets.py
 
 The defaults use the Brick's USB address and the matching published release.
 Both workflows run from the host and require no wireless service on the Brick.
+Use `--strict` when missing curated labels should make the USB command fail.
 
 ## Build
 

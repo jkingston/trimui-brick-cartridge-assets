@@ -124,7 +124,10 @@
       "id": "crystal",
       "platform": "gbc",
       "titles": [
-        "Pok\u00e9mon Crystal"
+        "Pok\u00e9mon Crystal",
+        "Pokemon Crystal",
+        "Pok\u00e9mon Crystal Version",
+        "Pokemon Crystal Version"
       ],
       "regions": [
         "US"
@@ -299,7 +302,9 @@
       "platform": "gba",
       "titles": [
         "Pok\u00e9mon Emerald",
-        "Pokemon Emerald"
+        "Pokemon Emerald",
+        "Pok\u00e9mon Emerald Version",
+        "Pokemon Emerald Version"
       ],
       "regions": [
         "US"

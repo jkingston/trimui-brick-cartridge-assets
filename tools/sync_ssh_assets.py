@@ -14,7 +14,7 @@ from sync_library_assets import sync
 
 DEFAULT_TARGET = "root@192.168.7.2"
 DEFAULT_INDEX = ("https://github.com/jkingston/trimui-brick-cartridge-assets/"
-                 "releases/download/v0.2.0/artwork-index.json")
+                 "releases/download/v0.2.1/artwork-index.json")
 
 
 def command(ssh, options, target, remote):
@@ -73,6 +73,8 @@ def main(argv=None):
     parser.add_argument("--ssh", default="ssh")
     parser.add_argument("--ssh-option", action="append", default=[])
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--strict", action="store_true",
+                        help="return status 2 when a game lacks curated artwork")
     args = parser.parse_args(argv)
     try:
         manifest, missing = synchronise(args.target, args.index, args.remote_root,
@@ -80,11 +82,13 @@ def main(argv=None):
                                         args.models_index)
     except (OSError, ValueError, json.JSONDecodeError, subprocess.CalledProcessError) as error:
         parser.exit(1, str(error) + "\n")
-    matched = sum("surfaces" in game for game in manifest["games"])
-    print(f"Scanned {len(manifest['games'])} games: {matched} matched, {len(missing)} missing")
+    matched = sum(bool(game.get("surfaces")) for game in manifest["games"])
+    modelled = sum("model" in game for game in manifest["games"])
+    print(f"Scanned {len(manifest['games'])} games: {matched} labelled, "
+          f"{modelled} modelled, {len(missing)} using neutral artwork")
     for row in missing:
         print(f"missing\t{row['platform']}\t{row['rom']}\t{row['match']}")
-    return 2 if missing else 0
+    return 2 if args.strict and missing else 0
 
 
 if __name__ == "__main__":

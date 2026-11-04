@@ -21,7 +21,8 @@ class LibrarySyncTests(unittest.TestCase):
         pack.mkdir()
         (pack / "artwork-000.pack").write_bytes(data)
         (pack / "models.pack").write_bytes(model_data)
-        model_ids = sorted({game["model"] for game in games})
+        model_ids = sorted({game["model"] for game in games} |
+                           set(syncer.DEFAULT_MODELS.values()))
         model_index = {"schema_version": 1, "version": "test-1", "models": [
             {"id": model_id, "sha256": model_digest, "pack": "models.pack",
              "offset": 0, "bytes": len(model_data)} for model_id in model_ids
@@ -105,6 +106,27 @@ class LibrarySyncTests(unittest.TestCase):
             manifest, missing = syncer.sync(root, index, cache=root / "cache")
             self.assertEqual(len(missing), 1)
             self.assertEqual(manifest["games"][0]["match"], "missing")
+            self.assertEqual(manifest["games"][0]["model"], "gb")
+            self.assertEqual(manifest["games"][0]["surfaces"], {})
+            self.assertEqual((root / "Assets/Brick/models/gb.glb").read_bytes(),
+                             b"device-ready-model")
+
+    def test_multi_region_and_language_tags_do_not_change_title(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            (root / "Roms/GB").mkdir(parents=True)
+            (root / "Roms/GB/Pokemon - Red Version (USA, Europe) (En).gb").write_bytes(b"rom")
+            index, digest = self.fixture(root, [{
+                "id": "red", "platform": "gb", "title": "Pokemon Red Version",
+                "regions": ["US"], "hashes": {}, "model": "gb",
+                "surfaces": {"artwork.front": "pending"},
+            }])
+            document = json.loads(index.read_text())
+            document["games"][0]["surfaces"]["artwork.front"] = digest
+            index.write_text(json.dumps(document))
+            manifest, missing = syncer.sync(root, index, cache=root / "cache")
+            self.assertFalse(missing)
+            self.assertEqual(manifest["games"][0]["game_id"], "red")
 
     def test_device_inventory_uses_hash_without_reading_rom_tree(self):
         with tempfile.TemporaryDirectory() as temporary:
