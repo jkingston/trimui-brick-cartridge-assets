@@ -15,11 +15,21 @@ class LibrarySyncTests(unittest.TestCase):
     def fixture(self, root, games):
         data = b"device-ready-label"
         digest = hashlib.sha256(data).hexdigest()
+        model_data = b"device-ready-model"
+        model_digest = hashlib.sha256(model_data).hexdigest()
         pack = root / "pack"
         pack.mkdir()
         (pack / "artwork-000.pack").write_bytes(data)
+        (pack / "models.pack").write_bytes(model_data)
+        model_ids = sorted({game["model"] for game in games})
+        model_index = {"schema_version": 1, "version": "test-1", "models": [
+            {"id": model_id, "sha256": model_digest, "pack": "models.pack",
+             "offset": 0, "bytes": len(model_data)} for model_id in model_ids
+        ]}
+        (pack / "models-index.json").write_text(json.dumps(model_index))
         index = {
             "schema_version": 1, "version": "test-1",
+            "models_index": "models-index.json",
             "objects": {digest: {"sha256": digest, "pack": "artwork-000.pack",
                                    "offset": 0, "bytes": len(data), "attribution": {"creator": "Example"}}},
             "games": games,
@@ -46,6 +56,8 @@ class LibrarySyncTests(unittest.TestCase):
             self.assertEqual(manifest["games"][0]["match"], "sha1")
             installed = root / "Assets/Brick" / manifest["games"][0]["surfaces"]["artwork.front"]
             self.assertEqual(installed.read_bytes(), b"device-ready-label")
+            self.assertEqual((root / "Assets/Brick/models/gba.glb").read_bytes(),
+                             b"device-ready-model")
 
     def test_zip_rom_matches_headerless_nes_crc(self):
         with tempfile.TemporaryDirectory() as temporary:

@@ -45,7 +45,7 @@ The index maps ROM hashes and exact catalogue names to physical models and label
 surfaces. No game artwork is included in the base firmware.
 
 ```sh
-INDEX=https://github.com/jkingston/trimui-brick-cartridge-assets/releases/download/v0.1.1/artwork-index.json
+INDEX=https://github.com/jkingston/trimui-brick-cartridge-assets/releases/download/v0.2.0/artwork-index.json
 uv run python tools/sync_library_assets.py /run/media/$USER/brick-data \
   --index "$INDEX" --dry-run
 uv run python tools/sync_library_assets.py /run/media/$USER/brick-data \
@@ -56,7 +56,7 @@ The synchroniser reads single-ROM ZIP files without extracting them, normalises
 common NES and SNES headers, and prefers SHA-256, SHA-1 or CRC32 identity over an
 exact-name fallback. Ambiguous and missing entries are reported rather than
 guessed. It writes checksummed objects, a minimal `Assets/Brick/library.json`,
-and attribution for the installed subset. Writes are staged and atomically
+the required neutral models, and attribution for the installed subset. Writes are staged and atomically
 renamed. It never uploads library information.
 
 With the custom firmware running, the same operation works over USB SSH. ROMs
@@ -65,12 +65,11 @@ small inventory travels to the host. The completed asset directory is streamed
 back and atomically swapped into place.
 
 ```sh
-uv run python tools/sync_ssh_assets.py root@BRICK_USB_ADDRESS \
-  --index "$INDEX" --dry-run
-uv run python tools/sync_ssh_assets.py root@BRICK_USB_ADDRESS \
-  --index "$INDEX"
+python3 tools/sync_ssh_assets.py --dry-run
+python3 tools/sync_ssh_assets.py
 ```
 
+The defaults use the Brick's USB address and the matching published release.
 Both workflows run from the host and require no wireless service on the Brick.
 
 ## Build
@@ -98,13 +97,14 @@ texture dimensions, material-slot preservation and output checksum.
 Create a production release after building that profile:
 
 ```sh
-make release PYTHON=.venv/bin/python VERSION=0.1.0
+make release PYTHON=.venv/bin/python VERSION=0.2.0
 ```
 
-This produces screen-sized artwork shards and a reproducible archive containing
-neutral runtime GLBs. Neutral models retain each artwork mesh and UV set but
-contain no game-specific label image. `tools/verify_release.py` verifies every
-object hash, byte range, dimension and catalogue reference.
+This produces range-addressable screen-sized artwork and neutral runtime GLBs,
+plus a reproducible complete model archive. Neutral models retain each artwork
+mesh and UV set but contain no game-specific label image.
+`tools/verify_release.py` verifies every artwork hash, byte range, dimension and
+catalogue reference.
 
 For a portable glTF library with shared geometry and images:
 

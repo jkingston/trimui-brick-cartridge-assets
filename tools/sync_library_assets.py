@@ -176,6 +176,28 @@ def load_index(source):
     return document, base
 
 
+def load_models_index(source):
+    parsed = urllib.parse.urlsplit(str(source))
+    if parsed.scheme:
+        if parsed.scheme not in {"file", "https"}:
+            raise ValueError("Model index must be local or HTTPS")
+        if parsed.scheme == "https":
+            data, base = request_bytes(str(source), maximum=8 * 1024 * 1024), str(source)
+        else:
+            path = Path(urllib.request.url2pathname(parsed.path)).resolve()
+            data, base = path.read_bytes(), path.as_uri()
+    else:
+        path = Path(source).resolve()
+        data, base = path.read_bytes(), path.as_uri()
+    document = json.loads(data)
+    if document.get("schema_version") != 1 or not isinstance(document.get("models"), list):
+        raise ValueError("Unsupported model index schema")
+    models = {row["id"]: row for row in document["models"]}
+    if len(models) != len(document["models"]):
+        raise ValueError("Duplicate model ID")
+    return models, base
+
+
 def build_lookup(index):
     hashes, names = {}, {}
     for game in index["games"]:
@@ -256,13 +278,14 @@ def inventory_rows(document):
         }
 
 
-def sync(root, index_source, output=None, cache=None, dry_run=False, prune=False, inventory=None):
+def sync(root, index_source, output=None, cache=None, dry_run=False, prune=False,
+         inventory=None, models_index_source=None):
     root = Path(root).resolve()
     output = Path(output).resolve() if output else root / "Assets" / "Brick"
     cache = Path(cache).expanduser().resolve() if cache else Path.home() / ".cache/brick-cartridge-assets"
     index, base = load_index(index_source)
     hashes, names = build_lookup(index)
-    rows, required, missing = [], set(), []
+    rows, required, required_models, missing = [], set(), set(), []
     scanned = inventory_rows(inventory) if inventory is not None else scan_library(root)
     for rom in scanned:
         game, method = match_game(rom, hashes, names)
@@ -271,6 +294,7 @@ def sync(root, index_source, output=None, cache=None, dry_run=False, prune=False
             row.update({"game_id": game["id"], "title": game["title"],
                         "model": game["model"], "surfaces": game["surfaces"]})
             required.update(game["surfaces"].values())
+            required_models.add(game["model"])
         else:
             row.update({"title": rom["title"], "note": rom["scan_note"]})
             missing.append(row)
@@ -284,6 +308,23 @@ def sync(root, index_source, output=None, cache=None, dry_run=False, prune=False
         object_paths[digest] = relative
         if not dry_run:
             atomic_write(output / relative, object_bytes(descriptor, base, cache))
+    model_paths = {}
+    if required_models:
+        source = models_index_source
+        if source is None and index.get("models_index"):
+            source = urllib.parse.urljoin(base, index["models_index"])
+        if source is None:
+            raise ValueError("Artwork index does not provide a model index")
+        models, models_base = load_models_index(source)
+        for model_id in sorted(required_models):
+            descriptor = models.get(model_id)
+            if descriptor is None:
+                raise ValueError(f"Missing model descriptor: {model_id}")
+            relative = f"models/{model_id}.glb"
+            model_paths[model_id] = relative
+            if not dry_run:
+                atomic_write(output / relative,
+                             object_bytes(descriptor, models_base, cache))
     for row in rows:
         if "surfaces" in row:
             row["surfaces"] = {slot: object_paths[digest] for slot, digest in row["surfaces"].items()}
@@ -298,13 +339,14 @@ def sync(root, index_source, output=None, cache=None, dry_run=False, prune=False
         atomic_write(output / "library.json",
                      (json.dumps(manifest, indent=2, ensure_ascii=False) + "\n").encode())
         if prune:
-            keep = {output / value for value in object_paths.values()}
-            objects = output / "objects"
-            if objects.is_dir():
-                for path in objects.rglob("*"):
+            keep = {output / value for value in (*object_paths.values(), *model_paths.values())}
+            for directory in (output / "objects", output / "models"):
+                if not directory.is_dir():
+                    continue
+                for path in directory.rglob("*"):
                     if path.is_file() and path not in keep:
                         path.unlink()
-                for path in sorted((p for p in objects.rglob("*") if p.is_dir()), reverse=True):
+                for path in sorted((p for p in directory.rglob("*") if p.is_dir()), reverse=True):
                     try:
                         path.rmdir()
                     except OSError:
@@ -320,13 +362,15 @@ def main(argv=None):
     parser.add_argument("--cache", help="Content-addressed download cache")
     parser.add_argument("--inventory", type=Path,
                         help="Device-generated inventory JSON instead of scanning LIBRARY/Roms")
+    parser.add_argument("--models-index",
+                        help="Override local path or HTTPS models-index.json")
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--prune", action="store_true")
     args = parser.parse_args(argv)
     try:
         inventory = json.loads(args.inventory.read_text()) if args.inventory else None
         manifest, missing = sync(args.library, args.index, args.output, args.cache,
-                                 args.dry_run, args.prune, inventory)
+                                 args.dry_run, args.prune, inventory, args.models_index)
     except (OSError, ValueError, urllib.error.URLError) as error:
         parser.exit(1, str(error) + "\n")
     matched = sum("surfaces" in row for row in manifest["games"])

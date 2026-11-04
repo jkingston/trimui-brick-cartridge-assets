@@ -18,8 +18,17 @@ class SshSyncTests(unittest.TestCase):
             label = b"label"
             digest = hashlib.sha256(label).hexdigest()
             (root / "artwork.pack").write_bytes(label)
+            model = b"model"
+            model_digest = hashlib.sha256(model).hexdigest()
+            (root / "models.pack").write_bytes(model)
+            (root / "models-index.json").write_text(json.dumps({
+                "schema_version": 1, "version": "test", "models": [{
+                    "id": "gb", "sha256": model_digest, "pack": "models.pack",
+                    "offset": 0, "bytes": len(model),
+                }],
+            }))
             index = {
-                "schema_version": 1, "version": "test", "objects": {
+                "schema_version": 1, "version": "test", "models_index": "models-index.json", "objects": {
                     digest: {"sha256": digest, "pack": "artwork.pack", "offset": 0,
                              "bytes": len(label), "attribution": {"creator": "Test"}}
                 }, "games": [{"id": "tetris", "platform": "gb", "title": "Tetris",
@@ -60,6 +69,7 @@ class SshSyncTests(unittest.TestCase):
             self.assertEqual((fake_remote / "library.json").is_file(), True)
             installed = next((fake_remote / "objects").rglob("*.png"))
             self.assertEqual(installed.read_bytes(), label)
+            self.assertEqual((fake_remote / "models/gb.glb").read_bytes(), model)
 
 
 if __name__ == "__main__":

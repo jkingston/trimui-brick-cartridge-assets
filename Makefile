@@ -14,8 +14,10 @@ artwork-release:
 
 model-release:
 	$(PYTHON) tools/build_neutral_models.py --version $(VERSION) \
-		--source $(RUNTIME_MODELS) --output $(DIST)/models
-	$(PYTHON) tools/package_models.py $(DIST)/models \
+		--source $(RUNTIME_MODELS) --output $(DIST)/models-unpacked
+	$(PYTHON) tools/release_models.py $(DIST)/models-unpacked $(DIST)/models \
+		--version $(VERSION)
+	$(PYTHON) tools/package_models.py $(DIST)/models-unpacked \
 		$(DIST)/trimui-brick-cartridge-models-$(VERSION).tar.gz
 
 release: test artwork-release model-release verify

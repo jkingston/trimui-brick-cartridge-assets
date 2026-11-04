@@ -150,6 +150,7 @@ def build(root, output, cache=None, version="0.1.0", limit=DEFAULT_LIMIT,
             "version": version,
             "texture_profile": {"format": "png", "maximum_dimension": limit,
                                 "colour_space": "srgb"},
+            "models_index": "models-index.json",
             "games": release_rows(root, surfaces),
             "objects": objects,
         }
