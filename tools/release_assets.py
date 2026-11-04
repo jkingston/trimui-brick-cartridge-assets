@@ -16,6 +16,11 @@ from cartridge import ROOT, acquire_artwork, read_json
 SCHEMA_VERSION = 1
 DEFAULT_LIMIT = 512
 DEFAULT_SHARD_SIZE = 64 * 1024 * 1024
+LIBRARY_PLATFORMS = {
+    "nes", "gb", "gbc", "gba", "mastersystem", "gamegear", "megadrive",
+    "snes", "psx", "neogeo", "ngpc",
+}
+PLATFORM_ALIASES = {"famicom": "nes", "mark-iii": "mastersystem"}
 
 
 def canonical_json(value):
@@ -88,9 +93,12 @@ def release_rows(root, release_surfaces):
         if release_id in seen:
             raise ValueError(f"Duplicate edition ID: {release_id}")
         seen.add(release_id)
+        platform = PLATFORM_ALIASES.get(edition["platform"], edition["platform"])
+        if platform not in LIBRARY_PLATFORMS:
+            raise ValueError(f"Unsupported library platform: {edition['platform']}")
         rows.append({
             "id": release_id,
-            "platform": edition["platform"],
+            "platform": platform,
             "title": edition["titles"][0],
             "aliases": edition["titles"][1:],
             "regions": edition.get("regions", []),

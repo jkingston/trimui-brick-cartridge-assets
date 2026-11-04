@@ -25,7 +25,7 @@
         "required": ["id", "platform", "title", "aliases", "regions", "model", "surfaces", "hashes"],
         "properties": {
           "id": {"type": "string", "minLength": 1},
-          "platform": {"type": "string", "minLength": 1},
+          "platform": {"enum": ["nes", "gb", "gbc", "gba", "mastersystem", "gamegear", "megadrive", "snes", "psx", "neogeo", "ngpc"]},
           "title": {"type": "string", "minLength": 1},
           "aliases": {"type": "array", "items": {"type": "string"}},
           "regions": {"type": "array", "items": {"type": "string"}},

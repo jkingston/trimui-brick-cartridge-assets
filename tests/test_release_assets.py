@@ -49,6 +49,31 @@ class ReleaseAssetTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "Duplicate edition"):
                 release_assets.release_rows(root, {"label": {"artwork.front": "0" * 64}})
 
+    def test_release_rows_map_physical_variants_to_library_platforms(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            (root / "catalogue").mkdir()
+            editions = [
+                {"id": "jp-cart", "platform": "famicom", "titles": ["Game"],
+                 "model": "famicom", "artwork_recipe": "one"},
+                {"id": "mark-three", "platform": "mark-iii", "titles": ["Game"],
+                 "model": "mark-iii-white", "artwork_recipe": "two"},
+            ]
+            (root / "catalogue/games.json").write_text(json.dumps({"editions": editions}))
+            surfaces = {key: {"artwork.front": key * 64} for key in ("one", "two")}
+            rows = release_assets.release_rows(root, surfaces)
+            self.assertEqual({row["platform"] for row in rows}, {"nes", "mastersystem"})
+
+    def test_release_rows_reject_unknown_library_platform(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            (root / "catalogue").mkdir()
+            edition = {"id": "bad", "platform": "unknown", "titles": ["Game"],
+                       "model": "gb", "artwork_recipe": "label"}
+            (root / "catalogue/games.json").write_text(json.dumps({"editions": [edition]}))
+            with self.assertRaisesRegex(ValueError, "Unsupported library platform"):
+                release_assets.release_rows(root, {"label": {"artwork.front": "0" * 64}})
+
 
 if __name__ == "__main__":
     unittest.main()
