@@ -1,0 +1,681 @@
+{
+  "schema_version": 1,
+  "region_codes": [
+    "US",
+    "CA",
+    "EU",
+    "AU",
+    "JP"
+  ],
+  "defaults": {
+    "gb": {
+      "default": "gb"
+    },
+    "gbc": {
+      "default": "gbc"
+    },
+    "gba": {
+      "default": "gba"
+    },
+    "gamegear": {
+      "default": "gamegear"
+    },
+    "mastersystem": {
+      "default": "mastersystem"
+    },
+    "nes": {
+      "default": "nes"
+    },
+    "famicom": {
+      "default": "famicom"
+    },
+    "neogeo-aes": {
+      "default": "neogeo"
+    },
+    "neogeo-mvs": {
+      "default": "neogeo-mvs"
+    },
+    "ngpc": {
+      "default": "ngpc"
+    },
+    "psx": {
+      "default": "psx"
+    },
+    "snes": {
+      "US": "snes",
+      "CA": "snes",
+      "EU": "snes-pal",
+      "AU": "snes-pal",
+      "JP": "snes-jp"
+    },
+    "megadrive": {
+      "US": "megadrive",
+      "EU": "md-pal",
+      "AU": "md-pal",
+      "JP": "md-jp"
+    }
+  },
+  "editions": [
+    {
+      "id": "gold",
+      "platform": "gbc",
+      "titles": [
+        "Pok\u00e9mon Gold",
+        "Pokemon Gold"
+      ],
+      "regions": [
+        "US"
+      ],
+      "model": "gold",
+      "status": "selected release reference; see model choices",
+      "choices": "gold",
+      "note": "Selected North American label; other Western shells may share geometry but their artwork is not mapped here.",
+      "artwork_recipe": "gold"
+    },
+    {
+      "id": "gold-jp",
+      "platform": "gbc",
+      "titles": [
+        "Pok\u00e9mon Gold",
+        "Pokemon Gold",
+        "Pocket Monsters Gold"
+      ],
+      "regions": [
+        "JP"
+      ],
+      "model": "gold-jp",
+      "status": "selected release reference; see model choices",
+      "choices": "gold-jp",
+      "artwork_recipe": "gold-jp"
+    },
+    {
+      "id": "silver",
+      "platform": "gbc",
+      "titles": [
+        "Pok\u00e9mon Silver",
+        "Pokemon Silver"
+      ],
+      "regions": [
+        "US"
+      ],
+      "model": "silver",
+      "status": "selected release reference; see model choices",
+      "choices": "silver",
+      "note": "Selected North American label; other Western shells may share geometry but their artwork is not mapped here.",
+      "artwork_recipe": "silver"
+    },
+    {
+      "id": "silver-jp",
+      "platform": "gbc",
+      "titles": [
+        "Pok\u00e9mon Silver",
+        "Pokemon Silver",
+        "Pocket Monsters Silver"
+      ],
+      "regions": [
+        "JP"
+      ],
+      "model": "silver-jp",
+      "status": "selected release reference; see model choices",
+      "choices": "silver-jp",
+      "artwork_recipe": "silver-jp"
+    },
+    {
+      "id": "crystal",
+      "platform": "gbc",
+      "titles": [
+        "Pok\u00e9mon Crystal"
+      ],
+      "regions": [
+        "US"
+      ],
+      "model": "crystal",
+      "status": "selected release reference; see model choices",
+      "choices": "crystal",
+      "release_code": "CGB-BYTE-0",
+      "reference": "https://gbhwdb.gekkio.fi/cartridges/CGB-BYTE-0/comrade-claire-1.html",
+      "artwork_recipe": "crystal"
+    },
+    {
+      "id": "blue",
+      "platform": "gb",
+      "titles": [
+        "Pok\u00e9mon Blue"
+      ],
+      "regions": [
+        "US"
+      ],
+      "model": "blue",
+      "status": "selected release reference; see model choices",
+      "choices": "blue",
+      "artwork_recipe": "blue",
+      "release_code": "DMG-APEE-USA",
+      "reference": "https://gbhwdb.gekkio.fi/cartridges/DMG-APEE-0/gekkio-1.html"
+    },
+    {
+      "id": "black-dx",
+      "platform": "gbc",
+      "titles": [
+        "The Legend of Zelda: Link\u2019s Awakening DX"
+      ],
+      "regions": [
+        "JP"
+      ],
+      "model": "black-dx",
+      "status": "selected release reference; see model choices",
+      "choices": "black-dx",
+      "note": "Selected original is Japanese Link\u2019s Awakening DX.",
+      "reference": "https://images.launchbox-app.com/6ea41ab9-2c61-40f7-ae5f-de9a8f844c10.png",
+      "artwork_recipe": "black-dx"
+    },
+    {
+      "id": "pink-tilt",
+      "platform": "gbc",
+      "titles": [
+        "Kirby Tilt \u2019n\u2019 Tumble"
+      ],
+      "regions": [
+        "US"
+      ],
+      "model": "pink-tilt",
+      "status": "selected release reference; see model choices",
+      "choices": "pink-tilt",
+      "artwork_recipe": "pink-tilt"
+    },
+    {
+      "id": "gb-pinball",
+      "platform": "gbc",
+      "titles": [
+        "Pok\u00e9mon Pinball"
+      ],
+      "regions": [
+        "US"
+      ],
+      "model": "gb-pinball",
+      "status": "selected release reference; see model choices",
+      "choices": "gb-pinball",
+      "reference": "https://gbhwdb.gekkio.fi/cartridges/DMG-VPHE-0/gekkio-1.html",
+      "artwork_recipe": "gb-pinball"
+    },
+    {
+      "id": "gba-boktai",
+      "platform": "gba",
+      "titles": [
+        "Boktai: The Sun Is in Your Hand"
+      ],
+      "regions": [
+        "EU"
+      ],
+      "model": "gba-boktai",
+      "status": "selected release reference; see model choices",
+      "choices": "gba-boktai",
+      "release_code": "AGB-U3IP-EUR",
+      "reference": "https://gbhwdb.gekkio.fi/cartridges/AGB-U3IP-0/3615retro-1.html",
+      "artwork_recipe": "gba-boktai"
+    },
+    {
+      "id": "gba-twisted",
+      "platform": "gba",
+      "titles": [
+        "WarioWare: Twisted!"
+      ],
+      "regions": [
+        "US"
+      ],
+      "model": "gba-twisted",
+      "status": "selected release reference; see model choices",
+      "choices": "gba-twisted",
+      "release_code": "AGB-RZWE-USA",
+      "reference": "https://gbhwdb.gekkio.fi/cartridges/AGB-RZWE-0/3615retro-1.html",
+      "artwork_recipe": "gba-twisted"
+    },
+    {
+      "id": "virtua-racing",
+      "platform": "megadrive",
+      "titles": [
+        "Virtua Racing"
+      ],
+      "regions": [
+        "EU"
+      ],
+      "model": "virtua-racing",
+      "status": "selected release reference; see model choices",
+      "choices": "virtua-racing",
+      "release_code": "670-3998-50",
+      "reference": "https://images.launchbox-app.com/6fde78fc-a6c8-44cb-8e68-911c84e18fff.png",
+      "note": "Selected scan is catalogued Europe and bears 670-3998-50; previous US mapping was incorrect. No US label inferred.",
+      "artwork_recipe": "virtua-racing"
+    },
+    {
+      "id": "sonic-knuckles",
+      "platform": "megadrive",
+      "titles": [
+        "Sonic & Knuckles"
+      ],
+      "regions": [
+        "US"
+      ],
+      "model": "sonic-knuckles",
+      "status": "selected release reference; see model choices",
+      "choices": "sonic-knuckles",
+      "artwork_recipe": "sonic-knuckles"
+    },
+    {
+      "id": "gba-ruby",
+      "platform": "gba",
+      "titles": [
+        "Pok\u00e9mon Ruby",
+        "Pokemon Ruby"
+      ],
+      "regions": [
+        "US"
+      ],
+      "model": "gba-ruby",
+      "status": "selected release reference; see model choices",
+      "choices": "gba-ruby",
+      "release_code": "AGB-AXVE-0",
+      "reference": "https://gbhwdb.gekkio.fi/cartridges/AGB-AXVE-0/fexcollects-1.html",
+      "artwork_recipe": "gba-ruby"
+    },
+    {
+      "id": "gba-sapphire",
+      "platform": "gba",
+      "titles": [
+        "Pok\u00e9mon Sapphire",
+        "Pokemon Sapphire"
+      ],
+      "regions": [
+        "US"
+      ],
+      "model": "gba-sapphire",
+      "status": "selected release reference; see model choices",
+      "choices": "gba-sapphire",
+      "release_code": "AGB-AXPE-0",
+      "reference": "https://gbhwdb.gekkio.fi/cartridges/AGB-AXPE-0/fexcollects-1.html",
+      "artwork_recipe": "gba-sapphire"
+    },
+    {
+      "id": "gba-emerald",
+      "platform": "gba",
+      "titles": [
+        "Pok\u00e9mon Emerald",
+        "Pokemon Emerald"
+      ],
+      "regions": [
+        "US"
+      ],
+      "model": "gba-emerald",
+      "status": "selected release reference; see model choices",
+      "choices": "gba-emerald",
+      "release_code": "AGB-BPEE-0",
+      "reference": "https://gbhwdb.gekkio.fi/cartridges/AGB-BPEE-0/fexcollects-1.html",
+      "artwork_recipe": "gba-emerald"
+    },
+    {
+      "id": "gba-firered",
+      "platform": "gba",
+      "titles": [
+        "Pok\u00e9mon FireRed",
+        "Pokemon FireRed"
+      ],
+      "regions": [
+        "US"
+      ],
+      "model": "gba-firered",
+      "status": "selected release reference; see model choices",
+      "choices": "gba-firered",
+      "release_code": "AGB-BPRE-1",
+      "revision": "1",
+      "reference": "https://gbhwdb.gekkio.fi/cartridges/AGB-BPRE-1/fexcollects-1.html",
+      "artwork_recipe": "gba-firered"
+    },
+    {
+      "id": "gba-leafgreen",
+      "platform": "gba",
+      "titles": [
+        "Pok\u00e9mon LeafGreen",
+        "Pokemon LeafGreen"
+      ],
+      "regions": [
+        "US"
+      ],
+      "model": "gba-leafgreen",
+      "status": "selected release reference; see model choices",
+      "choices": "gba-leafgreen",
+      "release_code": "AGB-BPGE-0",
+      "reference": "https://gbhwdb.gekkio.fi/cartridges/AGB-BPGE-0/ikk5-1.html",
+      "artwork_recipe": "gba-leafgreen"
+    },
+    {
+      "id": "gb",
+      "platform": "gb",
+      "titles": [
+        "Tetris"
+      ],
+      "regions": [
+        "US"
+      ],
+      "model": "gb",
+      "choices": "gb",
+      "status": "selected release reference",
+      "release_code": "DMG-TR-USA-1",
+      "reference": "https://images.launchbox-app.com/cfef6fae-834d-49ec-aa3e-9183db0586c5.png",
+      "artwork_recipe": "tetris-us-dmg-tr-usa-1"
+    },
+    {
+      "id": "gbc",
+      "platform": "gbc",
+      "titles": [
+        "The Legend of Zelda: Oracle of Ages"
+      ],
+      "regions": [
+        "JP"
+      ],
+      "model": "gbc",
+      "choices": "gbc",
+      "status": "selected release reference",
+      "release_code": "CGB-AZ8J-0",
+      "reference": "https://gbhwdb.gekkio.fi/cartridges/CGB-AZ8J-0/gdsn-1.html",
+      "artwork_recipe": "gbc"
+    },
+    {
+      "id": "nes",
+      "platform": "nes",
+      "titles": [
+        "Super Mario Bros. 3"
+      ],
+      "regions": [
+        "CA"
+      ],
+      "model": "nes",
+      "choices": "nes",
+      "status": "selected release reference",
+      "artwork_recipe": "nes"
+    },
+    {
+      "id": "snes",
+      "platform": "snes",
+      "titles": [
+        "Super Mario World"
+      ],
+      "regions": [
+        "US"
+      ],
+      "model": "snes",
+      "choices": "snes",
+      "status": "selected release reference",
+      "release_code": "SNS-MW-USA-1",
+      "note": "Select explicit edition when title and region do not distinguish locking versus ramp revision.",
+      "reference": "https://hitgaming.com/spot-fake-games",
+      "artwork_recipe": "snes"
+    },
+    {
+      "id": "snes-us-locking",
+      "platform": "snes",
+      "titles": [
+        "Super Mario World"
+      ],
+      "regions": [
+        "US"
+      ],
+      "model": "snes-us-locking",
+      "choices": "snes-us-locking",
+      "status": "selected release reference",
+      "release_code": "SNS-MW-USA",
+      "note": "Select explicit edition when title and region do not distinguish locking versus ramp revision.",
+      "reference": "https://snescentral.com/cart_test.php?id=0000&num=3",
+      "artwork_recipe": "snes-us-locking"
+    },
+    {
+      "id": "snes-pal",
+      "platform": "snes",
+      "titles": [
+        "Super Mario World"
+      ],
+      "regions": [
+        "EU"
+      ],
+      "model": "snes-pal",
+      "choices": "snes-pal",
+      "status": "selected release reference",
+      "release_code": "SNSP-MW-UKV",
+      "locale": "UK",
+      "note": "UK label selected; not a claim of identical artwork across all PAL countries.",
+      "reference": "https://snescentral.com/cart.php?id=0000&num=5",
+      "artwork_recipe": "snes-pal"
+    },
+    {
+      "id": "snes-jp",
+      "platform": "snes",
+      "titles": [
+        "Super Mario World"
+      ],
+      "regions": [
+        "JP"
+      ],
+      "model": "snes-jp",
+      "choices": "snes-jp",
+      "status": "selected release reference",
+      "release_code": "SHVC-MW",
+      "reference": "https://snescentral.com/cart.php?id=0000&num=0",
+      "artwork_recipe": "snes-jp"
+    },
+    {
+      "id": "md-pal",
+      "platform": "megadrive",
+      "titles": [
+        "Sonic the Hedgehog"
+      ],
+      "regions": [
+        "EU"
+      ],
+      "model": "md-pal",
+      "choices": "md-pal",
+      "status": "selected release reference",
+      "artwork_recipe": "md-pal"
+    },
+    {
+      "id": "md-jp",
+      "platform": "megadrive",
+      "titles": [
+        "Sonic the Hedgehog"
+      ],
+      "regions": [
+        "JP"
+      ],
+      "model": "md-jp",
+      "choices": "md-jp",
+      "status": "selected release reference",
+      "artwork_recipe": "md-jp"
+    },
+    {
+      "id": "md-ea",
+      "platform": "megadrive",
+      "titles": [
+        "FIFA International Soccer"
+      ],
+      "regions": [
+        "EU"
+      ],
+      "model": "md-ea",
+      "choices": "md-ea",
+      "status": "selected release reference",
+      "artwork_recipe": "md-ea"
+    },
+    {
+      "id": "md-codemasters",
+      "platform": "megadrive",
+      "titles": [
+        "Micro Machines"
+      ],
+      "regions": [
+        "EU"
+      ],
+      "model": "md-codemasters",
+      "choices": "md-codemasters",
+      "status": "selected release reference",
+      "artwork_recipe": "md-codemasters"
+    },
+    {
+      "id": "md-jcart",
+      "platform": "megadrive",
+      "titles": [
+        "Micro Machines 2 Turbo Tournament"
+      ],
+      "regions": [
+        "EU"
+      ],
+      "model": "md-jcart",
+      "choices": "md-jcart",
+      "status": "selected release reference",
+      "artwork_recipe": "md-jcart"
+    },
+    {
+      "id": "castlevania-sotn-us",
+      "platform": "psx",
+      "titles": [
+        "Castlevania: Symphony of the Night"
+      ],
+      "regions": [
+        "US"
+      ],
+      "model": "psx",
+      "choices": "psx",
+      "release_code": "SLUS-00067",
+      "status": "selected dark 1997 label layout checked against original disc photograph",
+      "artwork_recipe": "castlevania-sotn-us"
+    },
+    {
+      "id": "mark-iii-white",
+      "platform": "mark-iii",
+      "titles": [
+        "Alex Kidd no Miracle World"
+      ],
+      "regions": [
+        "JP"
+      ],
+      "model": "mark-iii-white",
+      "choices": "mark-iii-white",
+      "artwork_recipe": "mark-iii-white",
+      "status": "selected Japanese original cartridge label reference"
+    },
+    {
+      "id": "mark-iii-black",
+      "platform": "mark-iii",
+      "titles": [
+        "After Burner"
+      ],
+      "regions": [
+        "JP"
+      ],
+      "model": "mark-iii-black",
+      "choices": "mark-iii-black",
+      "artwork_recipe": "mark-iii-black",
+      "status": "selected Japanese original cartridge label reference"
+    },
+    {
+      "id": "mark-iii-silver",
+      "platform": "mark-iii",
+      "titles": [
+        "Solomon no Kagi: Oujo Rihita no Namida"
+      ],
+      "regions": [
+        "JP"
+      ],
+      "model": "mark-iii-silver",
+      "choices": "mark-iii-silver",
+      "artwork_recipe": "mark-iii-silver",
+      "status": "selected Japanese original cartridge label reference"
+    },
+    {
+      "id": "namcot",
+      "platform": "famicom",
+      "titles": [
+        "Pac-Man"
+      ],
+      "regions": [
+        "JP"
+      ],
+      "model": "namcot",
+      "choices": "namcot",
+      "release_code": "NAM-NPM-4500-02",
+      "reference": "https://nescartdb.com/profile/view/1592/pac-man",
+      "status": "selected original front/rear reference",
+      "artwork_recipe": "namcot"
+    },
+    {
+      "id": "pokemon-red-us-1",
+      "platform": "gb",
+      "titles": [
+        "Pok\u00e9mon Red",
+        "Pokemon Red",
+        "Pok\u00e9mon Red Version",
+        "Pokemon Red Version"
+      ],
+      "regions": [
+        "US"
+      ],
+      "model": "gb",
+      "choices": "gb",
+      "release_code": "DMG-APAE-USA-1",
+      "artwork_recipe": "pokemon-red-us-1",
+      "status": "Original cartridge photograph confirms shell colour and release label; standard DMG mesh reused.",
+      "material_variant": "dmg-red"
+    },
+    {
+      "id": "pokemon-yellow-us-1",
+      "platform": "gb",
+      "titles": [
+        "Pok\u00e9mon Yellow",
+        "Pokemon Yellow",
+        "Pok\u00e9mon Yellow Version",
+        "Pokemon Yellow Version"
+      ],
+      "regions": [
+        "US"
+      ],
+      "model": "gb",
+      "choices": "gb",
+      "release_code": "DMG-APSE-USA-1",
+      "artwork_recipe": "pokemon-yellow-us-1",
+      "status": "Original cartridge photograph confirms shell colour and release label; standard DMG mesh reused.",
+      "material_variant": "dmg-yellow"
+    },
+    {
+      "id": "pokemon-red-jp",
+      "platform": "gb",
+      "titles": [
+        "Pocket Monsters Red",
+        "Pok\u00e9mon Red",
+        "Pokemon Red"
+      ],
+      "regions": [
+        "JP"
+      ],
+      "model": "gb",
+      "choices": "gb",
+      "release_code": "DMG-APAJ-JPN",
+      "artwork_recipe": "pokemon-red-jp",
+      "status": "Original cartridge photograph confirms shell colour and release label; standard DMG mesh reused."
+    },
+    {
+      "id": "pokemon-green-jp",
+      "platform": "gb",
+      "titles": [
+        "Pocket Monsters Green",
+        "Pok\u00e9mon Green",
+        "Pokemon Green"
+      ],
+      "regions": [
+        "JP"
+      ],
+      "model": "gb",
+      "choices": "gb",
+      "release_code": "DMG-APBJ-JPN",
+      "artwork_recipe": "pokemon-green-jp",
+      "status": "Original cartridge photograph confirms shell colour and release label; standard DMG mesh reused."
+    }
+  ],
+  "model_choices": "catalogue/models.json",
+  "matching_note": "Regions describe the selected release artwork, not every market using the same shell. No ROM hashes are inferred."
+}

@@ -1,0 +1,1327 @@
+{
+  "schema_version": 1,
+  "source_catalogue": "sources/catalogue.json",
+  "status": "Authored model selections and audited component relationships. Optional portable packaging shares exact buffer bytes; no unverified whole-mesh substitution.",
+  "families": [
+    {
+      "id": "dmg-standard",
+      "models": [
+        "gb",
+        "gold",
+        "silver",
+        "gold-jp",
+        "silver-jp",
+        "black-dx",
+        "blue"
+      ],
+      "sharing": {
+        "status": "exact-geometry",
+        "components": [
+          "Front shell"
+        ],
+        "note": "Rear shell face coordinates also match at 0.00001 mm after vertex-order normalization; preserve UVs/normals until canonical replacement is verified.",
+        "runtime_deduplicated": false,
+        "uv_policy": "Existing UV arrays differ between editions; retain per-edition UVs or prove unused before removing. Geometry/corner normals/material-index arrays match for the named components."
+      }
+    },
+    {
+      "id": "cgb-curved-clear",
+      "models": [
+        "gbc",
+        "crystal"
+      ],
+      "sharing": {
+        "status": "exact-components",
+        "components": [
+          "Front mould",
+          "Rear mould"
+        ],
+        "note": "Boards, batteries, optics and Crystal glitter are separate.",
+        "runtime_deduplicated": false
+      }
+    },
+    {
+      "id": "agb-standard",
+      "models": [
+        "gba",
+        "gba-ruby",
+        "gba-sapphire",
+        "gba-emerald",
+        "gba-firered",
+        "gba-leafgreen"
+      ],
+      "sharing": {
+        "status": "exact-geometry",
+        "components": [
+          "Pok\u00e9mon Front mould",
+          "Pok\u00e9mon Rear mould"
+        ],
+        "note": "Five hollow Pok\u00e9mon bodies match. Standard opaque body differs; retain two shell variants.",
+        "runtime_deduplicated": false,
+        "uv_policy": "Existing UV arrays differ between editions; retain per-edition UVs or prove unused before removing. Geometry/corner normals/material-index arrays match for the named components."
+      }
+    },
+    {
+      "id": "genesis-standard",
+      "models": [
+        "megadrive",
+        "md-pal"
+      ],
+      "sharing": {
+        "status": "exact-components",
+        "components": [
+          "Front mould",
+          "Rear mould"
+        ],
+        "note": "US/PAL shell only; regional artwork remains separate.",
+        "runtime_deduplicated": false
+      }
+    },
+    {
+      "id": "snes-us",
+      "models": [
+        "snes",
+        "snes-us-locking"
+      ],
+      "sharing": {
+        "status": "exact-geometry",
+        "components": [
+          "Rear mould"
+        ],
+        "note": "Front locking pocket and later ramp differ.",
+        "runtime_deduplicated": false,
+        "uv_policy": "Existing UV arrays differ between editions; retain per-edition UVs or prove unused before removing. Geometry/corner normals/material-index arrays match for the named components."
+      }
+    },
+    {
+      "id": "snes-pal-sfc",
+      "models": [
+        "snes-pal",
+        "snes-jp"
+      ],
+      "sharing": {
+        "status": "exact-geometry",
+        "components": [
+          "PAL SFC curved front mould",
+          "PAL SFC rear mould"
+        ],
+        "note": "Regional rear warning and front labels differ.",
+        "runtime_deduplicated": false,
+        "uv_policy": "Existing UV arrays differ between editions; retain per-edition UVs or prove unused before removing. Geometry/corner normals/material-index arrays match for the named components."
+      }
+    },
+    {
+      "id": "codemasters-md",
+      "models": [
+        "md-codemasters",
+        "md-jcart"
+      ],
+      "sharing": {
+        "status": "exact-geometry",
+        "components": [
+          "Codemasters shared rear shell"
+        ],
+        "note": "J-Cart front and DE9 sockets differ.",
+        "runtime_deduplicated": false,
+        "uv_policy": "Existing UV arrays differ between editions; retain per-edition UVs or prove unused before removing. Geometry/corner normals/material-index arrays match for the named components."
+      }
+    },
+    {
+      "id": "mark-iii",
+      "models": [
+        "mark-iii-white",
+        "mark-iii-black",
+        "mark-iii-silver"
+      ],
+      "sharing": {
+        "status": "exact-geometry",
+        "components": [
+          "Mark III Front mould",
+          "Restored original rear mould"
+        ],
+        "note": "Finishes and labels differ. Front geometry and UVs match exactly; rear UV arrays differ.",
+        "runtime_deduplicated": false,
+        "uv_policy": "Existing UV arrays differ between editions; retain per-edition UVs or prove unused before removing. Geometry/corner normals/material-index arrays match for the named components."
+      }
+    },
+    {
+      "id": "gamegear",
+      "models": [
+        "gamegear"
+      ],
+      "sharing": {
+        "status": "distinct-assembly",
+        "components": [],
+        "note": "Distinct selected mould/assembly; retain until component hash proves sharing.",
+        "runtime_deduplicated": false
+      }
+    },
+    {
+      "id": "mastersystem",
+      "models": [
+        "mastersystem"
+      ],
+      "sharing": {
+        "status": "distinct-assembly",
+        "components": [],
+        "note": "Distinct selected mould/assembly; retain until component hash proves sharing.",
+        "runtime_deduplicated": false
+      }
+    },
+    {
+      "id": "nes",
+      "models": [
+        "nes"
+      ],
+      "sharing": {
+        "status": "distinct-assembly",
+        "components": [],
+        "note": "Distinct selected mould/assembly; retain until component hash proves sharing.",
+        "runtime_deduplicated": false
+      }
+    },
+    {
+      "id": "famicom",
+      "models": [
+        "famicom"
+      ],
+      "sharing": {
+        "status": "distinct-assembly",
+        "components": [],
+        "note": "Distinct selected mould/assembly; retain until component hash proves sharing.",
+        "runtime_deduplicated": false
+      }
+    },
+    {
+      "id": "neogeo",
+      "models": [
+        "neogeo"
+      ],
+      "sharing": {
+        "status": "distinct-assembly",
+        "components": [],
+        "note": "Distinct selected mould/assembly; retain until component hash proves sharing.",
+        "runtime_deduplicated": false
+      }
+    },
+    {
+      "id": "ngpc",
+      "models": [
+        "ngpc"
+      ],
+      "sharing": {
+        "status": "distinct-assembly",
+        "components": [],
+        "note": "Distinct selected mould/assembly; retain until component hash proves sharing.",
+        "runtime_deduplicated": false
+      }
+    },
+    {
+      "id": "psx",
+      "models": [
+        "psx"
+      ],
+      "sharing": {
+        "status": "distinct-assembly",
+        "components": [],
+        "note": "Distinct selected mould/assembly; retain until component hash proves sharing.",
+        "runtime_deduplicated": false
+      }
+    },
+    {
+      "id": "pink-tilt",
+      "models": [
+        "pink-tilt"
+      ],
+      "sharing": {
+        "status": "distinct-assembly",
+        "components": [],
+        "note": "Distinct selected mould/assembly; retain until component hash proves sharing.",
+        "runtime_deduplicated": false
+      }
+    },
+    {
+      "id": "md-jp",
+      "models": [
+        "md-jp"
+      ],
+      "sharing": {
+        "status": "distinct-assembly",
+        "components": [],
+        "note": "Distinct selected mould/assembly; retain until component hash proves sharing.",
+        "runtime_deduplicated": false
+      }
+    },
+    {
+      "id": "md-ea",
+      "models": [
+        "md-ea"
+      ],
+      "sharing": {
+        "status": "distinct-assembly",
+        "components": [],
+        "note": "Distinct selected mould/assembly; retain until component hash proves sharing.",
+        "runtime_deduplicated": false
+      }
+    },
+    {
+      "id": "gb-pinball",
+      "models": [
+        "gb-pinball"
+      ],
+      "sharing": {
+        "status": "distinct-assembly",
+        "components": [],
+        "note": "Distinct selected mould/assembly; retain until component hash proves sharing.",
+        "runtime_deduplicated": false
+      }
+    },
+    {
+      "id": "namcot",
+      "models": [
+        "namcot"
+      ],
+      "sharing": {
+        "status": "distinct-assembly",
+        "components": [],
+        "note": "Distinct selected mould/assembly; retain until component hash proves sharing.",
+        "runtime_deduplicated": false
+      }
+    },
+    {
+      "id": "gba-boktai",
+      "models": [
+        "gba-boktai"
+      ],
+      "sharing": {
+        "status": "distinct-assembly",
+        "components": [],
+        "note": "Distinct selected mould/assembly; retain until component hash proves sharing.",
+        "runtime_deduplicated": false
+      }
+    },
+    {
+      "id": "gba-twisted",
+      "models": [
+        "gba-twisted"
+      ],
+      "sharing": {
+        "status": "distinct-assembly",
+        "components": [],
+        "note": "Distinct selected mould/assembly; retain until component hash proves sharing.",
+        "runtime_deduplicated": false
+      }
+    },
+    {
+      "id": "virtua-racing",
+      "models": [
+        "virtua-racing"
+      ],
+      "sharing": {
+        "status": "distinct-assembly",
+        "components": [],
+        "note": "Distinct selected mould/assembly; retain until component hash proves sharing.",
+        "runtime_deduplicated": false
+      }
+    },
+    {
+      "id": "sonic-knuckles",
+      "models": [
+        "sonic-knuckles"
+      ],
+      "sharing": {
+        "status": "distinct-assembly",
+        "components": [],
+        "note": "Distinct selected mould/assembly; retain until component hash proves sharing.",
+        "runtime_deduplicated": false
+      }
+    },
+    {
+      "id": "neogeo-mvs",
+      "models": [
+        "neogeo-mvs"
+      ],
+      "sharing": {
+        "status": "distinct-assembly",
+        "components": [],
+        "note": "Distinct selected mould/assembly; retain until component hash proves sharing.",
+        "runtime_deduplicated": false
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "gb",
+      "name": "Game Boy",
+      "source": "sources/gb.blend",
+      "family": "dmg-standard",
+      "shell": "default",
+      "material": "gb",
+      "board": null,
+      "artwork": "gb"
+    },
+    {
+      "id": "gbc",
+      "name": "Game Boy Color",
+      "source": "sources/gbc.blend",
+      "family": "cgb-curved-clear",
+      "shell": "default",
+      "material": "gbc",
+      "board": "cgb-az8j-0-dmg-a06-01",
+      "artwork": "gbc"
+    },
+    {
+      "id": "gba",
+      "name": "Game Boy Advance",
+      "source": "sources/gba.blend",
+      "family": "agb-standard",
+      "shell": "opaque",
+      "material": "gba",
+      "board": null,
+      "artwork": "gba"
+    },
+    {
+      "id": "gamegear",
+      "name": "Game Gear",
+      "source": "sources/gamegear.blend",
+      "family": "gamegear",
+      "shell": "default",
+      "material": "gamegear",
+      "board": null,
+      "artwork": "gamegear"
+    },
+    {
+      "id": "mastersystem",
+      "name": "Master System",
+      "source": "sources/mastersystem.blend",
+      "family": "mastersystem",
+      "shell": "default",
+      "material": "mastersystem",
+      "board": null,
+      "artwork": "mastersystem"
+    },
+    {
+      "id": "megadrive",
+      "name": "Mega Drive / Genesis",
+      "source": "sources/megadrive.blend",
+      "family": "genesis-standard",
+      "shell": "default",
+      "material": "megadrive",
+      "board": null,
+      "artwork": "megadrive"
+    },
+    {
+      "id": "nes",
+      "name": "NES \u00b7 Canadian SMB3",
+      "source": "sources/nes.blend",
+      "family": "nes",
+      "shell": "default",
+      "material": "nes",
+      "board": null,
+      "artwork": "nes"
+    },
+    {
+      "id": "famicom",
+      "name": "Famicom",
+      "source": "sources/famicom.blend",
+      "family": "famicom",
+      "shell": "default",
+      "material": "famicom",
+      "board": null,
+      "artwork": "famicom"
+    },
+    {
+      "id": "snes",
+      "name": "SNES \u00b7 US later ramp",
+      "source": "sources/snes.blend",
+      "family": "snes-us",
+      "shell": "ramp",
+      "material": "snes",
+      "board": null,
+      "artwork": "snes"
+    },
+    {
+      "id": "neogeo",
+      "name": "Neo Geo \u00b7 AES",
+      "source": "sources/neogeo.blend",
+      "family": "neogeo",
+      "shell": "default",
+      "material": "neogeo",
+      "board": null,
+      "artwork": "neogeo"
+    },
+    {
+      "id": "ngpc",
+      "name": "Neo Geo Pocket Color",
+      "source": "sources/ngpc.blend",
+      "family": "ngpc",
+      "shell": "default",
+      "material": "ngpc",
+      "board": null,
+      "artwork": "ngpc"
+    },
+    {
+      "id": "psx",
+      "name": "PlayStation",
+      "source": "sources/psx.blend",
+      "family": "psx",
+      "shell": "default",
+      "material": "psx",
+      "board": null,
+      "artwork": "psx"
+    },
+    {
+      "id": "gold",
+      "name": "Pok\u00e9mon Gold",
+      "source": "sources/gold.blend",
+      "family": "dmg-standard",
+      "shell": "default",
+      "material": "gold",
+      "board": null,
+      "artwork": "gold"
+    },
+    {
+      "id": "silver",
+      "name": "Pok\u00e9mon Silver",
+      "source": "sources/silver.blend",
+      "family": "dmg-standard",
+      "shell": "default",
+      "material": "silver",
+      "board": null,
+      "artwork": "silver"
+    },
+    {
+      "id": "crystal",
+      "name": "Pok\u00e9mon Crystal",
+      "source": "sources/crystal.blend",
+      "family": "cgb-curved-clear",
+      "shell": "default",
+      "material": "crystal",
+      "board": "cgb-byte-0-dmg-kgdu-10",
+      "artwork": "crystal"
+    },
+    {
+      "id": "gold-jp",
+      "name": "Pocket Monsters Gold",
+      "source": "sources/gold-jp.blend",
+      "family": "dmg-standard",
+      "shell": "default",
+      "material": "gold-jp",
+      "board": null,
+      "artwork": "gold-jp"
+    },
+    {
+      "id": "silver-jp",
+      "name": "Pocket Monsters Silver",
+      "source": "sources/silver-jp.blend",
+      "family": "dmg-standard",
+      "shell": "default",
+      "material": "silver-jp",
+      "board": null,
+      "artwork": "silver-jp"
+    },
+    {
+      "id": "black-dx",
+      "name": "Link\u2019s Awakening DX",
+      "source": "sources/black-dx.blend",
+      "family": "dmg-standard",
+      "shell": "default",
+      "material": "black-dx",
+      "board": null,
+      "artwork": "black-dx"
+    },
+    {
+      "id": "pink-tilt",
+      "name": "Kirby Tilt \u2019n\u2019 Tumble",
+      "source": "sources/pink-tilt.blend",
+      "family": "pink-tilt",
+      "shell": "default",
+      "material": "pink-tilt",
+      "board": "kirby-tilt-specific",
+      "artwork": "pink-tilt"
+    },
+    {
+      "id": "blue",
+      "name": "Pok\u00e9mon Blue",
+      "source": "sources/blue.blend",
+      "family": "dmg-standard",
+      "shell": "default",
+      "material": "blue",
+      "board": null,
+      "artwork": "blue"
+    },
+    {
+      "id": "snes-pal",
+      "name": "SNES \u00b7 PAL",
+      "source": "sources/snes-pal.blend",
+      "family": "snes-pal-sfc",
+      "shell": "default",
+      "material": "snes-pal",
+      "board": null,
+      "artwork": "snes-pal"
+    },
+    {
+      "id": "snes-jp",
+      "name": "Super Famicom",
+      "source": "sources/snes-jp.blend",
+      "family": "snes-pal-sfc",
+      "shell": "default",
+      "material": "snes-jp",
+      "board": null,
+      "artwork": "snes-jp"
+    },
+    {
+      "id": "md-pal",
+      "name": "Mega Drive \u00b7 PAL",
+      "source": "sources/md-pal.blend",
+      "family": "genesis-standard",
+      "shell": "default",
+      "material": "md-pal",
+      "board": null,
+      "artwork": "md-pal"
+    },
+    {
+      "id": "md-jp",
+      "name": "Mega Drive \u00b7 Japan",
+      "source": "sources/md-jp.blend",
+      "family": "md-jp",
+      "shell": "default",
+      "material": "md-jp",
+      "board": null,
+      "artwork": "md-jp"
+    },
+    {
+      "id": "md-ea",
+      "name": "Mega Drive \u00b7 Electronic Arts",
+      "source": "sources/md-ea.blend",
+      "family": "md-ea",
+      "shell": "default",
+      "material": "md-ea",
+      "board": null,
+      "artwork": "md-ea"
+    },
+    {
+      "id": "md-codemasters",
+      "name": "Mega Drive \u00b7 Codemasters",
+      "source": "sources/md-codemasters.blend",
+      "family": "codemasters-md",
+      "shell": "standard",
+      "material": "md-codemasters",
+      "board": null,
+      "artwork": "md-codemasters"
+    },
+    {
+      "id": "md-jcart",
+      "name": "Mega Drive \u00b7 J-Cart",
+      "source": "sources/md-jcart.blend",
+      "family": "codemasters-md",
+      "shell": "jcart",
+      "material": "md-jcart",
+      "board": null,
+      "artwork": "md-jcart"
+    },
+    {
+      "id": "gb-pinball",
+      "name": "Pok\u00e9mon Pinball \u00b7 rumble",
+      "source": "sources/gb-pinball.blend",
+      "family": "gb-pinball",
+      "shell": "default",
+      "material": "gb-pinball",
+      "board": null,
+      "artwork": "gb-pinball"
+    },
+    {
+      "id": "namcot",
+      "name": "Famicom \u00b7 Namcot",
+      "source": "sources/namcot.blend",
+      "family": "namcot",
+      "shell": "default",
+      "material": "namcot",
+      "board": null,
+      "artwork": "namcot"
+    },
+    {
+      "id": "mark-iii-white",
+      "name": "Mark III \u00b7 early white",
+      "source": "sources/mark-iii-white.blend",
+      "family": "mark-iii",
+      "shell": "default",
+      "material": "mark-iii-white",
+      "board": null,
+      "artwork": "mark-iii-white"
+    },
+    {
+      "id": "mark-iii-black",
+      "name": "Mark III \u00b7 later black",
+      "source": "sources/mark-iii-black.blend",
+      "family": "mark-iii",
+      "shell": "default",
+      "material": "mark-iii-black",
+      "board": null,
+      "artwork": "mark-iii-black"
+    },
+    {
+      "id": "mark-iii-silver",
+      "name": "Mark III \u00b7 Salio",
+      "source": "sources/mark-iii-silver.blend",
+      "family": "mark-iii",
+      "shell": "default",
+      "material": "mark-iii-silver",
+      "board": null,
+      "artwork": "mark-iii-silver"
+    },
+    {
+      "id": "gba-boktai",
+      "name": "Boktai \u00b7 solar sensor",
+      "source": "sources/gba-boktai.blend",
+      "family": "gba-boktai",
+      "shell": "default",
+      "material": "gba-boktai",
+      "board": "agb-u3ip-0-solar-specific",
+      "artwork": "gba-boktai"
+    },
+    {
+      "id": "gba-twisted",
+      "name": "WarioWare Twisted \u00b7 gyro/rumble",
+      "source": "sources/gba-twisted.blend",
+      "family": "gba-twisted",
+      "shell": "default",
+      "material": "gba-twisted",
+      "board": "agb-rzwe-0-gyro-rumble-specific",
+      "artwork": "gba-twisted"
+    },
+    {
+      "id": "snes-us-locking",
+      "name": "SNES \u00b7 US early locking",
+      "source": "sources/snes-us-locking.blend",
+      "family": "snes-us",
+      "shell": "locking",
+      "material": "snes-us-locking",
+      "board": null,
+      "artwork": "snes-us-locking"
+    },
+    {
+      "id": "virtua-racing",
+      "name": "Mega Drive \u00b7 Virtua Racing",
+      "source": "sources/virtua-racing.blend",
+      "family": "virtua-racing",
+      "shell": "default",
+      "material": "virtua-racing",
+      "board": null,
+      "artwork": "virtua-racing"
+    },
+    {
+      "id": "sonic-knuckles",
+      "name": "Mega Drive \u00b7 Sonic & Knuckles",
+      "source": "sources/sonic-knuckles.blend",
+      "family": "sonic-knuckles",
+      "shell": "default",
+      "material": "sonic-knuckles",
+      "board": null,
+      "artwork": "sonic-knuckles"
+    },
+    {
+      "id": "gba-ruby",
+      "name": "Pok\u00e9mon Ruby",
+      "source": "sources/gba-ruby.blend",
+      "family": "agb-standard",
+      "shell": "hollow-translucent",
+      "material": "gba-ruby",
+      "board": "agb-axve-0-agb-e05-01",
+      "artwork": "gba-ruby"
+    },
+    {
+      "id": "gba-sapphire",
+      "name": "Pok\u00e9mon Sapphire",
+      "source": "sources/gba-sapphire.blend",
+      "family": "agb-standard",
+      "shell": "hollow-translucent",
+      "material": "gba-sapphire",
+      "board": "agb-axpe-0-agb-e05-01",
+      "artwork": "gba-sapphire"
+    },
+    {
+      "id": "gba-emerald",
+      "name": "Pok\u00e9mon Emerald",
+      "source": "sources/gba-emerald.blend",
+      "family": "agb-standard",
+      "shell": "hollow-translucent",
+      "material": "gba-emerald",
+      "board": "agb-bpee-0-agb-e05-01",
+      "artwork": "gba-emerald"
+    },
+    {
+      "id": "gba-firered",
+      "name": "Pok\u00e9mon FireRed",
+      "source": "sources/gba-firered.blend",
+      "family": "agb-standard",
+      "shell": "hollow-translucent",
+      "material": "gba-firered",
+      "board": "agb-bpre-1-agb-e02-30",
+      "artwork": "gba-firered"
+    },
+    {
+      "id": "gba-leafgreen",
+      "name": "Pok\u00e9mon LeafGreen",
+      "source": "sources/gba-leafgreen.blend",
+      "family": "agb-standard",
+      "shell": "hollow-translucent",
+      "material": "gba-leafgreen",
+      "board": "agb-bpge-0-agb-e02-20",
+      "artwork": "gba-leafgreen"
+    },
+    {
+      "id": "neogeo-mvs",
+      "name": "Neo Geo \u00b7 MVS",
+      "source": "sources/neogeo-mvs.blend",
+      "family": "neogeo-mvs",
+      "shell": "default",
+      "material": "neogeo-mvs",
+      "board": null,
+      "artwork": "neogeo-mvs"
+    }
+  ],
+  "materials": {
+    "gb": {
+      "source_model": "gb",
+      "binding": "preserve-source-materials"
+    },
+    "gbc": {
+      "source_model": "gbc",
+      "binding": "preserve-source-materials"
+    },
+    "gba": {
+      "source_model": "gba",
+      "binding": "preserve-source-materials"
+    },
+    "gamegear": {
+      "source_model": "gamegear",
+      "binding": "preserve-source-materials"
+    },
+    "mastersystem": {
+      "source_model": "mastersystem",
+      "binding": "preserve-source-materials"
+    },
+    "megadrive": {
+      "source_model": "megadrive",
+      "binding": "preserve-source-materials"
+    },
+    "nes": {
+      "source_model": "nes",
+      "binding": "preserve-source-materials"
+    },
+    "famicom": {
+      "source_model": "famicom",
+      "binding": "preserve-source-materials"
+    },
+    "snes": {
+      "source_model": "snes",
+      "binding": "preserve-source-materials"
+    },
+    "neogeo": {
+      "source_model": "neogeo",
+      "binding": "preserve-source-materials"
+    },
+    "ngpc": {
+      "source_model": "ngpc",
+      "binding": "preserve-source-materials"
+    },
+    "psx": {
+      "source_model": "psx",
+      "binding": "preserve-source-materials"
+    },
+    "gold": {
+      "source_model": "gold",
+      "binding": "preserve-source-materials",
+      "note": "Retain selected metallic-fleck material; do not substitute flat RGB."
+    },
+    "silver": {
+      "source_model": "silver",
+      "binding": "preserve-source-materials",
+      "note": "Retain selected metallic-fleck material; do not substitute flat RGB."
+    },
+    "crystal": {
+      "source_model": "crystal",
+      "binding": "preserve-source-materials",
+      "note": "Translucent blue with separate reflective inclusions; retain front/rear optical differences."
+    },
+    "gold-jp": {
+      "source_model": "gold-jp",
+      "binding": "preserve-source-materials",
+      "note": "Blue front, grey rear; per-half bindings."
+    },
+    "silver-jp": {
+      "source_model": "silver-jp",
+      "binding": "preserve-source-materials",
+      "note": "Grey front, blue rear; per-half bindings."
+    },
+    "black-dx": {
+      "source_model": "black-dx",
+      "binding": "preserve-source-materials"
+    },
+    "pink-tilt": {
+      "source_model": "pink-tilt",
+      "binding": "preserve-source-materials"
+    },
+    "blue": {
+      "source_model": "blue",
+      "binding": "preserve-source-materials"
+    },
+    "snes-pal": {
+      "source_model": "snes-pal",
+      "binding": "preserve-source-materials"
+    },
+    "snes-jp": {
+      "source_model": "snes-jp",
+      "binding": "preserve-source-materials"
+    },
+    "md-pal": {
+      "source_model": "md-pal",
+      "binding": "preserve-source-materials"
+    },
+    "md-jp": {
+      "source_model": "md-jp",
+      "binding": "preserve-source-materials"
+    },
+    "md-ea": {
+      "source_model": "md-ea",
+      "binding": "preserve-source-materials"
+    },
+    "md-codemasters": {
+      "source_model": "md-codemasters",
+      "binding": "preserve-source-materials"
+    },
+    "md-jcart": {
+      "source_model": "md-jcart",
+      "binding": "preserve-source-materials"
+    },
+    "gb-pinball": {
+      "source_model": "gb-pinball",
+      "binding": "preserve-source-materials"
+    },
+    "namcot": {
+      "source_model": "namcot",
+      "binding": "preserve-source-materials"
+    },
+    "mark-iii-white": {
+      "source_model": "mark-iii-white",
+      "binding": "preserve-source-materials"
+    },
+    "mark-iii-black": {
+      "source_model": "mark-iii-black",
+      "binding": "preserve-source-materials"
+    },
+    "mark-iii-silver": {
+      "source_model": "mark-iii-silver",
+      "binding": "preserve-source-materials"
+    },
+    "gba-boktai": {
+      "source_model": "gba-boktai",
+      "binding": "preserve-source-materials"
+    },
+    "gba-twisted": {
+      "source_model": "gba-twisted",
+      "binding": "preserve-source-materials"
+    },
+    "snes-us-locking": {
+      "source_model": "snes-us-locking",
+      "binding": "preserve-source-materials"
+    },
+    "virtua-racing": {
+      "source_model": "virtua-racing",
+      "binding": "preserve-source-materials"
+    },
+    "sonic-knuckles": {
+      "source_model": "sonic-knuckles",
+      "binding": "preserve-source-materials"
+    },
+    "gba-ruby": {
+      "source_model": "gba-ruby",
+      "binding": "preserve-source-materials"
+    },
+    "gba-sapphire": {
+      "source_model": "gba-sapphire",
+      "binding": "preserve-source-materials"
+    },
+    "gba-emerald": {
+      "source_model": "gba-emerald",
+      "binding": "preserve-source-materials"
+    },
+    "gba-firered": {
+      "source_model": "gba-firered",
+      "binding": "preserve-source-materials"
+    },
+    "gba-leafgreen": {
+      "source_model": "gba-leafgreen",
+      "binding": "preserve-source-materials"
+    },
+    "neogeo-mvs": {
+      "source_model": "neogeo-mvs",
+      "binding": "preserve-source-materials"
+    },
+    "dmg-red": {
+      "source_model": "gb",
+      "binding": "base-colour-override",
+      "base_color_factors": {
+        "surface.warm-light-grey-injection-moulded-abs": [
+          0.5332764,
+          0.0742136,
+          0.0822827,
+          1
+        ],
+        "surface.gb-smooth-tooling-finish": [
+          0.5332764,
+          0.0742136,
+          0.0822827,
+          1
+        ]
+      },
+      "accuracy_note": "Median photographic shell colour converted from sRGB to linear; uncalibrated estimate, not measured reflectance. Existing opaque ABS roughness and all geometry retained.",
+      "sample_regions": [
+        [
+          70,
+          650,
+          140,
+          900
+        ],
+        [
+          1240,
+          650,
+          1300,
+          900
+        ],
+        [
+          80,
+          1260,
+          360,
+          1360
+        ]
+      ],
+      "reference": "https://gbhwdb.gekkio.fi/static/DMG-APAE-0/beckybecky125-1_01_front.jpg"
+    },
+    "dmg-yellow": {
+      "source_model": "gb",
+      "binding": "base-colour-override",
+      "base_color_factors": {
+        "surface.warm-light-grey-injection-moulded-abs": [
+          0.7835378,
+          0.5583404,
+          0.0060488,
+          1
+        ],
+        "surface.gb-smooth-tooling-finish": [
+          0.7835378,
+          0.5583404,
+          0.0060488,
+          1
+        ]
+      },
+      "accuracy_note": "Median photographic shell colour converted from sRGB to linear; uncalibrated estimate, not measured reflectance. Existing opaque ABS roughness and all geometry retained.",
+      "sample_regions": [
+        [
+          45,
+          650,
+          120,
+          900
+        ],
+        [
+          1200,
+          650,
+          1275,
+          900
+        ],
+        [
+          50,
+          1340,
+          300,
+          1430
+        ]
+      ],
+      "reference": "https://gbhwdb.gekkio.fi/static/DMG-APSE-0/gekkio-1_01_front.jpg"
+    }
+  },
+  "boards": {
+    "cgb-az8j-0-dmg-a06-01": {
+      "pcb": "DMG-A06-01",
+      "mapper": "MBC5",
+      "battery": "CR1616",
+      "reference": "https://gbhwdb.gekkio.fi/cartridges/CGB-AZ8J-0/gdsn-1.html"
+    },
+    "cgb-byte-0-dmg-kgdu-10": {
+      "pcb": "DMG-KGDU-10",
+      "mapper": "MBC3B",
+      "battery": "CR2025",
+      "reference": "https://gbhwdb.gekkio.fi/cartridges/CGB-BYTE-0/comrade-claire-1.html"
+    },
+    "kirby-tilt-specific": {
+      "pcb": null,
+      "mapper": "MBC7",
+      "devices": [
+        "ADXL202",
+        "EEPROM"
+      ],
+      "note": "Photographed PCB and raised packages; exact board revision not asserted by this audit",
+      "rear_reference": {
+        "url": "https://gbhwdb.gekkio.fi/cartridges/CGB-KTNE-0/endrift-1.html",
+        "image": "https://gbhwdb.gekkio.fi/static/CGB-KTNE-0/endrift-1_03_pcb_back.jpg",
+        "photographer": "endrift",
+        "license": "CC-BY-SA-4.0",
+        "use": "Separate rear PCB image; same USA board entry as front"
+      }
+    },
+    "agb-u3ip-0-solar-specific": {
+      "devices": [
+        "solar sensor",
+        "battery"
+      ],
+      "reference": "https://gbhwdb.gekkio.fi/cartridges/AGB-U3IP-0/3615retro-1.html"
+    },
+    "agb-rzwe-0-gyro-rumble-specific": {
+      "devices": [
+        "gyro daughterboard",
+        "rumble motor"
+      ],
+      "reference": "https://gbhwdb.gekkio.fi/cartridges/AGB-RZWE-0/3615retro-1.html"
+    },
+    "agb-axve-0-agb-e05-01": {
+      "pcb": "AGB-E05-01",
+      "battery": "CR1616",
+      "reference": "https://gbhwdb.gekkio.fi/cartridges/AGB-AXVE-0/fexcollects-1.html",
+      "note": "R/S/E board designation shared, but do not merge photographs, package layout, battery tab/insulation or ROM identity; exact component hashes may share individual meshes."
+    },
+    "agb-axpe-0-agb-e05-01": {
+      "pcb": "AGB-E05-01",
+      "battery": "CR1616",
+      "reference": "https://gbhwdb.gekkio.fi/cartridges/AGB-AXPE-0/fexcollects-1.html",
+      "note": "R/S/E board designation shared, but do not merge photographs, package layout, battery tab/insulation or ROM identity; exact component hashes may share individual meshes."
+    },
+    "agb-bpee-0-agb-e05-01": {
+      "pcb": "AGB-E05-01",
+      "battery": "CR1616",
+      "reference": "https://gbhwdb.gekkio.fi/cartridges/AGB-BPEE-0/fexcollects-1.html",
+      "note": "R/S/E board designation shared, but do not merge photographs, package layout, battery tab/insulation or ROM identity; exact component hashes may share individual meshes."
+    },
+    "agb-bpre-1-agb-e02-30": {
+      "pcb": "AGB-E02-30",
+      "battery": null,
+      "reference": "https://gbhwdb.gekkio.fi/cartridges/AGB-BPRE-1/fexcollects-1.html",
+      "note": "R/S/E board designation shared, but do not merge photographs, package layout, battery tab/insulation or ROM identity; exact component hashes may share individual meshes."
+    },
+    "agb-bpge-0-agb-e02-20": {
+      "pcb": "AGB-E02-20",
+      "battery": null,
+      "reference": "https://gbhwdb.gekkio.fi/cartridges/AGB-BPGE-0/ikk5-1.html",
+      "note": "R/S/E board designation shared, but do not merge photographs, package layout, battery tab/insulation or ROM identity; exact component hashes may share individual meshes."
+    }
+  },
+  "artwork": {
+    "gb": {
+      "source_model": "gb",
+      "binding": "embedded-release-artwork",
+      "reference": "https://images.launchbox-app.com/cfef6fae-834d-49ec-aa3e-9183db0586c5.png"
+    },
+    "gbc": {
+      "source_model": "gbc",
+      "binding": "embedded-release-artwork"
+    },
+    "gba": {
+      "source_model": "gba",
+      "binding": "embedded-release-artwork",
+      "reference": "https://images.launchbox-app.com/607a0d08-aa96-4abf-825f-821a63b25b2e.png"
+    },
+    "gamegear": {
+      "source_model": "gamegear",
+      "binding": "embedded-release-artwork"
+    },
+    "mastersystem": {
+      "source_model": "mastersystem",
+      "binding": "embedded-release-artwork"
+    },
+    "megadrive": {
+      "source_model": "megadrive",
+      "binding": "embedded-release-artwork",
+      "reference": "https://images.launchbox-app.com/8e441fcd-d6a3-471d-adc1-d346f4fbcfe7.png"
+    },
+    "nes": {
+      "source_model": "nes",
+      "binding": "embedded-release-artwork"
+    },
+    "famicom": {
+      "source_model": "famicom",
+      "binding": "embedded-release-artwork"
+    },
+    "snes": {
+      "source_model": "snes",
+      "binding": "embedded-release-artwork"
+    },
+    "neogeo": {
+      "source_model": "neogeo",
+      "binding": "embedded-release-artwork",
+      "reference": "https://www.neostore.com/Neo-Turf-Masters-English-AES-p/491.htm"
+    },
+    "ngpc": {
+      "source_model": "ngpc",
+      "binding": "embedded-release-artwork"
+    },
+    "psx": {
+      "source_model": "psx",
+      "binding": "embedded-release-artwork",
+      "reference": "https://www.ebay.com/itm/900040487005"
+    },
+    "gold": {
+      "source_model": "gold",
+      "binding": "embedded-release-artwork"
+    },
+    "silver": {
+      "source_model": "silver",
+      "binding": "embedded-release-artwork"
+    },
+    "crystal": {
+      "source_model": "crystal",
+      "binding": "embedded-release-artwork"
+    },
+    "gold-jp": {
+      "source_model": "gold-jp",
+      "binding": "embedded-release-artwork"
+    },
+    "silver-jp": {
+      "source_model": "silver-jp",
+      "binding": "embedded-release-artwork"
+    },
+    "black-dx": {
+      "source_model": "black-dx",
+      "binding": "embedded-release-artwork"
+    },
+    "pink-tilt": {
+      "source_model": "pink-tilt",
+      "binding": "embedded-release-artwork"
+    },
+    "blue": {
+      "source_model": "blue",
+      "binding": "embedded-release-artwork"
+    },
+    "snes-pal": {
+      "source_model": "snes-pal",
+      "binding": "embedded-release-artwork",
+      "reference": "https://www.ebay.co.uk/itm/206551983576",
+      "rear_code": "SNSP-UKV",
+      "note": "Original rear warning photograph added; front and existing geometry preserved."
+    },
+    "snes-jp": {
+      "source_model": "snes-jp",
+      "binding": "embedded-release-artwork"
+    },
+    "md-pal": {
+      "source_model": "md-pal",
+      "binding": "embedded-release-artwork"
+    },
+    "md-jp": {
+      "source_model": "md-jp",
+      "binding": "embedded-release-artwork",
+      "rear_reference": "https://www.ebay.com/itm/304298898738"
+    },
+    "md-ea": {
+      "source_model": "md-ea",
+      "binding": "embedded-release-artwork",
+      "rear_reference": "https://www.ebay.com/itm/385604631823"
+    },
+    "md-codemasters": {
+      "source_model": "md-codemasters",
+      "binding": "embedded-release-artwork",
+      "rear_reference": "https://aukro.cz/sega-mega-drive-hra-micro-machines-7051479456"
+    },
+    "md-jcart": {
+      "source_model": "md-jcart",
+      "binding": "embedded-release-artwork"
+    },
+    "gb-pinball": {
+      "source_model": "gb-pinball",
+      "binding": "embedded-release-artwork"
+    },
+    "namcot": {
+      "source_model": "namcot",
+      "binding": "embedded-release-artwork"
+    },
+    "mark-iii-white": {
+      "source_model": "mark-iii-white",
+      "binding": "embedded-release-artwork"
+    },
+    "mark-iii-black": {
+      "source_model": "mark-iii-black",
+      "binding": "embedded-release-artwork"
+    },
+    "mark-iii-silver": {
+      "source_model": "mark-iii-silver",
+      "binding": "embedded-release-artwork"
+    },
+    "gba-boktai": {
+      "source_model": "gba-boktai",
+      "binding": "embedded-release-artwork"
+    },
+    "gba-twisted": {
+      "source_model": "gba-twisted",
+      "binding": "embedded-release-artwork"
+    },
+    "snes-us-locking": {
+      "source_model": "snes-us-locking",
+      "binding": "embedded-release-artwork",
+      "reference": "https://www.ebay.com/itm/226987238099",
+      "rear_code": "SNS-USA",
+      "note": "Original rear warning and centred green top title photograph added; all original meshes/transforms preserved."
+    },
+    "virtua-racing": {
+      "source_model": "virtua-racing",
+      "binding": "embedded-release-artwork",
+      "rear_reference": "https://www.ebay.com/itm/358628908988?chn=ps&google_free_listing_action=view_item&mkcid=28&mkevt=1"
+    },
+    "sonic-knuckles": {
+      "source_model": "sonic-knuckles",
+      "binding": "embedded-release-artwork",
+      "rear_reference": "https://i.ebayimg.com/images/g/CzYAAeSwjGhoHV9~/s-l1200.jpg"
+    },
+    "gba-ruby": {
+      "source_model": "gba-ruby",
+      "binding": "embedded-release-artwork"
+    },
+    "gba-sapphire": {
+      "source_model": "gba-sapphire",
+      "binding": "embedded-release-artwork"
+    },
+    "gba-emerald": {
+      "source_model": "gba-emerald",
+      "binding": "embedded-release-artwork"
+    },
+    "gba-firered": {
+      "source_model": "gba-firered",
+      "binding": "embedded-release-artwork"
+    },
+    "gba-leafgreen": {
+      "source_model": "gba-leafgreen",
+      "binding": "embedded-release-artwork"
+    },
+    "neogeo-mvs": {
+      "source_model": "neogeo-mvs",
+      "binding": "embedded-release-artwork"
+    }
+  },
+  "sharing_rules": {
+    "exact_components": "Evaluated geometry, UVs, corner normals and material-index arrays matched. Retain each instance transform and material-slot binding.",
+    "family": "A family is a reusable design grouping, not proof that every member has an identical whole mesh.",
+    "artwork": "Preserve each surface crop, aspect and placement. Shell reuse does not authorize substituting a regional label.",
+    "boards": "Same board designation does not make photographs, packages, batteries or ROM identity interchangeable. Opaque scenes without visible full boards have a null board binding.",
+    "optimization": "Raw scenes remain authoritative. Reduced geometry/textures and baked relief require visual comparison; exact component sharing alone does not change appearance.",
+    "exact_geometry": "Named geometry and corner normals match, but UV arrays can differ. Share position/normal buffers only until UV/material usage is resolved; not a whole glTF-mesh dedup claim."
+  },
+  "packaging": {
+    "tool": "tools/share_assets.py",
+    "strategy": "Exact bufferView payload and image byte sharing across portable glTF models",
+    "preserves": [
+      "accessors",
+      "UVs",
+      "normals",
+      "materials",
+      "node transforms"
+    ],
+    "scope": "Storage reuse only; runtime GPU sharing and draw-call reduction are not implied."
+  }
+}

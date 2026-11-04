@@ -1,0 +1,453 @@
+{
+  "schema_version": 1,
+  "status": "Editable source models with release and geometry references; portable and decoded compressed exports pass glTF validation. Per-model accuracy notes and renderer limitations still apply.",
+  "models": [
+    {
+      "id": "gb",
+      "name": "Game Boy",
+      "source": "sources/gb.blend",
+      "sha256": "87f855e9bb44a1d342634c2f298b1f7b0c6135e02a5ad7eb7c7ff50c4fcf1d1b",
+      "accuracy_notes": "invented rear warning removed, original DMG tooling and gamebit screw added; Curved logo pocket with raised lettering and baked short-range contact shading; recess depth is photo-estimated.; Original Nintendo and GAME BOY vector shapes projected into baked shallow relief on the actual shell surface, replacing separate overlapping glyph meshes. 2048 normal texture; authored relief depth 0.10mm (Kirby 0.16mm), not measured tooling. Original body geometry and plastic colour, roughness, transmission, IOR and alpha preserved; transparent lettering remains lighting-dependent.",
+      "reference": "https://images.launchbox-app.com/cfef6fae-834d-49ec-aa3e-9183db0586c5.png"
+    },
+    {
+      "id": "gbc",
+      "name": "Game Boy Color",
+      "source": "sources/gbc.blend",
+      "sha256": "c961cf3f32017a365ae4ff83b58075cb86017a9c7c56afb661345788e34755b6",
+      "accuracy_notes": "Release-matched visible PCB front and rear, corrected battery/screw placement and rear moulding; optical accuracy remains reference-reviewed; GAME BOY COLOR mould lettering uses clean vector-derived shallow normal relief with rounded edges; original curved shell, underline groove and artwork UV preserved. Relief height 0.08 mm is photo-estimated rather than measured.",
+      "reference": "https://images.launchbox-app.com/0b6eb9a1-8e64-48b0-bf09-71f259687acf.png",
+      "reference_kind": "Release artwork and exterior reference",
+      "geometry_reference": "https://www.printables.com/model/849559-gameboy-color-cartridge-shell",
+      "geometry_author": "leslielaw",
+      "geometry_license": "CC BY 4.0",
+      "runtime_optical_limit": "Three.js screen-space rough transmission can appear frostier than matched Cycles source/import; constant nominal wall thickness does not model multiple interfaces or PCB air gap. Source roughness preserved; experimental thickness-aware blur is diagnostic only."
+    },
+    {
+      "id": "gba",
+      "name": "Game Boy Advance",
+      "source": "sources/gba.blend",
+      "sha256": "126c4cc1e85b98294c548a9a582e6ac1636d779dc23d82c34915d5dc48ab711a",
+      "accuracy_notes": "full connector-span cavity and visible board edge; photographed AGB-002 rear and Y screw, front/internal geometry preserved; Planar front logo field and raised lettering; broad top/corner chamfer replaces the abrupt bar. Chamfer width is photo-estimated, not measured CAD.; Upper swept lip restored with a continuous cosine-squared arch/taper, rounded outer brow skin and seated original vector relief. Lower-face vertices and original shell colours/transmission preserved exactly. Depths remain photograph-estimated, not measured CAD; fine emboss has view-dependent occlusion/faceted highlights at glancing angles.; Broad top-front chamfer restored subtractively around the existing swept lip; protruding lower shoulder fins removed and high chamfer edges given a localized 0.035 radius. All original lower-face vertices retained, with four side-boundary subdivisions at z26.42; original colours/transmission unchanged. Chamfer depth remains photograph-estimated. Fine emboss retains glancing-angle occlusion/faceted highlights.",
+      "reference": "https://images.launchbox-app.com/607a0d08-aa96-4abf-825f-821a63b25b2e.png"
+    },
+    {
+      "id": "gamegear",
+      "name": "Game Gear",
+      "source": "sources/gamegear.blend",
+      "sha256": "c19dc150ec4ac923bea554c6d6f187a4e0556d19c632f3c743e4d9d56c5e973e",
+      "accuracy_notes": "Photographed rear tooling and connector layout; fine lettering and production pairing limits are photo-fitted",
+      "reference": "https://images.launchbox-app.com/e251e249-ad28-4ba0-94d5-c0203cea4d69.png",
+      "reference_kind": "Release artwork and exterior reference"
+    },
+    {
+      "id": "mastersystem",
+      "name": "Master System",
+      "source": "sources/mastersystem.blend",
+      "sha256": "368845bf2d27b2657f4694fd9e7ddb6be5c88952afe013c831b37324a2f296b0",
+      "accuracy_notes": "Photographed rear tooling and connector layout; fine lettering and production pairing limits are photo-fitted",
+      "reference": "https://images.launchbox-app.com/e2ce400a-e2ed-4abf-801f-1426d87481f1.png",
+      "reference_kind": "Release artwork and exterior reference"
+    },
+    {
+      "id": "megadrive",
+      "name": "Mega Drive / Genesis",
+      "source": "sources/megadrive.blend",
+      "sha256": "ac5e2a7cb5fa5899ac99abac5c45eb47e47ad9e741c6096703db0e976eb4d31e",
+      "accuracy_notes": "Photo-referenced rear tooling, Sega relief, security screws, MADE IN JAPAN and caution wording. Fine glyph shapes and relief depth use fitted approximations; uncertain patent-number column omitted. Existing geometry and UVs preserved.; Inset structural mating tongue closes the through-gap between shell halves while preserving the recessed exterior seam, original shell geometry and connector mouth. EA yellow insert now has continuous exterior colour after its overlapping black backing was recessed inside it. Internal tongue depth is an inferred assembly detail, not measured original tooling.",
+      "reference": "https://images.launchbox-app.com/8e441fcd-d6a3-471d-adc1-d346f4fbcfe7.png",
+      "geometry_reference": "https://www.hdretrovision.com/free-stuff/",
+      "rear_reference": "https://i.ebayimg.com/images/g/8XkAAeSwRo9qbVda/s-l1600.webp"
+    },
+    {
+      "id": "nes",
+      "name": "NES \u00b7 Canadian SMB3",
+      "source": "sources/nes.blend",
+      "sha256": "dfa0ee64ce6b52c8fedaceb559a1f571685bc9bd0ccb96bee18e8967ad15d8e6",
+      "accuracy_notes": "Matching Canadian front/top/rear scans, continuous crown wrap and assembled rear fasteners; original-board connector layout and recessed mouth",
+      "reference": "https://nescartdb.com/profile/view/1288/super-mario-bros-3",
+      "reference_kind": "Release artwork and exterior reference"
+    },
+    {
+      "id": "famicom",
+      "name": "Famicom",
+      "source": "sources/famicom.blend",
+      "sha256": "68f60c9229f13b5831fbd718218730f17929a3893780f54f937ac26c21c4ea93",
+      "accuracy_notes": "Original Kirby rear label and wraparound grips; connector cavity and PCB edge restored; Sharp-aware smooth normals remove faceted moulding highlights; original shell dimensions and artwork retained.",
+      "reference": "https://nescartdb.com/profile/view/3488/hoshi-no-kirby-yume-no-izumi-no-monogatari",
+      "reference_kind": "Release artwork and exterior reference"
+    },
+    {
+      "id": "snes",
+      "name": "SNES \u00b7 US later ramp",
+      "source": "sources/snes.blend",
+      "sha256": "3f25100eb5c81efc246358ea119d62522fdf0d7746fb3c0a4e172481ec63d896",
+      "accuracy_notes": "USA-1 artwork and genuine top label; documented ramp release; original-board connector layout and recessed mouth; rear grooves, Nintendo relief and keyways; exact USA-1 warning",
+      "reference": "https://snescentral.com/0/0/0/0000/SNS-MW-USA-1-cart.jpg",
+      "reference_kind": "Release artwork and exterior reference"
+    },
+    {
+      "id": "neogeo",
+      "name": "Neo Geo \u00b7 AES",
+      "source": "sources/neogeo.blend",
+      "sha256": "e2c65a9797bc215f642d3bfd115374665b49c3ca3f2be114ecb7b77fff2ec9ba",
+      "accuracy_notes": "Photo-fitted exterior; assembled rear remains less strongly referenced; Original assembled rear photos agree on rounded upper grip contour and SNK / MADE IN JAPAN tooling panel. Added these only; existing front retained. Rear six-slot pitch now matches photo (~4.6mm), widths14/14/15/17/22/34mm; lower rear channels corrected7 to11. Front unchanged.; Roof-label projection stays on the roof bevel; original front and top cartridge artwork verified from the same NeoStore specimen.",
+      "reference": "https://www.neostore.com/Neo-Turf-Masters-English-AES-p/491.htm",
+      "rear_references": [
+        "https://www.vgdb.com.br/gf/fotos/games/media_30817/minasan-no-okagesama-desu-30817.jpg",
+        "https://i.ebayimg.com/images/g/N0wAAOSwFm1k5Czb/s-l1200.jpg"
+      ],
+      "accuracy_limits": "Upper grip depth 1.65mm photo-estimated; exact later Neo Turf Masters mould not photographed. SNK vector reused from established logo; MADE IN JAPAN closest font, not exact tooling typography."
+    },
+    {
+      "id": "ngpc",
+      "name": "Neo Geo Pocket Color",
+      "source": "sources/ngpc.blend",
+      "sha256": "8452d554e9dda794fdf433796049386d04670c74a590afcf4dcb89e7cb6c66b7",
+      "accuracy_notes": "Original Metal Slug rear reference: recessed six-lobe screw, guide strips, mould mark and origin panel; dimensional/lettering estimates are photo-fitted; Broader recessed upper/lower grip flutes and distinct shoulders follow original cartridge photographs; profile dimensions are photo-normalised. Inset support joins roll to front body, preserving shallow seam without through-gap; flat cap normals avoid radial shading.",
+      "reference": "https://images.launchbox-app.com/81f0050f-77c7-4af7-93d1-6b26f6ab5f00.png",
+      "reference_kind": "Release artwork and exterior reference",
+      "rear_reference": "https://www.ebay.com/itm/267439438812"
+    },
+    {
+      "id": "psx",
+      "name": "PlayStation",
+      "source": "sources/psx.blend",
+      "sha256": "5d8e1577c0db5614ac302b8e49220f74ee823115857ab8bbf8c3cdd9fffcec65",
+      "accuracy_notes": "Dark-label artwork layout reference checked; glossy printed finish, polished underside hub and dark data side. Optical material parameters remain photo-estimated.",
+      "reference": "https://www.ebay.com/itm/900040487005"
+    },
+    {
+      "id": "gold",
+      "name": "Pok\u00e9mon Gold",
+      "source": "sources/gold.blend",
+      "sha256": "c4ddd91cb8571308b072de4495a85c0054750e005d8c9ae5174a74d87d0ebdce",
+      "accuracy_notes": "invented rear warning removed, original DMG tooling and gamebit screw added; Curved logo pocket with raised lettering and baked short-range contact shading; recess depth is photo-estimated.; Original Nintendo and GAME BOY vector shapes projected into baked shallow relief on the actual shell surface, replacing separate overlapping glyph meshes. 2048 normal texture; authored relief depth 0.10mm (Kirby 0.16mm), not measured tooling. Original body geometry and plastic colour, roughness, transmission, IOR and alpha preserved; transparent lettering remains lighting-dependent.",
+      "reference": "https://images.launchbox-app.com/a8c2f791-2b55-48e9-a3de-05ff0437a3e2.png",
+      "reference_kind": "Release artwork and exterior reference"
+    },
+    {
+      "id": "silver",
+      "name": "Pok\u00e9mon Silver",
+      "source": "sources/silver.blend",
+      "sha256": "44ef95c3cbcb98040452d1381f8bad47266ddb79f84d40070fad640241171046",
+      "accuracy_notes": "invented rear warning removed, original DMG tooling and gamebit screw added; Curved logo pocket with raised lettering and baked short-range contact shading; recess depth is photo-estimated.; Original Nintendo and GAME BOY vector shapes projected into baked shallow relief on the actual shell surface, replacing separate overlapping glyph meshes. 2048 normal texture; authored relief depth 0.10mm (Kirby 0.16mm), not measured tooling. Original body geometry and plastic colour, roughness, transmission, IOR and alpha preserved; transparent lettering remains lighting-dependent.",
+      "reference": "https://images.launchbox-app.com/43c2fac2-68a1-433a-9ff5-1076edf632bb.jpg",
+      "reference_kind": "Release artwork and exterior reference"
+    },
+    {
+      "id": "crystal",
+      "name": "Pok\u00e9mon Crystal",
+      "source": "sources/crystal.blend",
+      "sha256": "566e3d69fdd5d04f9f69c6863ad17fbdf7b55384657aaf1e7005f3f307e06d5d",
+      "accuracy_notes": "Release-matched visible PCB front and rear, corrected battery/screw placement and rear moulding; optical accuracy remains reference-reviewed; GAME BOY COLOR mould lettering uses clean vector-derived shallow normal relief with rounded edges; original curved shell, underline groove and artwork UV preserved. Relief height 0.08 mm is photo-estimated rather than measured.",
+      "reference": "https://gbhwdb.gekkio.fi/static/CGB-BYTE-0/comrade-claire-1_01_front.jpg",
+      "reference_kind": "Release artwork and exterior reference",
+      "geometry_reference": "https://www.printables.com/model/849559-gameboy-color-cartridge-shell",
+      "geometry_author": "leslielaw",
+      "geometry_license": "CC BY 4.0",
+      "runtime_optical_limit": "Three.js screen-space rough transmission can appear frostier than matched Cycles source/import; constant nominal wall thickness does not model multiple interfaces or PCB air gap. Source roughness preserved; experimental thickness-aware blur is diagnostic only."
+    },
+    {
+      "id": "gold-jp",
+      "name": "Pocket Monsters Gold",
+      "source": "sources/gold-jp.blend",
+      "sha256": "1c841a2b2e3fa39d6246b068ac3987ca0f2537ca1e93748590cbe6c666cc9a15",
+      "accuracy_notes": "invented rear warning removed, original DMG tooling and gamebit screw added; Curved logo pocket with raised lettering and baked short-range contact shading; recess depth is photo-estimated.; Original Nintendo and GAME BOY vector shapes projected into baked shallow relief on the actual shell surface, replacing separate overlapping glyph meshes. 2048 normal texture; authored relief depth 0.10mm (Kirby 0.16mm), not measured tooling. Original body geometry and plastic colour, roughness, transmission, IOR and alpha preserved; transparent lettering remains lighting-dependent.",
+      "reference": "https://images.launchbox-app.com/r2_ce310e0e-bcc3-48be-b87a-13585a5cd4c2.png",
+      "reference_kind": "Release artwork and exterior reference"
+    },
+    {
+      "id": "silver-jp",
+      "name": "Pocket Monsters Silver",
+      "source": "sources/silver-jp.blend",
+      "sha256": "945d3b1ef580db481cd13d8a47e6e9b1ca9bdcb8e3b4b386474179ab4be4950b",
+      "accuracy_notes": "invented rear warning removed, original DMG tooling and gamebit screw added; Curved logo pocket with raised lettering and baked short-range contact shading; recess depth is photo-estimated.; Original Nintendo and GAME BOY vector shapes projected into baked shallow relief on the actual shell surface, replacing separate overlapping glyph meshes. 2048 normal texture; authored relief depth 0.10mm (Kirby 0.16mm), not measured tooling. Original body geometry and plastic colour, roughness, transmission, IOR and alpha preserved; transparent lettering remains lighting-dependent.",
+      "reference": "https://images.launchbox-app.com/b139d19c-dc6d-4a79-97e6-d64744fc4dfc.png",
+      "reference_kind": "Release artwork and exterior reference"
+    },
+    {
+      "id": "black-dx",
+      "name": "Link\u2019s Awakening DX",
+      "source": "sources/black-dx.blend",
+      "sha256": "318d6f099205b079a16e8d5b07137f1b9d5b0271930da7cb72c0350d4b4a4aa2",
+      "accuracy_notes": "invented rear warning removed, original DMG tooling and gamebit screw added; Curved logo pocket with raised lettering and baked short-range contact shading; recess depth is photo-estimated.; Original Nintendo and GAME BOY vector shapes projected into baked shallow relief on the actual shell surface, replacing separate overlapping glyph meshes. 2048 normal texture; authored relief depth 0.10mm (Kirby 0.16mm), not measured tooling. Original body geometry and plastic colour, roughness, transmission, IOR and alpha preserved; transparent lettering remains lighting-dependent.",
+      "reference": "https://images.launchbox-app.com/6ea41ab9-2c61-40f7-ae5f-de9a8f844c10.png",
+      "reference_kind": "Release artwork and exterior reference"
+    },
+    {
+      "id": "pink-tilt",
+      "name": "Kirby Tilt \u2019n\u2019 Tumble",
+      "source": "sources/pink-tilt.blend",
+      "sha256": "17b538855316debb97828b8d1aef93c761b0af422fe49a94d964c35f1ff01553",
+      "accuracy_notes": "Correct USA rear PCB, corner gamebit screws and DMG-20 tooling; rear optics improved, photo-estimated.; both shell halves share the original front pink-resin material; obsolete rear-only neutral interface removed; Original Nintendo and GAME BOY vector shapes projected into baked shallow relief on the actual shell surface, replacing separate overlapping glyph meshes. 2048 normal texture; authored relief depth 0.10mm (Kirby 0.16mm), not measured tooling. Original body geometry and plastic colour, roughness, transmission, IOR and alpha preserved; transparent lettering remains lighting-dependent.",
+      "reference": "https://images.launchbox-app.com/5952f1a8-afab-49bf-9955-cd0dd554eeee.png",
+      "reference_kind": "Release artwork and exterior reference",
+      "runtime_optical_limit": "Three.js screen-space rough transmission can appear frostier than matched Cycles source/import; constant nominal wall thickness does not model multiple interfaces or PCB air gap. Source roughness preserved; experimental thickness-aware blur is diagnostic only."
+    },
+    {
+      "id": "blue",
+      "name": "Pok\u00e9mon Blue",
+      "source": "sources/blue.blend",
+      "sha256": "8d164ad47d6341a2205b8394a5ddc30a8ecb58a0b03db8274254659afb31d548",
+      "accuracy_notes": "invented rear warning removed, original DMG tooling and gamebit screw added; Curved logo pocket with raised lettering and baked short-range contact shading; recess depth is photo-estimated.; Original Nintendo and GAME BOY vector shapes projected into baked shallow relief on the actual shell surface, replacing separate overlapping glyph meshes. 2048 normal texture; authored relief depth 0.10mm (Kirby 0.16mm), not measured tooling. Original body geometry and plastic colour, roughness, transmission, IOR and alpha preserved; transparent lettering remains lighting-dependent.",
+      "reference": "https://images.launchbox-app.com/f27eb5ca-0747-40e7-a498-4a166c08557f.png",
+      "reference_kind": "Release artwork and exterior reference"
+    },
+    {
+      "id": "snes-pal",
+      "name": "SNES \u00b7 PAL",
+      "source": "sources/snes-pal.blend",
+      "sha256": "791885278fa4d1b089ea693502e11cc09240f7069230d733a3cbc2a09e12cb77",
+      "accuracy_notes": "Original rear warning photograph added; front and existing geometry preserved. Placement photo-estimated; photographic wear retained.; Sharp-aware smooth normals remove faceted moulding highlights; original shell dimensions and artwork retained.",
+      "reference": "https://www.ebay.co.uk/itm/206551983576"
+    },
+    {
+      "id": "snes-jp",
+      "name": "Super Famicom",
+      "source": "sources/snes-jp.blend",
+      "sha256": "efd3399f9711ca4f93aa57a04017781dbb1d34db0c2884c067eff9d10564fbca",
+      "accuracy_notes": "New model; reference reviewed, rear/section dimensions may remain estimated; original-board connector layout and recessed mouth; Sharp-aware smooth normals remove faceted moulding highlights; original shell dimensions and artwork retained.",
+      "reference": "https://snescentral.com/cart.php?id=0000&num=0",
+      "reference_kind": "Release artwork and exterior reference",
+      "geometry_reference": "https://commons.wikimedia.org/wiki/File:SFC_Super_Mario_World_cassette_20090828.jpg"
+    },
+    {
+      "id": "md-pal",
+      "name": "Mega Drive \u00b7 PAL",
+      "source": "sources/md-pal.blend",
+      "sha256": "119ea380ef6abd92c26132c8e1c77e71895542a9fd80ea77efd7d3f2bf28f7be",
+      "accuracy_notes": "Photo-referenced rear tooling, Sega relief, security screws, MADE IN JAPAN and caution wording. Fine glyph shapes and relief depth use fitted approximations; uncertain patent-number column omitted. Existing geometry and UVs preserved.; Inset structural mating tongue closes the through-gap between shell halves while preserving the recessed exterior seam, original shell geometry and connector mouth. EA yellow insert now has continuous exterior colour after its overlapping black backing was recessed inside it. Internal tongue depth is an inferred assembly detail, not measured original tooling.",
+      "reference": "https://images.launchbox-app.com/ec79743c-b892-4aa7-8cf4-d71974a04de5.png",
+      "reference_kind": "Release artwork and exterior reference",
+      "geometry_reference": "https://www.hdretrovision.com/free-stuff/",
+      "rear_reference": "https://i.ebayimg.com/images/g/LucAAeSwZU5qDKfh/s-l1600.webp"
+    },
+    {
+      "id": "md-jp",
+      "name": "Mega Drive \u00b7 Japan",
+      "source": "sources/md-jp.blend",
+      "sha256": "2db66c7521414d95da38ef4ebb8a92f1ccd90e2caa3d9a09d92e70fe1815e5ae",
+      "accuracy_notes": "Long rounded rear finger bowl; Small exact Sega relief; Recessed intact original 670-1630 warning label, rectified from original Sonic photograph. Photo-estimated dimensions.; Inset structural mating tongue closes the through-gap between shell halves while preserving the recessed exterior seam, original shell geometry and connector mouth. EA yellow insert now has continuous exterior colour after its overlapping black backing was recessed inside it. Internal tongue depth is an inferred assembly detail, not measured original tooling.",
+      "reference": "https://images.launchbox-app.com/4d6e9d99-9c9a-4d41-83b2-e1a0e5fe7486.png",
+      "rear_reference": "https://www.ebay.com/itm/304298898738",
+      "reference_kind": "Release artwork and exterior reference"
+    },
+    {
+      "id": "md-ea",
+      "name": "Mega Drive \u00b7 Electronic Arts",
+      "source": "sources/md-ea.blend",
+      "sha256": "8d53471c8d620c02a59bc898c098e06040c29383e5e05186e1b4a5dbf30ce415",
+      "accuracy_notes": "Asymmetric finger bowl; Large smooth caution tooling panel; Two original external gamebit screws. Photo-estimated dimensions. rear wording transcribed from original photograph, approximate Liberation font shapes/relief, original geometry and artwork preserved; Inset structural mating tongue closes the through-gap between shell halves while preserving the recessed exterior seam, original shell geometry and connector mouth. EA yellow insert now has continuous exterior colour after its overlapping black backing was recessed inside it. Internal tongue depth is an inferred assembly detail, not measured original tooling.",
+      "reference": "https://images.launchbox-app.com/b6c961c6-3dcb-4b51-aa22-ac28256c5583.png",
+      "rear_reference": "https://i.ebayimg.com/images/g/q5MAAOSwLqFkW63L/s-l1600.webp",
+      "reference_kind": "Release artwork and exterior reference"
+    },
+    {
+      "id": "md-codemasters",
+      "name": "Mega Drive \u00b7 Codemasters",
+      "source": "sources/md-codemasters.blend",
+      "sha256": "03709833f992c54a1aedba7bd71af9dd0383fbae57618a575014bba56f6fc6ae",
+      "accuracy_notes": "Rounded original-reference top/bottom corner transitions; front artwork and UVs preserved; rear wording transcribed from original photograph, approximate Liberation font shapes/relief, original geometry and artwork preserved; Inset structural mating tongue closes the through-gap between shell halves while preserving the recessed exterior seam, original shell geometry and connector mouth. EA yellow insert now has continuous exterior colour after its overlapping black backing was recessed inside it. Internal tongue depth is an inferred assembly detail, not measured original tooling.",
+      "reference": "https://images.launchbox-app.com/41a97c7f-244c-40c5-9a28-fefd80cbe0db.png",
+      "rear_reference": "https://cdn.aukro.cz/images/sk1701550813787/sega-mega-drive-hra-micro-machines-178772482.jpeg",
+      "reference_kind": "Release artwork and exterior reference"
+    },
+    {
+      "id": "md-jcart",
+      "name": "Mega Drive \u00b7 J-Cart",
+      "source": "sources/md-jcart.blend",
+      "sha256": "2f888c26db8b963531cc576a44660227e8665511c6d4eb8b1c8b98043c591708",
+      "accuracy_notes": "New model; reference reviewed, rear/section dimensions may remain estimated; Inset structural mating tongue closes the through-gap between shell halves while preserving the recessed exterior seam, original shell geometry and connector mouth. EA yellow insert now has continuous exterior colour after its overlapping black backing was recessed inside it. Internal tongue depth is an inferred assembly detail, not measured original tooling.",
+      "reference": "https://images.launchbox-app.com/7c276d28-0063-4f36-9b1b-e1cb4ea728ae.png",
+      "reference_kind": "Release artwork and exterior reference",
+      "additional_references": [
+        "https://consolemods.org/wiki/Dimensions_for_Game_Cartridges"
+      ],
+      "accuracy_limits": "Could not obtain clear assembled original rear in bounded search; exact rear lettering/mould revision remains unverified. Standard CM rear photograph alone is not independent J-Cart proof."
+    },
+    {
+      "id": "gb-pinball",
+      "name": "Pok\u00e9mon Pinball \u00b7 rumble",
+      "source": "sources/gb-pinball.blend",
+      "sha256": "1409c97c8cfc9092919d8f9c4ec5ebf7680c316e20370a0c7c407dde08ff39ac",
+      "accuracy_notes": "New model; reference reviewed, rear/section dimensions may remain estimated; Upper label panel slopes back above the battery housing; approximately 16.7-degree wedge is estimated from two side photographs, not calibrated CAD.; Continuous inclined-label-to-battery shoulder, stepped inset battery cheeks, closed rounded thumb recess and OPEN tongue reconstructed from matched side photos and a closed GBHWDB specimen; depths and radii are photo-estimated, not calibrated CAD.; Battery housing and lower insertion body are a connected manifold front case; the unintended underside opening is closed by an internal structural neck, retaining external cheek steps and cover seams. Connection dimensions remain photo-inferred.",
+      "reference": "https://gbhwdb.gekkio.fi/cartridges/DMG-VPHE-0/gekkio-1.html",
+      "reference_kind": "Original shell and board photographs",
+      "reference_author": "gekkio",
+      "reference_license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "namcot",
+      "name": "Famicom \u00b7 Namcot",
+      "source": "sources/namcot.blend",
+      "sha256": "dcca9621f161416e0b7957d81a499d5b33dff3e2a67dd6488f59bab1bb44ca36",
+      "accuracy_notes": "Original-reference reviewed; detailed measurement and material limits remain in provenance",
+      "reference": "https://nescartdb.com/profile/view/1592/pac-man",
+      "reference_kind": "Release artwork and exterior reference"
+    },
+    {
+      "id": "mark-iii-white",
+      "name": "Mark III \u00b7 early white",
+      "source": "sources/mark-iii-white.blend",
+      "sha256": "ec394c301676728fdd85e77007172fcd24a07dbc5a68b18852b7f63d12eb4ad0",
+      "accuracy_notes": "Original-reference reviewed; detailed measurement and material limits remain in provenance",
+      "reference": "https://images.launchbox-app.com/0f97463f-8fc0-4a6a-b6f6-477ee5f3d377.png",
+      "reference_kind": "Release artwork and exterior reference",
+      "geometry_reference": "https://www.sega.jp/history/hard/segamark3/devices.html"
+    },
+    {
+      "id": "mark-iii-black",
+      "name": "Mark III \u00b7 later black",
+      "source": "sources/mark-iii-black.blend",
+      "sha256": "7aee73e9a96d84c528666c9fa58f6dfeddeda0fb2b6dacdce5e3361361227a63",
+      "accuracy_notes": "Original-reference reviewed; detailed measurement and material limits remain in provenance",
+      "reference": "https://images.launchbox-app.com/46cd3317-fc44-4db2-8ad2-9c9f73f69b08.jpg",
+      "reference_kind": "Release artwork and exterior reference",
+      "geometry_reference": "https://www.sega.jp/history/hard/segamark3/devices.html"
+    },
+    {
+      "id": "mark-iii-silver",
+      "name": "Mark III \u00b7 Salio",
+      "source": "sources/mark-iii-silver.blend",
+      "sha256": "e0f36fcb18ef23a61546aeef916bd52570a003219fc8b2a9ed7a0f9b15958ae2",
+      "accuracy_notes": "Original-reference reviewed; detailed measurement and material limits remain in provenance",
+      "reference": "https://images.launchbox-app.com/b4086e48-9d20-4bf2-831f-45704bfe7129.png",
+      "reference_kind": "Release artwork and exterior reference",
+      "geometry_reference": "https://www.sega.jp/history/hard/segamark3/devices.html"
+    },
+    {
+      "id": "gba-boktai",
+      "name": "Boktai \u00b7 solar sensor",
+      "source": "sources/gba-boktai.blend",
+      "sha256": "45c925ce4f6f1041fdb516241b177d0ffd39a3f8e5131785dae4bce470adc6e7",
+      "accuracy_notes": "Original-reference reviewed; detailed measurement and material limits remain in provenance; opaque paper and PCB semantics corrected; release-matched photographed rear PCB mapped separately, existing geometry retained; Top cavity follows the curved crown with nominal 1.2 mm wall, eliminating unintended corner openings.",
+      "reference": "https://gbhwdb.gekkio.fi/cartridges/AGB-U3IP-0/3615retro-1.html",
+      "reference_kind": "Original shell and board photographs",
+      "reference_author": "3615retro",
+      "reference_license": "CC BY-SA 4.0",
+      "rear_pcb_reference": {
+        "url": "https://gbhwdb.gekkio.fi/cartridges/AGB-U3IP-0/3615retro-1.html",
+        "author": "3615retro",
+        "license": "CC BY-SA 4.0"
+      },
+      "runtime_optical_limit": "Three.js screen-space rough transmission can appear frostier than matched Cycles source/import; constant nominal wall thickness does not model multiple interfaces or PCB air gap. Source roughness preserved; experimental thickness-aware blur is diagnostic only."
+    },
+    {
+      "id": "gba-twisted",
+      "name": "WarioWare Twisted \u00b7 gyro/rumble",
+      "source": "sources/gba-twisted.blend",
+      "sha256": "ce8620a00553ff1a8a54bc6b9cda6ec1de6ee3cb0262dae326278c4ff53784b6",
+      "accuracy_notes": "Photographed annular dome boss and rounded lower frame; original artwork and assembled internals preserved; opaque paper and PCB semantics corrected; release-matched photographed rear PCB mapped separately, existing geometry retained; Photograph-based smooth ramp joins the lower body to the gyro hood, with a closed underside and surface-following boss, logo and moulding; label, connector and PCB geometry retained.",
+      "reference": "https://gbhwdb.gekkio.fi/cartridges/AGB-RZWE-0/3615retro-1.html",
+      "reference_kind": "Original shell and board photographs",
+      "reference_author": "3615retro",
+      "reference_license": "CC BY-SA 4.0",
+      "rear_pcb_reference": {
+        "url": "https://gbhwdb.gekkio.fi/cartridges/AGB-RZWE-0/3615retro-1.html",
+        "author": "3615retro",
+        "license": "CC BY-SA 4.0"
+      },
+      "runtime_optical_limit": "Three.js screen-space rough transmission can appear frostier than matched Cycles source/import; constant nominal wall thickness does not model multiple interfaces or PCB air gap. Source roughness preserved; experimental thickness-aware blur is diagnostic only."
+    },
+    {
+      "id": "snes-us-locking",
+      "name": "SNES \u00b7 US early locking",
+      "source": "sources/snes-us-locking.blend",
+      "sha256": "df0032338ad3374adec1da9753645e1e29a1a4cf5d265fedfd62faa4ecc64bc6",
+      "accuracy_notes": "Original rear warning and centred green top title photograph added; all original meshes/transforms preserved. Placement photo-estimated; photographic wear retained.",
+      "reference": "https://www.ebay.com/itm/226987238099"
+    },
+    {
+      "id": "virtua-racing",
+      "name": "Mega Drive \u00b7 Virtua Racing",
+      "source": "sources/virtua-racing.blend",
+      "sha256": "b36aa73f3af5de62d3713132decd589d533f4af85a9d13d914dbd1e0c46c2838",
+      "accuracy_notes": "Rear upper crown inset; Sega wordmark and patent/caution tooling panels; Two lower security fasteners and mould ejector witness. Photo-estimated dimensions. rear wording transcribed from original photograph, approximate Liberation font shapes/relief, original geometry and artwork preserved; uncertain left patent column omitted",
+      "reference": "https://images.launchbox-app.com/6fde78fc-a6c8-44cb-8e68-911c84e18fff.png",
+      "rear_reference": "https://i.ebayimg.com/images/g/L3kAAeSwWslpVYij/s-l1600.webp",
+      "reference_kind": "Release artwork and exterior reference"
+    },
+    {
+      "id": "sonic-knuckles",
+      "name": "Mega Drive \u00b7 Sonic & Knuckles",
+      "source": "sources/sonic-knuckles.blend",
+      "sha256": "e608e4a12375b0d66d48ed3e7c9aa45bf82cb9213d24a9d634e29efff93127bd",
+      "accuracy_notes": "Rear finger bowl; Sega wordmark and warning tooling panels; Four original external gamebit screws. Photo-estimated dimensions. rear wording transcribed from original photograph, approximate Liberation font shapes/relief, original geometry and artwork preserved; stale custom normals cleared on lower shell halves, removing spurious side-notch facets; geometry and UV hashes unchanged",
+      "reference": "https://images.launchbox-app.com/4c98b7aa-758a-4cb3-82aa-751ee058b8ae.png",
+      "rear_reference": "https://i.ebayimg.com/images/g/CzYAAeSwjGhoHV9~/s-l1200.jpg",
+      "reference_kind": "Release artwork and exterior reference",
+      "geometry_reference": "https://commons.wikimedia.org/wiki/File:SegaGenesis-Sonic%2BKnuckles-lock-on-open.jpg"
+    },
+    {
+      "id": "gba-ruby",
+      "name": "Pok\u00e9mon Ruby",
+      "source": "sources/gba-ruby.blend",
+      "sha256": "ee0aaf4ecc5fac034ac368d7f676ed688130d65047ea134e9cb2be2747635522",
+      "accuracy_notes": "Original release labels and title-specific boards; revised translucent material after optical A/B; full connector-span cavity and visible board edge; photographed AGB-002 rear and Y screw, front/internal geometry preserved; Planar front logo field and raised lettering; broad top/corner chamfer replaces the abrupt bar. Chamfer width is photo-estimated, not measured CAD.; Upper swept lip restored with a continuous cosine-squared arch/taper, rounded outer brow skin and seated original vector relief. Lower-face vertices and original shell colours/transmission preserved exactly. Depths remain photograph-estimated, not measured CAD; fine emboss has view-dependent occlusion/faceted highlights at glancing angles.; Broad top-front chamfer restored subtractively around the existing swept lip; protruding lower shoulder fins removed and high chamfer edges given a localized 0.035 radius. All original lower-face vertices retained, with four side-boundary subdivisions at z26.42; original colours/transmission unchanged. Chamfer depth remains photograph-estimated. Fine emboss retains glancing-angle occlusion/faceted highlights.",
+      "reference": "https://gbhwdb.gekkio.fi/cartridges/AGB-AXVE-0/fexcollects-1.html",
+      "reference_kind": "Original shell and board photographs",
+      "reference_author": "fexcollects",
+      "reference_license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "gba-sapphire",
+      "name": "Pok\u00e9mon Sapphire",
+      "source": "sources/gba-sapphire.blend",
+      "sha256": "3936a48ec0c226e0d4a2e2325314564fbab7175c3393462790f8b312e59ff38e",
+      "accuracy_notes": "Original release labels and title-specific boards; revised translucent material after optical A/B; full connector-span cavity and visible board edge; photographed AGB-002 rear and Y screw, front/internal geometry preserved; Planar front logo field and raised lettering; broad top/corner chamfer replaces the abrupt bar. Chamfer width is photo-estimated, not measured CAD.; Upper swept lip restored with a continuous cosine-squared arch/taper, rounded outer brow skin and seated original vector relief. Lower-face vertices and original shell colours/transmission preserved exactly. Depths remain photograph-estimated, not measured CAD; fine emboss has view-dependent occlusion/faceted highlights at glancing angles.; Broad top-front chamfer restored subtractively around the existing swept lip; protruding lower shoulder fins removed and high chamfer edges given a localized 0.035 radius. All original lower-face vertices retained, with four side-boundary subdivisions at z26.42; original colours/transmission unchanged. Chamfer depth remains photograph-estimated. Fine emboss retains glancing-angle occlusion/faceted highlights.",
+      "reference": "https://gbhwdb.gekkio.fi/cartridges/AGB-AXPE-0/fexcollects-1.html",
+      "reference_kind": "Original shell and board photographs",
+      "reference_author": "fexcollects",
+      "reference_license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "gba-emerald",
+      "name": "Pok\u00e9mon Emerald",
+      "source": "sources/gba-emerald.blend",
+      "sha256": "61f1b384de36af1a95adc37adec554368d5723c7dcfb4e056ef8d0d506b80470",
+      "accuracy_notes": "Original release labels and title-specific boards; revised translucent material after optical A/B; full connector-span cavity and visible board edge; photographed AGB-002 rear and Y screw, front/internal geometry preserved; Planar front logo field and raised lettering; broad top/corner chamfer replaces the abrupt bar. Chamfer width is photo-estimated, not measured CAD.; Upper swept lip restored with a continuous cosine-squared arch/taper, rounded outer brow skin and seated original vector relief. Lower-face vertices and original shell colours/transmission preserved exactly. Depths remain photograph-estimated, not measured CAD; fine emboss has view-dependent occlusion/faceted highlights at glancing angles.; Broad top-front chamfer restored subtractively around the existing swept lip; protruding lower shoulder fins removed and high chamfer edges given a localized 0.035 radius. All original lower-face vertices retained, with four side-boundary subdivisions at z26.42; original colours/transmission unchanged. Chamfer depth remains photograph-estimated. Fine emboss retains glancing-angle occlusion/faceted highlights.",
+      "reference": "https://gbhwdb.gekkio.fi/cartridges/AGB-BPEE-0/fexcollects-1.html",
+      "reference_kind": "Original shell and board photographs",
+      "reference_author": "fexcollects",
+      "reference_license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "gba-firered",
+      "name": "Pok\u00e9mon FireRed",
+      "source": "sources/gba-firered.blend",
+      "sha256": "a37fb1661debaa12be47add6e1805615245c9d0925369e2ec662cf7e17c9622d",
+      "accuracy_notes": "Original release labels and title-specific boards; revised translucent material after optical A/B; full connector-span cavity and visible board edge; photographed AGB-002 rear and Y screw, front/internal geometry preserved; Planar front logo field and raised lettering; broad top/corner chamfer replaces the abrupt bar. Chamfer width is photo-estimated, not measured CAD.; Upper swept lip restored with a continuous cosine-squared arch/taper, rounded outer brow skin and seated original vector relief. Lower-face vertices and original shell colours/transmission preserved exactly. Depths remain photograph-estimated, not measured CAD; fine emboss has view-dependent occlusion/faceted highlights at glancing angles.; Broad top-front chamfer restored subtractively around the existing swept lip; protruding lower shoulder fins removed and high chamfer edges given a localized 0.035 radius. All original lower-face vertices retained, with four side-boundary subdivisions at z26.42; original colours/transmission unchanged. Chamfer depth remains photograph-estimated. Fine emboss retains glancing-angle occlusion/faceted highlights.",
+      "reference": "https://gbhwdb.gekkio.fi/cartridges/AGB-BPRE-1/fexcollects-1.html",
+      "reference_kind": "Original shell and board photographs",
+      "reference_author": "fexcollects",
+      "reference_license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "gba-leafgreen",
+      "name": "Pok\u00e9mon LeafGreen",
+      "source": "sources/gba-leafgreen.blend",
+      "sha256": "36fb2a861bedfe0f7728d0b15fd917c5a77b69a702a56c8bfd3ecefe50e4d40f",
+      "accuracy_notes": "Original release labels and title-specific boards; revised translucent material after optical A/B; full connector-span cavity and visible board edge; photographed AGB-002 rear and Y screw, front/internal geometry preserved; Planar front logo field and raised lettering; broad top/corner chamfer replaces the abrupt bar. Chamfer width is photo-estimated, not measured CAD.; Upper swept lip restored with a continuous cosine-squared arch/taper, rounded outer brow skin and seated original vector relief. Lower-face vertices and original shell colours/transmission preserved exactly. Depths remain photograph-estimated, not measured CAD; fine emboss has view-dependent occlusion/faceted highlights at glancing angles.; Broad top-front chamfer restored subtractively around the existing swept lip; protruding lower shoulder fins removed and high chamfer edges given a localized 0.035 radius. All original lower-face vertices retained, with four side-boundary subdivisions at z26.42; original colours/transmission unchanged. Chamfer depth remains photograph-estimated. Fine emboss retains glancing-angle occlusion/faceted highlights.",
+      "reference": "https://gbhwdb.gekkio.fi/cartridges/AGB-BPGE-0/ikk5-1.html",
+      "reference_kind": "Original shell and board photographs",
+      "reference_author": "ikk5",
+      "reference_license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "neogeo-mvs",
+      "name": "Neo Geo \u00b7 MVS",
+      "source": "sources/neogeo-mvs.blend",
+      "sha256": "69bfb562679e29553c8579ad2a26d4c824d65da2c8f3cef987a8ad8e3a2655f3",
+      "accuracy_notes": "Distinct arcade shell with original Neo Turf Masters spine/caution artwork, photographed vents and twin PCB connectors; depth remains estimated",
+      "reference": "https://www.neostore.com/Neo-Turf-Masters-English-MVS-cartridge-p/901.htm",
+      "reference_kind": "Original assembled MVS cartridge photographs",
+      "additional_references": [
+        "https://www.neostore.com/Neo-Turf-Masters-English-MVS-cartridge-p/901.htm",
+        "https://commons.wikimedia.org/wiki/File:Cartouche_Neo-Geo_MVS.png"
+      ],
+      "accuracy_limits": "35mm depth is photograph-estimated; internal components not modelled without evidence."
+    }
+  ],
+  "accuracy_basis": "Exterior features and selected releases are photo-referenced. Unless a model says otherwise, dimensions, tooling radii and optical parameters are fitted estimates rather than measurements of manufacturer tooling. Original scan wear and illumination remain visible."
+}

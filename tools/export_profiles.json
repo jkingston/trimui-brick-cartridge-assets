@@ -1,0 +1,705 @@
+{
+  "schema_version": 1,
+  "source_unit_metres": 0.001,
+  "image_max": 1024,
+  "normal_resolution": 1024,
+  "models": {
+    "gb": {
+      "source": "sources/gb.blend",
+      "display_root": "Turntable",
+      "exclude": [
+        "Studio ground"
+      ],
+      "expected_width_mm": 57,
+      "material_slots": {
+        "Printed label": "artwork.front"
+      },
+      "contact_occlusion_mm": 0.65,
+      "bake_resolution": 2048,
+      "image_max": 2048
+    },
+    "gba-ruby": {
+      "source": "sources/gba-ruby.blend",
+      "display_root": "Turntable",
+      "exclude": [
+        "Studio ground"
+      ],
+      "expected_width_mm": 57,
+      "material_slots": {
+        "Original ruby label": "artwork.front",
+        "Original AGB-E05-01 front": "board.front",
+        "Original AGB-E05-01 rear": "board.rear",
+        "Injection moulded gba": "shell.translucent"
+      },
+      "volume": {
+        "Injection moulded gba": {
+          "thickness_mm": 1.2,
+          "thickness_status": "nominal constant; not a measured thickness map",
+          "density_space": "authored_world"
+        }
+      }
+    },
+    "psx": {
+      "source": "sources/psx.blend",
+      "display_root": "Turntable",
+      "exclude": [
+        "Studio ground"
+      ],
+      "expected_width_mm": 120,
+      "material_slots": {
+        "Printed disc": "artwork.disc",
+        "Black optical underside": "disc.data",
+        "Polycarbonate edge": "disc.edge"
+      },
+      "torus_tessellation": [
+        {
+          "object": "Moulded hub ring",
+          "radius_mm": 10.5,
+          "tube_mm": 0.11,
+          "major_segments": 96,
+          "minor_segments": 6
+        },
+        {
+          "object": "Moulded hub ring.001",
+          "radius_mm": 11.15,
+          "tube_mm": 0.07,
+          "major_segments": 96,
+          "minor_segments": 6
+        },
+        {
+          "object": "Moulded hub ring.002",
+          "radius_mm": 18.8,
+          "tube_mm": 0.055,
+          "major_segments": 96,
+          "minor_segments": 6
+        },
+        {
+          "object": "Underside moulded hub boundary",
+          "radius_mm": 19,
+          "tube_mm": 0.075,
+          "major_segments": 96,
+          "minor_segments": 6
+        },
+        {
+          "object": "Underside moulded hub boundary.001",
+          "radius_mm": 20.6,
+          "tube_mm": 0.028,
+          "major_segments": 96,
+          "minor_segments": 6
+        }
+      ]
+    },
+    "gbc": {
+      "source": "sources/gbc.blend",
+      "display_root": "Turntable",
+      "exclude": [
+        "Studio ground"
+      ],
+      "expected_width_mm": 56.735,
+      "width_basis": "audited authored bounds; not independent caliper measurement",
+      "material_slots": {
+        "clear-gbc actual rear PCB": "board.rear",
+        "clear-gbc actual front PCB": "board.front",
+        "Printed label": "artwork.front"
+      },
+      "volume": {
+        "clear-gbc moulded polymer": {
+          "thickness_mm": 1.2,
+          "thickness_status": "nominal constant; not a measured thickness map",
+          "density_space": "authored_world"
+        },
+        "clear-gbc rear low-roughness polymer": {
+          "thickness_mm": 1.2,
+          "thickness_status": "nominal constant; not a measured thickness map",
+          "density_space": "authored_world"
+        },
+        "clear-gbc moulded polymer lettering relief": {
+          "thickness_mm": 1.2,
+          "thickness_status": "nominal constant; not a measured thickness map",
+          "density_space": "authored_world"
+        }
+      },
+      "image_max": 2048,
+      "bake_resolution": 2048
+    },
+    "gba": {
+      "source": "sources/gba.blend",
+      "display_root": "Turntable",
+      "exclude": [
+        "Studio ground"
+      ],
+      "expected_width_mm": 57.0,
+      "width_basis": "audited authored bounds; not independent caliper measurement",
+      "material_slots": {
+        "Printed cartridge label": "artwork.front"
+      }
+    },
+    "gamegear": {
+      "source": "sources/gamegear.blend",
+      "display_root": "Turntable",
+      "exclude": [
+        "Studio ground"
+      ],
+      "expected_width_mm": 66.0,
+      "width_basis": "audited authored bounds; not independent caliper measurement",
+      "material_slots": {
+        "Printed cartridge label": "artwork.front"
+      }
+    },
+    "mastersystem": {
+      "source": "sources/mastersystem.blend",
+      "display_root": "Turntable",
+      "exclude": [
+        "Studio ground"
+      ],
+      "expected_width_mm": 109.1,
+      "width_basis": "audited authored bounds; not independent caliper measurement",
+      "material_slots": {
+        "Printed cartridge label.001": "artwork.rear",
+        "Printed cartridge label": "artwork.front"
+      }
+    },
+    "megadrive": {
+      "source": "sources/megadrive.blend",
+      "display_root": "Turntable",
+      "exclude": [
+        "Studio ground"
+      ],
+      "expected_width_mm": 108.712,
+      "width_basis": "audited authored bounds; not independent caliper measurement",
+      "material_slots": {
+        "Printed cartridge label": "artwork.front",
+        "Scanned top label": "artwork.top"
+      }
+    },
+    "nes": {
+      "source": "sources/nes.blend",
+      "display_root": "Turntable",
+      "exclude": [
+        "Studio ground"
+      ],
+      "expected_width_mm": 119.7,
+      "width_basis": "audited authored bounds; not independent caliper measurement",
+      "material_slots": {
+        "Original Canadian top scan": "artwork.top",
+        "Canadian warning scan": "artwork.rear",
+        "Printed cartridge label": "artwork.front"
+      }
+    },
+    "famicom": {
+      "source": "sources/famicom.blend",
+      "display_root": "Turntable",
+      "exclude": [
+        "Studio ground"
+      ],
+      "expected_width_mm": 108.0,
+      "width_basis": "audited authored bounds; not independent caliper measurement",
+      "material_slots": {
+        "Printed cartridge label": "artwork.front",
+        "Original red 880920 warning": "artwork.rear"
+      }
+    },
+    "snes": {
+      "source": "sources/snes.blend",
+      "display_root": "Turntable",
+      "exclude": [
+        "Studio ground"
+      ],
+      "expected_width_mm": 135.0,
+      "width_basis": "audited authored bounds; not independent caliper measurement",
+      "material_slots": {
+        "Printed cartridge label": "artwork.front",
+        "Original SNS-USA-CAN-1 warning": "artwork.rear",
+        "Scanned top label": "artwork.top"
+      }
+    },
+    "neogeo": {
+      "source": "sources/neogeo.blend",
+      "display_root": "Turntable",
+      "exclude": [
+        "Studio ground"
+      ],
+      "expected_width_mm": 146.0,
+      "width_basis": "audited authored bounds; not independent caliper measurement",
+      "material_slots": {
+        "Original photographed top label": "artwork.top",
+        "Printed cartridge label": "artwork.front"
+      }
+    },
+    "ngpc": {
+      "source": "sources/ngpc.blend",
+      "display_root": "Turntable",
+      "exclude": [
+        "Studio ground"
+      ],
+      "expected_width_mm": 54.0,
+      "width_basis": "audited authored bounds; not independent caliper measurement",
+      "material_slots": {
+        "Printed cartridge label": "artwork.front"
+      }
+    },
+    "gold": {
+      "source": "sources/gold.blend",
+      "display_root": "Turntable",
+      "exclude": [
+        "Studio ground"
+      ],
+      "expected_width_mm": 57.0,
+      "width_basis": "audited authored bounds; not independent caliper measurement",
+      "material_slots": {
+        "Printed label": "artwork.front"
+      },
+      "bake_resolution": 2048,
+      "contact_occlusion_mm": 0.65,
+      "image_max": 2048
+    },
+    "silver": {
+      "source": "sources/silver.blend",
+      "display_root": "Turntable",
+      "exclude": [
+        "Studio ground"
+      ],
+      "expected_width_mm": 57.0,
+      "width_basis": "audited authored bounds; not independent caliper measurement",
+      "material_slots": {
+        "Printed label": "artwork.front"
+      },
+      "bake_resolution": 2048,
+      "contact_occlusion_mm": 0.65,
+      "image_max": 2048
+    },
+    "crystal": {
+      "source": "sources/crystal.blend",
+      "display_root": "Turntable",
+      "exclude": [
+        "Studio ground"
+      ],
+      "expected_width_mm": 56.735,
+      "width_basis": "audited authored bounds; not independent caliper measurement",
+      "material_slots": {
+        "crystal actual rear PCB": "board.rear",
+        "Printed label": "artwork.front",
+        "crystal actual front PCB": "board.front"
+      },
+      "volume": {
+        "crystal rear low-roughness polymer": {
+          "thickness_mm": 1.2,
+          "thickness_status": "nominal constant; not a measured thickness map",
+          "density_space": "authored_world"
+        },
+        "crystal moulded polymer": {
+          "thickness_mm": 1.2,
+          "thickness_status": "nominal constant; not a measured thickness map",
+          "density_space": "authored_world"
+        },
+        "crystal moulded polymer lettering relief": {
+          "thickness_mm": 1.2,
+          "thickness_status": "nominal constant; not a measured thickness map",
+          "density_space": "authored_world"
+        }
+      },
+      "bake_resolution": 4096,
+      "image_max": 2048
+    },
+    "gold-jp": {
+      "source": "sources/gold-jp.blend",
+      "display_root": "Turntable",
+      "exclude": [
+        "Studio ground"
+      ],
+      "expected_width_mm": 57.0,
+      "width_basis": "audited authored bounds; not independent caliper measurement",
+      "material_slots": {
+        "Printed label": "artwork.front"
+      },
+      "contact_occlusion_mm": 0.65,
+      "bake_resolution": 2048,
+      "image_max": 2048
+    },
+    "silver-jp": {
+      "source": "sources/silver-jp.blend",
+      "display_root": "Turntable",
+      "exclude": [
+        "Studio ground"
+      ],
+      "expected_width_mm": 57.0,
+      "width_basis": "audited authored bounds; not independent caliper measurement",
+      "material_slots": {
+        "Printed label": "artwork.front"
+      },
+      "contact_occlusion_mm": 0.65,
+      "bake_resolution": 2048,
+      "image_max": 2048
+    },
+    "black-dx": {
+      "source": "sources/black-dx.blend",
+      "display_root": "Turntable",
+      "exclude": [
+        "Studio ground"
+      ],
+      "expected_width_mm": 57.0,
+      "width_basis": "audited authored bounds; not independent caliper measurement",
+      "material_slots": {
+        "Printed label": "artwork.front"
+      },
+      "contact_occlusion_mm": 0.65,
+      "bake_resolution": 2048,
+      "image_max": 2048
+    },
+    "pink-tilt": {
+      "source": "sources/pink-tilt.blend",
+      "display_root": "Turntable",
+      "exclude": [
+        "Studio ground"
+      ],
+      "expected_width_mm": 57.0,
+      "width_basis": "audited authored bounds; not independent caliper measurement",
+      "material_slots": {
+        "Teardown PCB pink-tilt": "board.front",
+        "Printed label": "artwork.front",
+        "Original CGB-KTNE-USA DMG-A40-01 rear PCB": "board.rear"
+      },
+      "volume": {
+        "pink-tilt moulded polymer": {
+          "thickness_mm": 1.2,
+          "thickness_status": "nominal constant; not a measured thickness map",
+          "density_space": "authored_world"
+        },
+        "pink-tilt moulded logo surface": {
+          "thickness_mm": 1.2,
+          "thickness_status": "nominal constant; not a measured thickness map",
+          "density_space": "authored_world"
+        }
+      },
+      "bake_resolution": 2048,
+      "image_max": 2048
+    },
+    "blue": {
+      "source": "sources/blue.blend",
+      "display_root": "Turntable",
+      "exclude": [
+        "Studio ground"
+      ],
+      "expected_width_mm": 57.0,
+      "width_basis": "audited authored bounds; not independent caliper measurement",
+      "material_slots": {
+        "Printed label": "artwork.front"
+      },
+      "contact_occlusion_mm": 0.65,
+      "bake_resolution": 2048,
+      "image_max": 2048
+    },
+    "snes-pal": {
+      "source": "sources/snes-pal.blend",
+      "display_root": "Turntable",
+      "exclude": [
+        "Studio ground"
+      ],
+      "expected_width_mm": 127.0,
+      "width_basis": "audited authored bounds; not independent caliper measurement",
+      "material_slots": {
+        "Scanned original pal label": "artwork.front",
+        "Original UK PAL rear warning": "artwork.rear"
+      }
+    },
+    "snes-jp": {
+      "source": "sources/snes-jp.blend",
+      "display_root": "Turntable",
+      "exclude": [
+        "Studio ground"
+      ],
+      "expected_width_mm": 127.0,
+      "width_basis": "audited authored bounds; not independent caliper measurement",
+      "material_slots": {
+        "Japanese original caution label": "artwork.rear",
+        "Scanned original jp label": "artwork.front"
+      }
+    },
+    "md-pal": {
+      "source": "sources/md-pal.blend",
+      "display_root": "Turntable",
+      "exclude": [
+        "Studio ground"
+      ],
+      "expected_width_mm": 108.712,
+      "width_basis": "audited authored bounds; not independent caliper measurement",
+      "material_slots": {
+        "Printed cartridge label.001": "artwork.front"
+      }
+    },
+    "md-jp": {
+      "source": "sources/md-jp.blend",
+      "display_root": "Turntable",
+      "exclude": [
+        "Studio ground"
+      ],
+      "expected_width_mm": 105.6,
+      "width_basis": "audited authored bounds; not independent caliper measurement",
+      "material_slots": {
+        "Printed cartridge label": "artwork.front"
+      }
+    },
+    "md-ea": {
+      "source": "sources/md-ea.blend",
+      "display_root": "Turntable",
+      "exclude": [
+        "Studio ground"
+      ],
+      "expected_width_mm": 95.55,
+      "width_basis": "audited authored bounds; not independent caliper measurement",
+      "material_slots": {
+        "Printed cartridge label": "artwork.front"
+      },
+      "mesh_replacements": {
+        "path": "tools/geometry/sega-rear-glyphs.json.gz",
+        "sha256": "82edba1880c9cd64ef22e553de29a3ce8a4693006f19fc51ba8b94f047cc7554"
+      }
+    },
+    "md-codemasters": {
+      "source": "sources/md-codemasters.blend",
+      "display_root": "Turntable",
+      "exclude": [
+        "Studio ground"
+      ],
+      "expected_width_mm": 98.0,
+      "width_basis": "audited authored bounds; not independent caliper measurement",
+      "material_slots": {
+        "Original Codemasters cartridge scan": "artwork.front"
+      },
+      "mesh_replacements": {
+        "path": "tools/geometry/sega-rear-glyphs.json.gz",
+        "sha256": "82edba1880c9cd64ef22e553de29a3ce8a4693006f19fc51ba8b94f047cc7554"
+      }
+    },
+    "md-jcart": {
+      "source": "sources/md-jcart.blend",
+      "display_root": "Turntable",
+      "exclude": [
+        "Studio ground"
+      ],
+      "expected_width_mm": 98.0,
+      "width_basis": "audited authored bounds; not independent caliper measurement",
+      "material_slots": {
+        "Original J-Cart cartridge scan": "artwork.front"
+      }
+    },
+    "gb-pinball": {
+      "source": "sources/gb-pinball.blend",
+      "display_root": "Turntable",
+      "exclude": [
+        "Studio ground"
+      ],
+      "expected_width_mm": 57.0,
+      "width_basis": "audited authored bounds; not independent caliper measurement",
+      "material_slots": {
+        "Scanned matte printed paper": "artwork.front"
+      }
+    },
+    "namcot": {
+      "source": "sources/namcot.blend",
+      "display_root": "Turntable",
+      "exclude": [
+        "Studio ground"
+      ],
+      "expected_width_mm": 108.0,
+      "width_basis": "audited authored bounds; not independent caliper measurement",
+      "material_slots": {
+        "Original label.png": "artwork.front",
+        "Original back-label.png": "artwork.rear"
+      }
+    },
+    "mark-iii-white": {
+      "source": "sources/mark-iii-white.blend",
+      "display_root": "Turntable",
+      "exclude": [
+        "Studio ground"
+      ],
+      "expected_width_mm": 84.4,
+      "width_basis": "audited authored bounds; not independent caliper measurement",
+      "material_slots": {
+        "Printed cartridge label": "artwork.front"
+      }
+    },
+    "mark-iii-black": {
+      "source": "sources/mark-iii-black.blend",
+      "display_root": "Turntable",
+      "exclude": [
+        "Studio ground"
+      ],
+      "expected_width_mm": 84.4,
+      "width_basis": "audited authored bounds; not independent caliper measurement",
+      "material_slots": {
+        "Printed cartridge label": "artwork.front"
+      }
+    },
+    "mark-iii-silver": {
+      "source": "sources/mark-iii-silver.blend",
+      "display_root": "Turntable",
+      "exclude": [
+        "Studio ground"
+      ],
+      "expected_width_mm": 84.4,
+      "width_basis": "audited authored bounds; not independent caliper measurement",
+      "material_slots": {
+        "Printed cartridge label": "artwork.front"
+      }
+    },
+    "gba-boktai": {
+      "source": "sources/gba-boktai.blend",
+      "display_root": "Turntable",
+      "exclude": [
+        "Studio ground"
+      ],
+      "expected_width_mm": 57.0,
+      "width_basis": "audited authored bounds; not independent caliper measurement",
+      "material_slots": {
+        "Photographed AGB-E18 PCB": "board.front",
+        "Original Boktai label": "artwork.front",
+        "gba-boktai photographed rear PCB": "board.rear"
+      }
+    },
+    "gba-twisted": {
+      "source": "sources/gba-twisted.blend",
+      "display_root": "Turntable",
+      "exclude": [
+        "Studio ground"
+      ],
+      "expected_width_mm": 57.7,
+      "width_basis": "audited authored bounds; not independent caliper measurement",
+      "material_slots": {
+        "Photographed Twisted PCB": "board.front",
+        "Original Twisted label": "artwork.front",
+        "gba-twisted photographed rear PCB": "board.rear"
+      }
+    },
+    "snes-us-locking": {
+      "source": "sources/snes-us-locking.blend",
+      "display_root": "Turntable",
+      "exclude": [
+        "Studio ground"
+      ],
+      "expected_width_mm": 135.0,
+      "width_basis": "audited authored bounds; not independent caliper measurement",
+      "material_slots": {
+        "Printed cartridge label": "artwork.front",
+        "Original early centred top label": "artwork.top",
+        "Original early SNS-USA rear warning": "artwork.rear"
+      }
+    },
+    "virtua-racing": {
+      "source": "sources/virtua-racing.blend",
+      "display_root": "Turntable",
+      "exclude": [
+        "Studio ground"
+      ],
+      "expected_width_mm": 109.0,
+      "width_basis": "audited authored bounds; not independent caliper measurement",
+      "material_slots": {
+        "Original cartridge print": "artwork.front"
+      },
+      "mesh_replacements": {
+        "path": "tools/geometry/sega-rear-glyphs.json.gz",
+        "sha256": "82edba1880c9cd64ef22e553de29a3ce8a4693006f19fc51ba8b94f047cc7554"
+      }
+    },
+    "sonic-knuckles": {
+      "source": "sources/sonic-knuckles.blend",
+      "display_root": "Turntable",
+      "exclude": [
+        "Studio ground"
+      ],
+      "expected_width_mm": 121.65,
+      "width_basis": "audited authored bounds; not independent caliper measurement",
+      "material_slots": {
+        "Printed cartridge label": "artwork.front"
+      },
+      "mesh_replacements": {
+        "path": "tools/geometry/sega-rear-glyphs.json.gz",
+        "sha256": "82edba1880c9cd64ef22e553de29a3ce8a4693006f19fc51ba8b94f047cc7554"
+      }
+    },
+    "gba-sapphire": {
+      "source": "sources/gba-sapphire.blend",
+      "display_root": "Turntable",
+      "exclude": [
+        "Studio ground"
+      ],
+      "expected_width_mm": 57.0,
+      "width_basis": "audited authored bounds; not independent caliper measurement",
+      "material_slots": {
+        "Original AGB-E05-01 rear": "board.rear",
+        "Original sapphire label": "artwork.front",
+        "Original AGB-E05-01 front": "board.front"
+      },
+      "volume": {
+        "Injection moulded gba": {
+          "thickness_mm": 1.2,
+          "thickness_status": "nominal constant; not a measured thickness map",
+          "density_space": "authored_world"
+        }
+      }
+    },
+    "gba-emerald": {
+      "source": "sources/gba-emerald.blend",
+      "display_root": "Turntable",
+      "exclude": [
+        "Studio ground"
+      ],
+      "expected_width_mm": 57.0,
+      "width_basis": "audited authored bounds; not independent caliper measurement",
+      "material_slots": {
+        "Original AGB-E05-01 front": "board.front",
+        "Original AGB-E05-01 rear": "board.rear",
+        "Original emerald label": "artwork.front"
+      },
+      "volume": {
+        "Injection moulded gba": {
+          "thickness_mm": 1.2,
+          "thickness_status": "nominal constant; not a measured thickness map",
+          "density_space": "authored_world"
+        }
+      }
+    },
+    "gba-firered": {
+      "source": "sources/gba-firered.blend",
+      "display_root": "Turntable",
+      "exclude": [
+        "Studio ground"
+      ],
+      "expected_width_mm": 57.0,
+      "width_basis": "audited authored bounds; not independent caliper measurement",
+      "material_slots": {
+        "Original firered label": "artwork.front",
+        "Original AGB-E02-30 front": "board.front",
+        "Original AGB-E02-30 rear": "board.rear"
+      }
+    },
+    "gba-leafgreen": {
+      "source": "sources/gba-leafgreen.blend",
+      "display_root": "Turntable",
+      "exclude": [
+        "Studio ground"
+      ],
+      "expected_width_mm": 57.0,
+      "width_basis": "audited authored bounds; not independent caliper measurement",
+      "material_slots": {
+        "Original leafgreen label": "artwork.front",
+        "Original AGB-E02-20 front": "board.front",
+        "Original AGB-E02-20 rear": "board.rear"
+      }
+    },
+    "neogeo-mvs": {
+      "source": "sources/neogeo-mvs.blend",
+      "display_root": "Turntable",
+      "exclude": [
+        "Studio ground"
+      ],
+      "expected_width_mm": 190.0,
+      "width_basis": "audited authored bounds; not independent caliper measurement",
+      "material_slots": {
+        "Printed cartridge label": "artwork.front",
+        "Printed cartridge label.001": "artwork.top"
+      }
+    }
+  }
+}

@@ -1,0 +1,851 @@
+{
+  "schema_version": 1,
+  "recipes": {
+    "tetris-us-dmg-tr-usa-1": {
+      "platform": "gb",
+      "model": "gb",
+      "title": "Tetris",
+      "region": "US",
+      "release_code": "DMG-TR-USA-1",
+      "url": "https://images.launchbox-app.com/cfef6fae-834d-49ec-aa3e-9183db0586c5.png",
+      "source_type": "front-on cartridge scan",
+      "sha256": "728ab9639aed5fe4e460b61f460b4a22233ac99fe00ec697e7dde2f936b61000",
+      "crop": [
+        99,
+        258,
+        692,
+        785
+      ],
+      "slot": "artwork.front",
+      "note": "Crop checked against scan and composed render; no colour correction or stretching."
+    },
+    "mark-iii-white": {
+      "platform": "mark-iii",
+      "model": "mark-iii-white",
+      "title": "Alex Kidd no Miracle World",
+      "region": "JP",
+      "url": "https://images.launchbox-app.com/0f97463f-8fc0-4a6a-b6f6-477ee5f3d377.png",
+      "source_type": "front-on cartridge scan",
+      "crop": [
+        47,
+        10,
+        563,
+        474
+      ],
+      "slot": "artwork.front",
+      "note": "Crop inherited from reference-reviewed authoring source; exact material finish remains model-specific.",
+      "sha256": "5a6146921443b6022cb377464b48bf58fc4f87473d055563925a50972366c9dc"
+    },
+    "mark-iii-black": {
+      "platform": "mark-iii",
+      "model": "mark-iii-black",
+      "title": "After Burner",
+      "region": "JP",
+      "url": "https://images.launchbox-app.com/46cd3317-fc44-4db2-8ad2-9c9f73f69b08.jpg",
+      "source_type": "front-on cartridge scan",
+      "crop": [
+        88,
+        0,
+        910,
+        735
+      ],
+      "slot": "artwork.front",
+      "note": "Crop inherited from reference-reviewed authoring source; exact material finish remains model-specific.",
+      "sha256": "c6b8cf15d43daa1996407f81192f44a55ed818400239a0e78a55a91ee80393fa"
+    },
+    "mark-iii-silver": {
+      "platform": "mark-iii",
+      "model": "mark-iii-silver",
+      "title": "Solomon no Kagi: Oujo Rihita no Namida",
+      "region": "JP",
+      "url": "https://images.launchbox-app.com/b4086e48-9d20-4bf2-831f-45704bfe7129.png",
+      "source_type": "front-on cartridge scan",
+      "crop": [
+        44,
+        8,
+        363,
+        303
+      ],
+      "slot": "artwork.front",
+      "note": "Crop inherited from reference-reviewed authoring source; exact material finish remains model-specific.",
+      "sha256": "da7ae7a436ea53d5e326b75949d98e4b0d0fe0ce6b39a67d77f4b8e0b240399b"
+    },
+    "castlevania-sotn-us": {
+      "platform": "psx",
+      "model": "psx",
+      "title": "Castlevania: Symphony of the Night",
+      "region": "US",
+      "release_code": "SLUS-00067",
+      "url": "https://images.launchbox-app.com/d0c807f4-734d-40c4-8636-b1250b882eb2.png",
+      "source_type": "front-on optical disc scan",
+      "sha256": "b434b18d99eaf60438a84401b41727df237e9d4ebf3eea904ca74d6302fb83e3",
+      "slot": "artwork.disc",
+      "note": "Dark 1997 printing, checked against original disc photograph. Full scan binds to annular UVs; physical centre hole and underside remain geometry/materials, not replacement artwork.",
+      "reference": "https://www.ebay.com/itm/900040487005"
+    },
+    "pokemon-red-us-1": {
+      "platform": "gb",
+      "model": "gb",
+      "title": "Pok\u00e9mon Red",
+      "region": "US",
+      "release_code": "DMG-APAE-USA-1",
+      "url": "https://gbhwdb.gekkio.fi/static/DMG-APAE-0/beckybecky125-1_01_front.jpg",
+      "sha256": "241fe06513152f7c72adf02ad6abb4ef4b0828370eff33e38e63503ec4290174",
+      "slot": "artwork.front",
+      "source_type": "Original cartridge photograph",
+      "author": "beckybecky125",
+      "license": "CC BY-SA 4.0",
+      "note": "Label boundary rectified to the standard DMG label aspect used by the verified mesh; rounded corners extend to their nominal rectangle. Original ink, wear and lighting preserved, without repainting.",
+      "quad": [
+        218,
+        397,
+        1148,
+        401,
+        1177,
+        1223,
+        193,
+        1217
+      ],
+      "size": [
+        1024,
+        911
+      ]
+    },
+    "pokemon-yellow-us-1": {
+      "platform": "gb",
+      "model": "gb",
+      "title": "Pok\u00e9mon Yellow",
+      "region": "US",
+      "release_code": "DMG-APSE-USA-1",
+      "url": "https://gbhwdb.gekkio.fi/static/DMG-APSE-0/gekkio-1_01_front.jpg",
+      "sha256": "81ec97a92964e410e422eea1366e5922a3cc0c9d94cb1b13a6c579264b539da3",
+      "slot": "artwork.front",
+      "source_type": "Original cartridge photograph",
+      "author": "gekkio",
+      "license": "CC BY-SA 4.0",
+      "note": "Label boundary rectified to the standard DMG label aspect used by the verified mesh; rounded corners extend to their nominal rectangle. Original ink, wear and lighting preserved, without repainting.",
+      "quad": [
+        179,
+        445,
+        1147,
+        445,
+        1147,
+        1294,
+        179,
+        1294
+      ],
+      "size": [
+        1024,
+        911
+      ]
+    },
+    "pokemon-red-jp": {
+      "platform": "gb",
+      "model": "gb",
+      "title": "Pocket Monsters Red",
+      "region": "JP",
+      "release_code": "DMG-APAJ-JPN",
+      "url": "https://gbhwdb.gekkio.fi/static/DMG-APAJ-1/gdsn-1_01_front.jpg",
+      "sha256": "9c3a1cbf1f2d1c08a1754412eefd82383944424542d40a09b1aa5953e248379b",
+      "slot": "artwork.front",
+      "source_type": "Original cartridge photograph",
+      "author": "gdsn",
+      "license": "CC BY-SA 4.0",
+      "note": "Label boundary rectified to the standard DMG label aspect used by the verified mesh; rounded corners extend to their nominal rectangle. Original ink, wear and lighting preserved, without repainting.",
+      "quad": [
+        189,
+        447,
+        1144,
+        445,
+        1144,
+        1281,
+        189,
+        1281
+      ],
+      "size": [
+        1024,
+        911
+      ]
+    },
+    "pokemon-green-jp": {
+      "platform": "gb",
+      "model": "gb",
+      "title": "Pocket Monsters Green",
+      "region": "JP",
+      "release_code": "DMG-APBJ-JPN",
+      "url": "https://gbhwdb.gekkio.fi/static/DMG-APBJ-1/gekkio-1_01_front.jpg",
+      "sha256": "790ddb10a0926ff46e57c81d9a9146184eda210a2879d64611684a3f7aa1fa62",
+      "slot": "artwork.front",
+      "source_type": "Original cartridge photograph",
+      "author": "gekkio",
+      "license": "CC BY-SA 4.0",
+      "note": "Label boundary rectified to the standard DMG label aspect used by the verified mesh; rounded corners extend to their nominal rectangle. Original ink, wear and lighting preserved, without repainting.",
+      "quad": [
+        135,
+        313,
+        819,
+        310,
+        819,
+        910,
+        135,
+        914
+      ],
+      "size": [
+        1024,
+        911
+      ]
+    },
+    "gba-emerald": {
+      "platform": "gba",
+      "model": "gba-emerald",
+      "title": "Pok\u00e9mon Emerald",
+      "region": "US",
+      "slot": "artwork.front",
+      "url": "https://gbhwdb.gekkio.fi/static/AGB-BPEE-0/fexcollects-1_01_front.jpg?ts=tjrrlv",
+      "sha256": "b6bd1b3229001ca7eade995f12df25cc1d9e2c680aab2cd2031aff64d63bf190",
+      "crop": [
+        400,
+        450,
+        2350,
+        1475
+      ],
+      "reference": "https://gbhwdb.gekkio.fi/cartridges/AGB-BPEE-0/fexcollects-1.html",
+      "source_type": "Original cartridge photograph",
+      "author": "fexcollects",
+      "license": "CC BY-SA 4.0",
+      "note": "Exact selected cartridge front; crop preserves photographed ink, wear and lighting. Board/release identity remains unchanged."
+    },
+    "gba-firered": {
+      "platform": "gba",
+      "model": "gba-firered",
+      "title": "Pok\u00e9mon FireRed",
+      "region": "US",
+      "slot": "artwork.front",
+      "url": "https://gbhwdb.gekkio.fi/static/AGB-BPRE-1/fexcollects-1_01_front.jpg?ts=tjrrml",
+      "sha256": "8d62a91986d3e1cef64456740dd6419d0749a5431bb693a670616e823c6e830c",
+      "crop": [
+        276,
+        311,
+        1623,
+        1018
+      ],
+      "reference": "https://gbhwdb.gekkio.fi/cartridges/AGB-BPRE-1/fexcollects-1.html",
+      "source_type": "Original cartridge photograph",
+      "author": "fexcollects",
+      "license": "CC BY-SA 4.0",
+      "note": "Exact selected cartridge front; crop preserves photographed ink, wear and lighting. Board/release identity remains unchanged."
+    },
+    "gba-leafgreen": {
+      "platform": "gba",
+      "model": "gba-leafgreen",
+      "title": "Pok\u00e9mon LeafGreen",
+      "region": "US",
+      "slot": "artwork.front",
+      "url": "https://gbhwdb.gekkio.fi/static/AGB-BPGE-0/ikk5-1_01_front.jpg?ts=tkjfih",
+      "sha256": "fa70636bfca2be33b92f5bde70c39fc170d4ec1d32f8e4a144dc64c27ea11aca",
+      "crop": [
+        310,
+        340,
+        2060,
+        1245
+      ],
+      "reference": "https://gbhwdb.gekkio.fi/cartridges/AGB-BPGE-0/ikk5-1.html",
+      "source_type": "Original cartridge photograph",
+      "author": "ikk5",
+      "license": "CC BY-SA 4.0",
+      "note": "Exact selected cartridge front; crop preserves photographed ink, wear and lighting. Board/release identity remains unchanged."
+    },
+    "gba-ruby": {
+      "platform": "gba",
+      "model": "gba-ruby",
+      "title": "Pok\u00e9mon Ruby",
+      "region": "US",
+      "slot": "artwork.front",
+      "url": "https://gbhwdb.gekkio.fi/static/AGB-AXVE-0/fexcollects-1_01_front.jpg?ts=tjrrlw",
+      "sha256": "b327f3b085f021434ab028c357e827b46e2c1ad88d30bd0bfa8f866d44af9951",
+      "crop": [
+        400,
+        450,
+        2350,
+        1475
+      ],
+      "reference": "https://gbhwdb.gekkio.fi/cartridges/AGB-AXVE-0/fexcollects-1.html",
+      "source_type": "Original cartridge photograph",
+      "author": "fexcollects",
+      "license": "CC BY-SA 4.0",
+      "note": "Exact selected cartridge front; crop preserves photographed ink, wear and lighting. Board/release identity remains unchanged."
+    },
+    "gba-sapphire": {
+      "platform": "gba",
+      "model": "gba-sapphire",
+      "title": "Pok\u00e9mon Sapphire",
+      "region": "US",
+      "slot": "artwork.front",
+      "url": "https://gbhwdb.gekkio.fi/static/AGB-AXPE-0/fexcollects-1_01_front.jpg?ts=tjrrm7",
+      "sha256": "494fe10e973a1be5b55aba1e7b6e3f64e050211f5443600926848b535a8fe16a",
+      "crop": [
+        400,
+        450,
+        2350,
+        1475
+      ],
+      "reference": "https://gbhwdb.gekkio.fi/cartridges/AGB-AXPE-0/fexcollects-1.html",
+      "source_type": "Original cartridge photograph",
+      "author": "fexcollects",
+      "license": "CC BY-SA 4.0",
+      "note": "Exact selected cartridge front; crop preserves photographed ink, wear and lighting. Board/release identity remains unchanged."
+    },
+    "gb-pinball": {
+      "platform": "gbc",
+      "model": "gb-pinball",
+      "title": "Pok\u00e9mon Pinball",
+      "region": "US",
+      "slot": "artwork.front",
+      "url": "https://gbhwdb.gekkio.fi/static/DMG-VPHE-0/gekkio-1_01_front.jpg",
+      "sha256": "43f2621e250c7eaa0d676836487cb9095924a2405f51dd79b94f419d34005e87",
+      "crop": [
+        83,
+        57,
+        1138,
+        447
+      ],
+      "reference": "https://gbhwdb.gekkio.fi/cartridges/DMG-VPHE-0/gekkio-1.html",
+      "source_type": "Original cartridge photograph",
+      "author": "gekkio",
+      "license": "CC BY-SA 4.0",
+      "note": "Exact selected specimen. Original photographed glare/wear retained; not reconstructed artwork."
+    },
+    "gba-boktai": {
+      "platform": "gba",
+      "model": "gba-boktai",
+      "title": "Boktai: The Sun Is in Your Hand",
+      "region": "EU",
+      "slot": "artwork.front",
+      "url": "https://gbhwdb.gekkio.fi/static/AGB-U3IP-0/3615retro-1_01_front.jpg",
+      "sha256": "fc84ef885859dc8c5d7a029a39b2adaaba83e7bf76c5b63506f8513124ea15fa",
+      "crop": [
+        250,
+        950,
+        2320,
+        1785
+      ],
+      "reference": "https://gbhwdb.gekkio.fi/cartridges/AGB-U3IP-0/3615retro-1.html",
+      "source_type": "Original cartridge photograph",
+      "author": "3615retro",
+      "license": "CC BY-SA 4.0",
+      "note": "Exact selected specimen. Original photographed glare/wear retained; not reconstructed artwork."
+    },
+    "gba-twisted": {
+      "platform": "gba",
+      "model": "gba-twisted",
+      "title": "WarioWare: Twisted!",
+      "region": "US",
+      "slot": "artwork.front",
+      "url": "https://gbhwdb.gekkio.fi/static/AGB-RZWE-0/3615retro-1_01_front.jpg",
+      "sha256": "2f25c7e2fd8c0aa3f02323aca6b648ffb8c4ac8d80d3a20bf62b4fc0232d3042",
+      "crop": [
+        185,
+        960,
+        1665,
+        1578
+      ],
+      "reference": "https://gbhwdb.gekkio.fi/cartridges/AGB-RZWE-0/3615retro-1.html",
+      "source_type": "Original cartridge photograph",
+      "author": "3615retro",
+      "license": "CC BY-SA 4.0",
+      "note": "Exact selected specimen. Original photographed glare/wear retained; not reconstructed artwork."
+    },
+    "snes-us-locking": {
+      "platform": "snes",
+      "model": "snes-us-locking",
+      "title": "Super Mario World",
+      "region": "US",
+      "slot": "artwork.front",
+      "url": "https://i.ebayimg.com/images/g/dpMAAeSwuVlo0XF6/s-l1600.webp",
+      "sha256": "ab7af2bc6d04d343ab5242f9e88ad8f1ce2338e842ab59548ff6926010cc22cf",
+      "quad": [
+        145,
+        499,
+        1551,
+        495,
+        1556,
+        1131,
+        135,
+        1125
+      ],
+      "size": [
+        976,
+        436
+      ],
+      "release_code": "SNS-MW-USA",
+      "reference": "https://www.ebay.com/itm/226987238099",
+      "source_type": "Original cartridge photograph",
+      "author": "reillys-retro",
+      "note": "Paired front, rear SNS-USA copyright 1991, and centred green top title photographed on the same original; retains small label wear.",
+      "surfaces": {
+        "artwork.rear": {
+          "url": "https://i.ebayimg.com/images/g/dD8AAeSw5WJo0XGE/s-l1600.webp",
+          "sha256": "a6718e37d570a825d8ccd9f274026cc4ea087a979478e7f86c39cb4b4ac3c3fc",
+          "note": "SNS-USA, copyright 1991; same specimen as front.",
+          "crop": [
+            470,
+            574,
+            1170,
+            843
+          ]
+        },
+        "artwork.top": {
+          "url": "https://i.ebayimg.com/images/g/tRAAAeSw44Vo0XGF/s-l1600.webp",
+          "sha256": "eff97e4c9f0459d8d00170ebe6d848c32599b198155030deb71b492ba4391f8c",
+          "note": "Centred green title, same specimen; no later revision transplant.",
+          "crop": [
+            435,
+            733,
+            1274,
+            791
+          ]
+        }
+      }
+    },
+    "md-pal": {
+      "platform": "megadrive",
+      "model": "md-pal",
+      "title": "Sonic the Hedgehog",
+      "region": "EU",
+      "slot": "artwork.front",
+      "url": "https://images.launchbox-app.com/ec79743c-b892-4aa7-8cf4-d71974a04de5.png",
+      "sha256": "42e65f7615a51d99f077be784eeaf12eae4ec466d6235f36d3d5c8fa60e0cfa8",
+      "crop": [
+        135,
+        0,
+        858,
+        574
+      ],
+      "source_type": "Original cartridge scan",
+      "reference": "https://images.launchbox-app.com/ec79743c-b892-4aa7-8cf4-d71974a04de5.png",
+      "note": "Original label crop; photographed lighting retained. No replacement top artwork inferred."
+    },
+    "md-jp": {
+      "platform": "megadrive",
+      "model": "md-jp",
+      "title": "Sonic the Hedgehog",
+      "region": "JP",
+      "slot": "artwork.front",
+      "url": "https://images.launchbox-app.com/4d6e9d99-9c9a-4d41-83b2-e1a0e5fe7486.png",
+      "sha256": "11ee28a9a5947b014a7a52ff33c2d9056af71d521701e27fdedc2fd679570802",
+      "crop": [
+        105,
+        3,
+        698,
+        442
+      ],
+      "source_type": "Original cartridge scan",
+      "reference": "https://images.launchbox-app.com/4d6e9d99-9c9a-4d41-83b2-e1a0e5fe7486.png",
+      "note": "Original label crop; photographed lighting retained. No replacement top artwork inferred."
+    },
+    "md-ea": {
+      "platform": "megadrive",
+      "model": "md-ea",
+      "title": "FIFA International Soccer",
+      "region": "EU",
+      "slot": "artwork.front",
+      "url": "https://images.launchbox-app.com/b6c961c6-3dcb-4b51-aa22-ac28256c5583.png",
+      "sha256": "b208897626ab4036d0da410541429a76d2d583f4558809a27451c1d855eb76a8",
+      "crop": [
+        210,
+        4,
+        912,
+        752
+      ],
+      "source_type": "Original cartridge scan",
+      "reference": "https://images.launchbox-app.com/b6c961c6-3dcb-4b51-aa22-ac28256c5583.png",
+      "note": "Original label crop; photographed lighting retained. No replacement top artwork inferred."
+    },
+    "md-codemasters": {
+      "platform": "megadrive",
+      "model": "md-codemasters",
+      "title": "Micro Machines",
+      "region": "EU",
+      "slot": "artwork.front",
+      "url": "https://images.launchbox-app.com/41a97c7f-244c-40c5-9a28-fefd80cbe0db.png",
+      "sha256": "5025b31b2aa603fc71a811d39fb58d3098f1f170c2ed67571ce44c9237f3ff49",
+      "source_type": "Original cartridge scan",
+      "reference": "https://images.launchbox-app.com/41a97c7f-244c-40c5-9a28-fefd80cbe0db.png",
+      "note": "Full cartridge image intentionally retained: shaped artwork mesh UVs select only label pixels; do not crop or remap."
+    },
+    "md-jcart": {
+      "platform": "megadrive",
+      "model": "md-jcart",
+      "title": "Micro Machines 2 Turbo Tournament",
+      "region": "EU",
+      "slot": "artwork.front",
+      "url": "https://images.launchbox-app.com/7c276d28-0063-4f36-9b1b-e1cb4ea728ae.png",
+      "sha256": "817820257e4c5e38a7e4f473afa8a3d55a49ce3c4caa435ef504efc17f47aa26",
+      "source_type": "Original cartridge scan",
+      "reference": "https://images.launchbox-app.com/7c276d28-0063-4f36-9b1b-e1cb4ea728ae.png",
+      "note": "Full cartridge image intentionally retained: shaped artwork mesh UVs select only label pixels; do not crop or remap."
+    },
+    "snes-pal": {
+      "platform": "snes",
+      "model": "snes-pal",
+      "title": "Super Mario World",
+      "region": "EU",
+      "slot": "artwork.front",
+      "url": "https://snescentral.com/0/0/0/0000/SNSP-MW-UKV-cart.jpg",
+      "sha256": "f1f46869f0f0f94aea71bcc67b73cea328dcc05becca49c727e525e22e58548f",
+      "release_code": "SNSP-MW-UKV",
+      "author": "Kester W / SNES Central",
+      "source_type": "Original label scan",
+      "reference": "https://snescentral.com/cart.php?id=0000&num=5",
+      "note": "Complete original label scan, selected exact regional printing; no shell or box-art pixels.",
+      "surfaces": {
+        "artwork.rear": {
+          "url": "https://i.ebayimg.com/images/g/Dx0AAeSwdt5qpTRH/s-l1600.webp",
+          "sha256": "95118b4fa744275faf196a9f7c47117a53ac86963598bcd31bbb91984a2e734e",
+          "reference": "https://www.ebay.co.uk/itm/206551983576",
+          "author": "man_jay",
+          "note": "SNSP-UKV copyright 1992 warning; paired auction front shows SNSP-MW-UKV, same release as the independent front scan.",
+          "crop": [
+            909,
+            646,
+            1276,
+            800
+          ]
+        }
+      }
+    },
+    "snes-jp": {
+      "platform": "snes",
+      "model": "snes-jp",
+      "title": "Super Mario World",
+      "region": "JP",
+      "slot": "artwork.front",
+      "url": "https://snescentral.com/0/0/0/0000/SHVC-MW-cart.jpg",
+      "sha256": "aebf7ab13c12b66e21cdc88f5c0569f1944ff951f84fdcd36d2eb5521eff0cb3",
+      "release_code": "SHVC-MW",
+      "author": "Evan G / SNES Central",
+      "source_type": "Original label scan",
+      "reference": "https://snescentral.com/cart.php?id=0000&num=0",
+      "note": "Complete original label scan, selected exact regional printing; no shell or box-art pixels."
+    },
+    "gold": {
+      "platform": "gbc",
+      "model": "gold",
+      "title": "Pok\u00e9mon Gold",
+      "region": "US",
+      "slot": "artwork.front",
+      "url": "https://images.launchbox-app.com/a8c2f791-2b55-48e9-a3de-05ff0437a3e2.png",
+      "sha256": "f3067a2dabb6f10ce9e28f157e2c864482ba61f47095830ff3efc4faf54b9ddb",
+      "crop": [
+        65,
+        171,
+        451,
+        510
+      ],
+      "source_type": "Original cartridge scan",
+      "note": "Exact selected regional label; tight original label bounds, photographed lighting and wear retained. No box-art substitution."
+    },
+    "silver": {
+      "platform": "gbc",
+      "model": "silver",
+      "title": "Pok\u00e9mon Silver",
+      "region": "US",
+      "slot": "artwork.front",
+      "url": "https://images.launchbox-app.com/43c2fac2-68a1-433a-9ff5-1076edf632bb.jpg",
+      "sha256": "98d9a69fd5cbde7439fd4518de13f604c9a2ee92664870115a1dbb4dae172025",
+      "crop": [
+        90,
+        201,
+        550,
+        617
+      ],
+      "source_type": "Original cartridge scan",
+      "note": "Exact selected regional label; tight original label bounds, photographed lighting and wear retained. No box-art substitution."
+    },
+    "silver-jp": {
+      "platform": "gbc",
+      "model": "silver-jp",
+      "title": "Pok\u00e9mon Silver",
+      "region": "JP",
+      "slot": "artwork.front",
+      "url": "https://images.launchbox-app.com/b139d19c-dc6d-4a79-97e6-d64744fc4dfc.png",
+      "sha256": "1056d343ef9fd14dc2fa6278bcca8ef103156960086a56d41c262f0bddd7e4d8",
+      "crop": [
+        110,
+        272,
+        692,
+        787
+      ],
+      "source_type": "Original cartridge scan",
+      "note": "Exact selected regional label; tight original label bounds, photographed lighting and wear retained. No box-art substitution."
+    },
+    "black-dx": {
+      "platform": "gbc",
+      "model": "black-dx",
+      "title": "The Legend of Zelda: Link\u2019s Awakening DX",
+      "region": "JP",
+      "slot": "artwork.front",
+      "url": "https://images.launchbox-app.com/6ea41ab9-2c61-40f7-ae5f-de9a8f844c10.png",
+      "sha256": "17a0c7c7c5713adda204b41572962a00e6587ba78bc321854f822a1270df8c86",
+      "crop": [
+        87,
+        224,
+        585,
+        667
+      ],
+      "source_type": "Original cartridge scan",
+      "note": "Exact selected regional label; tight original label bounds, photographed lighting and wear retained. No box-art substitution."
+    },
+    "pink-tilt": {
+      "platform": "gbc",
+      "model": "pink-tilt",
+      "title": "Kirby Tilt \u2019n\u2019 Tumble",
+      "region": "US",
+      "slot": "artwork.front",
+      "url": "https://images.launchbox-app.com/5952f1a8-afab-49bf-9955-cd0dd554eeee.png",
+      "sha256": "a5f23de2ad54a6794a21f6887b58173bf69b24f6e80e82855e49412b3c3799c9",
+      "crop": [
+        91,
+        272,
+        559,
+        693
+      ],
+      "source_type": "Original cartridge scan",
+      "note": "Exact selected regional label; tight original label bounds, photographed lighting and wear retained. No box-art substitution."
+    },
+    "gold-jp": {
+      "platform": "gbc",
+      "model": "gold-jp",
+      "title": "Pok\u00e9mon Gold",
+      "region": "JP",
+      "slot": "artwork.front",
+      "url": "https://images.launchbox-app.com/r2_ce310e0e-bcc3-48be-b87a-13585a5cd4c2.png",
+      "sha256": "10e51e09c16a27903e875075d1a23d837d281c8818471a0db5c2a2214c367378",
+      "quad": [
+        122,
+        317,
+        811,
+        316,
+        811,
+        917,
+        125,
+        920
+      ],
+      "size": [
+        1024,
+        911
+      ],
+      "source_type": "Original cartridge scan",
+      "note": "Japanese DMG-AAUJ-JPN label boundary rectified to standard DMG label aspect; original colour retained."
+    },
+    "gbc": {
+      "platform": "gbc",
+      "model": "gbc",
+      "title": "The Legend of Zelda: Oracle of Ages",
+      "region": "JP",
+      "slot": "artwork.front",
+      "url": "https://gbhwdb.gekkio.fi/static/CGB-AZ8J-0/gdsn-1_01_front.jpg?ts=tjrrmq",
+      "sha256": "6cb14cbf9f7df30c138f9ac9031075d969525c7cafae84c7835d5646adfff063",
+      "crop": [
+        191,
+        504,
+        1146,
+        1345
+      ],
+      "reference": "https://gbhwdb.gekkio.fi/cartridges/CGB-AZ8J-0/gdsn-1.html",
+      "source_type": "Original cartridge photograph",
+      "author": "gdsn",
+      "license": "CC BY-SA 4.0",
+      "release_code": "CGB-AZ8J-JPN",
+      "note": "Exact Japanese selected release front; higher-resolution original replaces low-resolution scan. Same release PCB remains in model."
+    },
+    "blue": {
+      "platform": "gb",
+      "model": "blue",
+      "title": "Pok\u00e9mon Blue",
+      "region": "US",
+      "slot": "artwork.front",
+      "url": "https://gbhwdb.gekkio.fi/static/DMG-APEE-0/gekkio-1_01_front.jpg",
+      "sha256": "88a32b8f16174e2632934bfeb0a04fa1ad1b65a0cf5a860e36457543bfe97694",
+      "crop": [
+        178,
+        442,
+        1154,
+        1305
+      ],
+      "reference": "https://gbhwdb.gekkio.fi/cartridges/DMG-APEE-0/gekkio-1.html",
+      "source_type": "Original cartridge photograph",
+      "author": "gekkio",
+      "license": "CC BY-SA 4.0",
+      "release_code": "DMG-APEE-USA",
+      "note": "Readable exact original US label replaces the 258px cartridge image; no wear removal or colour reconstruction."
+    },
+    "crystal": {
+      "platform": "gbc",
+      "model": "crystal",
+      "title": "Pok\u00e9mon Crystal",
+      "region": "US",
+      "slot": "artwork.front",
+      "url": "https://images.launchbox-app.com/0a40d723-c657-4266-af60-2f25d7acf2fa.png",
+      "sha256": "dfbce8fb67f4446b825f6f5d3b5b3c5b4d388d7295204ae467ae9c544b754d04",
+      "crop": [
+        393,
+        1028,
+        2344,
+        2739
+      ],
+      "reference": "https://gamesdb.launchbox-app.com/games/images/2240-pokmon-crystal-version",
+      "source_type": "Original cartridge scan",
+      "release_code": "CGB-BYTE-USA",
+      "note": "2708x3064 original North American scan, matching CGB-BYTE-USA label layout; improved resolution over 566px source. Foil reflections and wear remain; not reconstructed ink. Board identity comes from separate exact release reference."
+    },
+    "virtua-racing": {
+      "platform": "megadrive",
+      "model": "virtua-racing",
+      "title": "Virtua Racing",
+      "region": "EU",
+      "slot": "artwork.front",
+      "url": "https://images.launchbox-app.com/6fde78fc-a6c8-44cb-8e68-911c84e18fff.png",
+      "sha256": "c710503acd1ac2474a58263bf2bbba06f859eb8dcb9f0db00bc1b9631d9e74fc",
+      "release_code": "670-3998-50",
+      "source_type": "Original cartridge scan",
+      "note": "Europe scan with 670-3998-50 visible. Full cartridge image required: shaped label UVs select its original pixels; do not crop or remap."
+    },
+    "sonic-knuckles": {
+      "platform": "megadrive",
+      "model": "sonic-knuckles",
+      "title": "Sonic & Knuckles",
+      "region": "US",
+      "slot": "artwork.front",
+      "url": "https://images.launchbox-app.com/4c98b7aa-758a-4cb3-82aa-751ee058b8ae.png",
+      "sha256": "2ff0c0244c9a3e406a5ae44444da778dba2f3757eda61a6cda77fac3813cd580",
+      "crop": [
+        31,
+        150,
+        751,
+        217
+      ],
+      "source_type": "Original cartridge scan",
+      "note": "Selected US printing explicitly reads ASSEMBLED IN U.S.; same capsule label, original photograph perspective retained."
+    },
+    "namcot": {
+      "platform": "famicom",
+      "model": "namcot",
+      "title": "Pac-Man",
+      "region": "JP",
+      "slot": "artwork.front",
+      "url": "https://nescartdb.com/images/700/218a97e50a6577af81e803c35ec9e168.jpg",
+      "sha256": "5bf5a3357822f50f0cf03b9ae00bcc6c46abf503e16495d8aeda723cddf214e1",
+      "crop": [
+        39,
+        79,
+        665,
+        379
+      ],
+      "reference": "https://nescartdb.com/profile/view/1592/pac-man",
+      "release_code": "NAM-NPM-4500-02",
+      "source_type": "Original cartridge scan",
+      "author": "bootgod",
+      "note": "Exact Japanese Pac-Man 02 front and rear paired under collector profile 1592.",
+      "surfaces": {
+        "artwork.rear": {
+          "url": "https://nescartdb.com/images/700/a44b579bc91ce731d7621002b9eab338.jpg",
+          "sha256": "ccc9968f477e7e04190ed84e3b7c275d93e9752ba09075914337ad0a955c7496",
+          "note": "Original rear from same profile 1592.",
+          "crop": [
+            44,
+            81,
+            653,
+            303
+          ]
+        }
+      }
+    },
+    "nes": {
+      "platform": "nes",
+      "model": "nes",
+      "title": "Super Mario Bros. 3",
+      "region": "CA",
+      "slot": "artwork.front",
+      "url": "https://images.launchbox-app.com/e00ba27a-6d4f-48f5-9c36-178135b056dc.png",
+      "sha256": "896921197df9340cacb281907579b5aeaff363660621e6fd30900cc30134f998",
+      "crop": [
+        319,
+        1,
+        689,
+        600
+      ],
+      "reference": "https://nescartdb.com/profile/view/1288/super-mario-bros-3",
+      "release_code": "NES-UM-CAN",
+      "source_type": "Original cartridge scan",
+      "note": "Printed NES-UM-CAN overrides incorrect US grouping in image index. Paired collector profile 1288 confirms Canadian top and bilingual REV-A rear.",
+      "surfaces": {
+        "artwork.top": {
+          "url": "https://nescartdb.com/images/700/72e7cc270ca611f2cb5b7fcd2c0cf3f8.jpg",
+          "sha256": "5f81a9ac8ca2d8a3c4e9a669dc07eaa6abb1499af4da17a513cbdff796cecb6d",
+          "note": "Bilingual TM/MC Canadian top; profile 1288.",
+          "crop": [
+            87,
+            1,
+            414,
+            43
+          ]
+        },
+        "artwork.rear": {
+          "url": "https://nescartdb.com/images/700/829d3fa7a25e6b2202fb4fb95d76102b.jpg",
+          "sha256": "45ca9e3bbbb90a0c6a8da240107f9a4d29f666eea7eeb5253e90974d3c71c375",
+          "note": "Bilingual CAN REV-A rear; profile 1288.",
+          "crop": [
+            126,
+            392,
+            589,
+            573
+          ]
+        }
+      }
+    },
+    "snes": {
+      "platform": "snes",
+      "model": "snes",
+      "title": "Super Mario World",
+      "region": "US",
+      "slot": "artwork.front",
+      "url": "https://snescentral.com/0/0/0/0000/SNS-MW-USA-1-cart.jpg",
+      "sha256": "95509595389569025ed2ba7018aec76a772006d583d914c338698f8544ebe5e8",
+      "crop": [
+        0,
+        46,
+        584,
+        307
+      ],
+      "release_code": "SNS-MW-USA-1",
+      "source_type": "Original label scan",
+      "note": "Flattened original USA-1 label divided at front/top fold. Later SNS-USA/CAN-1 rear matches independently photographed USA-1 ramp cartridge.",
+      "surfaces": {
+        "artwork.top": {
+          "url": "https://snescentral.com/0/0/0/0000/SNS-MW-USA-1-cart.jpg",
+          "sha256": "95509595389569025ed2ba7018aec76a772006d583d914c338698f8544ebe5e8",
+          "note": "Top from same flattened USA-1 scan; two-line title.",
+          "crop": [
+            0,
+            0,
+            584,
+            43
+          ]
+        },
+        "artwork.rear": {
+          "url": "https://hitgaming.com/assets/images/guides/fakes/real/real-snes-super-mario-world-back.jpg",
+          "sha256": "c69924b59c7f64cb8a28bded99725baece9f2e90630e45e991e3973b66df3c5c",
+          "reference": "https://hitgaming.com/spot-fake-games",
+          "note": "SNS-USA/CAN-1 warning; paired page front identifies USA-1 ramp release.",
+          "crop": [
+            310,
+            173,
+            900,
+            397
+          ]
+        }
+      }
+    }
+  }
+}
