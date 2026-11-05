@@ -42,8 +42,9 @@ Embedded artwork retains its original ownership; no blanket licence is asserted 
 
 An artwork release stores prepared images once by SHA-256 in bounded pack files.
 The index maps ROM hashes and exact catalogue names to physical models and label
-surfaces. Games without a curated label use the neutral model for their platform,
-so a partial artwork catalogue still produces a complete cartridge shelf. No game
+surfaces. Games without a curated label use the neutral model for their platform
+and a deterministic title label; the tool never substitutes unrelated artwork.
+This means a partial artwork catalogue still produces a complete cartridge shelf. No game
 artwork is included in the base firmware.
 
 ```sh

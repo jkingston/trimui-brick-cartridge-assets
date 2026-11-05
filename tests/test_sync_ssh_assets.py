@@ -7,6 +7,8 @@ import sys
 import tempfile
 import unittest
 
+from PIL import Image
+
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
 import sync_ssh_assets
 
@@ -15,7 +17,9 @@ class SshSyncTests(unittest.TestCase):
     def test_inventory_and_payload_use_ssh_without_transferring_roms(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
-            label = b"label"
+            label_path = root / "label.png"
+            Image.new("RGBA", (8, 6), (20, 40, 80, 255)).save(label_path)
+            label = label_path.read_bytes()
             digest = hashlib.sha256(label).hexdigest()
             (root / "artwork.pack").write_bytes(label)
             model = b"model"
@@ -69,6 +73,7 @@ class SshSyncTests(unittest.TestCase):
             self.assertEqual((fake_remote / "library.json").is_file(), True)
             installed = next((fake_remote / "objects").rglob("*.png"))
             self.assertEqual(installed.read_bytes(), label)
+            self.assertTrue(next((fake_remote / "textures").rglob("*.brtx")).is_file())
             self.assertEqual((fake_remote / "models/gb.glb").read_bytes(), model)
 
 

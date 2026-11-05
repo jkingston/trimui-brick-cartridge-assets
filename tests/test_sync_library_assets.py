@@ -7,13 +7,17 @@ import tempfile
 import unittest
 import zipfile
 
+from PIL import Image
+
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
 import sync_library_assets as syncer
 
 
 class LibrarySyncTests(unittest.TestCase):
     def fixture(self, root, games):
-        data = b"device-ready-label"
+        label = root / "label.png"
+        Image.new("RGBA", (8, 6), (20, 40, 80, 255)).save(label)
+        data = label.read_bytes()
         digest = hashlib.sha256(data).hexdigest()
         model_data = b"device-ready-model"
         model_digest = hashlib.sha256(model_data).hexdigest()
@@ -56,7 +60,9 @@ class LibrarySyncTests(unittest.TestCase):
             self.assertFalse(missing)
             self.assertEqual(manifest["games"][0]["match"], "sha1")
             installed = root / "Assets/Brick" / manifest["games"][0]["surfaces"]["artwork.front"]
-            self.assertEqual(installed.read_bytes(), b"device-ready-label")
+            self.assertEqual(installed.read_bytes(), (root / "label.png").read_bytes())
+            texture = root / "Assets/Brick" / manifest["games"][0]["textures"]["artwork.front"]
+            self.assertEqual(texture.read_bytes()[:8], b"BRTX\x08\x00\x06\x00")
             self.assertEqual((root / "Assets/Brick/models/gba.glb").read_bytes(),
                              b"device-ready-model")
 
@@ -108,8 +114,20 @@ class LibrarySyncTests(unittest.TestCase):
             self.assertEqual(manifest["games"][0]["match"], "missing")
             self.assertEqual(manifest["games"][0]["model"], "gb")
             self.assertEqual(manifest["games"][0]["surfaces"], {})
+            texture_path = manifest["games"][0]["textures"]["artwork.front"]
+            texture = (root / "Assets/Brick" / texture_path).read_bytes()
+            self.assertEqual(texture[:4], b"BRTX")
             self.assertEqual((root / "Assets/Brick/models/gb.glb").read_bytes(),
                              b"device-ready-model")
+
+    def test_generated_labels_are_deterministic_and_platform_shaped(self):
+        first = syncer.runtime_texture(syncer.generated_label("Unknown Game", "gba"))
+        second = syncer.runtime_texture(syncer.generated_label("Unknown Game", "gba"))
+        other = syncer.runtime_texture(syncer.generated_label("Other Game", "gba"))
+        self.assertEqual(first, second)
+        self.assertNotEqual(first, other)
+        width, height = int.from_bytes(first[4:6], "little"), int.from_bytes(first[6:8], "little")
+        self.assertGreater(width, height)
 
     def test_multi_region_and_language_tags_do_not_change_title(self):
         with tempfile.TemporaryDirectory() as temporary:

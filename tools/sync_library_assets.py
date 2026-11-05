@@ -4,15 +4,19 @@
 import argparse
 import binascii
 import hashlib
+import io
 import json
 import os
 from pathlib import Path
 import re
+import struct
 import tempfile
 import urllib.error
 import urllib.parse
 import urllib.request
 import zipfile
+
+from PIL import Image, ImageDraw, ImageFont
 
 
 SYSTEMS = {
@@ -269,6 +273,64 @@ def atomic_write(path, data):
     os.replace(temporary, path)
 
 
+def runtime_texture(data, maximum=160):
+    """Convert release artwork to the shell's tiny, decoder-free BGRA format."""
+    with Image.open(io.BytesIO(data)) as source:
+        image = source.convert("RGBA")
+        image.thumbnail((maximum, maximum), Image.Resampling.LANCZOS)
+        rgba = image.tobytes()
+    bgra = bytearray(len(rgba))
+    for offset in range(0, len(rgba), 4):
+        red, green, blue, alpha = rgba[offset:offset + 4]
+        bgra[offset:offset + 4] = bytes((blue, green, red, alpha))
+    return b"BRTX" + struct.pack("<HH", image.width, image.height) + bgra
+
+
+def generated_label(title, platform):
+    """Create an honest, deterministic fallback label from local ROM metadata."""
+    width, height = ({"gba": (500, 240), "snes": (480, 320)}
+                     .get(platform, (400, 400)))
+    identity = hashlib.sha256(f"{platform}\0{title}".encode()).digest()
+    base = tuple(38 + identity[index] % 72 for index in range(3))
+    accent = tuple(126 + identity[index + 3] % 110 for index in range(3))
+    image = Image.new("RGBA", (width, height), (*base, 255))
+    draw = ImageDraw.Draw(image)
+    step = max(28, width // 12)
+    for offset in range(-height, width, step):
+        draw.polygon(((offset, height), (offset + step // 2, height),
+                      (offset + height + step // 2, 0), (offset + height, 0)),
+                     fill=(*accent, 30))
+    font_path = "/usr/share/fonts/dejavu-sans-fonts/DejaVuSans-Bold.ttf"
+    try:
+        small = ImageFont.truetype(font_path, max(18, height // 13))
+        large = ImageFont.truetype(font_path, max(28, height // 8))
+    except OSError:
+        small = large = ImageFont.load_default()
+    margin = width // 12
+    system = platform.upper().replace("MEGADRIVE", "MEGA DRIVE")
+    draw.text((margin, margin), system, font=small, fill=(245, 244, 237, 210))
+    words, lines, line = title.split(), [], ""
+    for word in words:
+        candidate = f"{line} {word}".strip()
+        if line and draw.textbbox((0, 0), candidate, font=large)[2] > width - margin * 2:
+            lines.append(line)
+            line = word
+        else:
+            line = candidate
+    if line:
+        lines.append(line)
+    lines = lines[:3]
+    line_height = draw.textbbox((0, 0), "Ag", font=large)[3] + height // 30
+    y = (height - line_height * len(lines)) // 2 + height // 14
+    for line in lines:
+        draw.text((margin, y), line, font=large, fill=(255, 255, 250, 255),
+                  stroke_width=max(1, height // 180), stroke_fill=(*base, 220))
+        y += line_height
+    output = io.BytesIO()
+    image.save(output, "PNG", optimize=True)
+    return output.getvalue()
+
+
 def inventory_rows(document):
     if document.get("schema_version") != 1 or not isinstance(document.get("games"), list):
         raise ValueError("Unsupported library inventory schema")
@@ -313,15 +375,19 @@ def sync(root, index_source, output=None, cache=None, dry_run=False, prune=False
                 required_models.add(model)
             missing.append(row)
         rows.append(row)
-    object_paths = {}
+    object_paths, texture_paths = {}, {}
     for digest in sorted(required):
         descriptor = index["objects"].get(digest)
         if not descriptor or descriptor.get("sha256") != digest:
             raise ValueError(f"Missing object descriptor: {digest}")
         relative = f"objects/{digest[:2]}/{digest}.png"
+        texture_relative = f"textures/{digest[:2]}/{digest}.brtx"
         object_paths[digest] = relative
+        texture_paths[digest] = texture_relative
         if not dry_run:
-            atomic_write(output / relative, object_bytes(descriptor, base, cache))
+            data = object_bytes(descriptor, base, cache)
+            atomic_write(output / relative, data)
+            atomic_write(output / texture_relative, runtime_texture(data))
     model_paths = {}
     if required_models:
         source = models_index_source
@@ -341,7 +407,17 @@ def sync(root, index_source, output=None, cache=None, dry_run=False, prune=False
                              object_bytes(descriptor, models_base, cache))
     for row in rows:
         if "surfaces" in row:
-            row["surfaces"] = {slot: object_paths[digest] for slot, digest in row["surfaces"].items()}
+            source_surfaces = row["surfaces"]
+            row["surfaces"] = {slot: object_paths[digest] for slot, digest in source_surfaces.items()}
+            row["textures"] = {slot: texture_paths[digest] for slot, digest in source_surfaces.items()}
+            if not source_surfaces:
+                data = runtime_texture(generated_label(row["title"], row["platform"]))
+                digest = hashlib.sha256(data).hexdigest()
+                relative = f"textures/generated/{digest}.brtx"
+                row["textures"] = {"artwork.front": relative}
+                texture_paths[f"generated:{digest}"] = relative
+                if not dry_run:
+                    atomic_write(output / relative, data)
     manifest = {
         "schema_version": 1,
         "asset_index_version": index.get("version"),
@@ -353,8 +429,8 @@ def sync(root, index_source, output=None, cache=None, dry_run=False, prune=False
         atomic_write(output / "library.json",
                      (json.dumps(manifest, indent=2, ensure_ascii=False) + "\n").encode())
         if prune:
-            keep = {output / value for value in (*object_paths.values(), *model_paths.values())}
-            for directory in (output / "objects", output / "models"):
+            keep = {output / value for value in (*object_paths.values(), *texture_paths.values(), *model_paths.values())}
+            for directory in (output / "objects", output / "textures", output / "models"):
                 if not directory.is_dir():
                     continue
                 for path in directory.rglob("*"):
