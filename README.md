@@ -75,7 +75,8 @@ python3 tools/sync_ssh_assets.py
 The defaults use the Brick's USB address and the matching published release.
 Both workflows run from the host and require no wireless service on the Brick.
 The USB workflow pre-renders the installed glTF models with Playwright; run
-`npm ci --prefix preview && npx --prefix preview playwright install chromium` once on the host.
+`npm ci --prefix preview && mise run preview-install` once on the host. Tool
+versions are pinned in `mise.toml`.
 Use `--strict` when missing curated labels should make the USB command fail.
 
 ## Build

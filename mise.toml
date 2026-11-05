@@ -1,0 +1,19 @@
+[tools]
+uv = "0.12.12"
+node = "22"
+
+[tasks.test]
+description = "Run asset, release and viewer regression tests"
+run = [
+    "uv run python -m unittest discover -s tests",
+    "npm ci --prefix preview",
+    "npm test --prefix preview",
+]
+
+[tasks.preview-install]
+description = "Install the pinned browser used to pre-render runtime sprites"
+run = "npx --prefix preview playwright install chromium"
+
+[tasks.sync]
+description = "Install the connected Brick's library assets over USB"
+run = "uv run python tools/sync_ssh_assets.py"
