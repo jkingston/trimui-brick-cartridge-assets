@@ -302,18 +302,16 @@ def generated_label(title, platform):
     accent = tuple(126 + identity[index + 3] % 110 for index in range(3))
     image = Image.new("RGBA", (width, height), (*base, 255))
     draw = ImageDraw.Draw(image)
+    stripe = tuple((base[index] * 4 + accent[index]) // 5 for index in range(3))
     step = max(28, width // 12)
     for offset in range(-height, width, step):
         draw.polygon(((offset, height), (offset + step // 2, height),
                       (offset + height + step // 2, 0), (offset + height, 0)),
-                     fill=(*accent, 30))
-    font_path = "/usr/share/fonts/dejavu-sans-fonts/DejaVuSans-Bold.ttf"
-    try:
-        small = ImageFont.truetype(font_path, max(18, height // 13))
-        large = ImageFont.truetype(font_path, max(28, height // 8))
-    except OSError:
-        small = large = ImageFont.load_default()
-    margin = width // 12
+                     fill=(*stripe, 255))
+    optical = platform == "psx"
+    small = ImageFont.load_default(size=max(18, height // (15 if optical else 13)))
+    large = ImageFont.load_default(size=max(28, height // (12 if optical else 8)))
+    margin = width // (5 if optical else 12)
     system = platform.upper().replace("MEGADRIVE", "MEGA DRIVE")
     draw.text((margin, margin), system, font=small, fill=(245, 244, 237, 210))
     words, lines, line = title.split(), [], ""
@@ -328,9 +326,11 @@ def generated_label(title, platform):
         lines.append(line)
     lines = lines[:3]
     line_height = draw.textbbox((0, 0), "Ag", font=large)[3] + height // 30
-    y = (height - line_height * len(lines)) // 2 + height // 14
+    y = (height - line_height * len(lines)) // 2 + (height // 14 if not optical else 0)
     for line in lines:
-        draw.text((margin, y), line, font=large, fill=(255, 255, 250, 255),
+        line_width = draw.textbbox((0, 0), line, font=large)[2]
+        x = (width - line_width) // 2 if optical else margin
+        draw.text((x, y), line, font=large, fill=(255, 255, 250, 255),
                   stroke_width=max(1, height // 180), stroke_fill=(*base, 220))
         y += line_height
     output = io.BytesIO()
