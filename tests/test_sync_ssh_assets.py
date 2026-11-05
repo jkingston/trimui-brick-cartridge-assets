@@ -61,7 +61,8 @@ class SshSyncTests(unittest.TestCase):
             os.environ["FAKE_REMOTE"] = str(fake_remote)
             try:
                 manifest, missing = sync_ssh_assets.synchronise(
-                    "brick", str(root / "index.json"), ssh=str(fake_ssh), cache=root / "cache")
+                    "brick", str(root / "index.json"), ssh=str(fake_ssh), cache=root / "cache",
+                    render_sprites=False)
             finally:
                 for key, value in previous.items():
                     if value is None:

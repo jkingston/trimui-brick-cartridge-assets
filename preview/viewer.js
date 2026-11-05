@@ -5,7 +5,7 @@ import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
 
 const viewport = document.querySelector('#viewport'), metrics = document.querySelector('#metrics'), status = document.querySelector('#status');
-const renderer = new THREE.WebGLRenderer({antialias:true, powerPreference:'low-power'});
+const renderer = new THREE.WebGLRenderer({antialias:true, alpha:true, powerPreference:'low-power'});
 renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
 // Preserve printed label colours rather than applying a cinematic colour curve.
 renderer.toneMapping = THREE.NeutralToneMapping;
@@ -54,8 +54,9 @@ function draw() {
 }
 function setBackground(name) {
   const colours = {paper:'#e9e6df',dark:'#262a30'};
-  if (!colours[name]) throw Error('Unknown background');
-  scene.background.set(colours[name]); document.querySelector('#background').value=name;
+  if (name !== 'transparent' && !colours[name]) throw Error('Unknown background');
+  scene.background = name === 'transparent' ? null : new THREE.Color(colours[name]);
+  document.querySelector('#background').value=name;
   const url=new URL(location.href); url.searchParams.set('background',name); history.replaceState(null,'',url); invalidate();
 }
 function setLighting(name) {

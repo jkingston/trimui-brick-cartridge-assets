@@ -48,7 +48,7 @@ This means a partial artwork catalogue still produces a complete cartridge shelf
 artwork is included in the base firmware.
 
 ```sh
-INDEX=https://github.com/jkingston/trimui-brick-cartridge-assets/releases/download/v0.2.1/artwork-index.json
+INDEX=https://github.com/jkingston/trimui-brick-cartridge-assets/releases/download/v0.2.2/artwork-index.json
 uv run python tools/sync_library_assets.py /run/media/$USER/brick-data \
   --index "$INDEX" --dry-run
 uv run python tools/sync_library_assets.py /run/media/$USER/brick-data \
@@ -74,6 +74,8 @@ python3 tools/sync_ssh_assets.py
 
 The defaults use the Brick's USB address and the matching published release.
 Both workflows run from the host and require no wireless service on the Brick.
+The USB workflow pre-renders the installed glTF models with Playwright; run
+`npm ci --prefix preview && npx --prefix preview playwright install chromium` once on the host.
 Use `--strict` when missing curated labels should make the USB command fail.
 
 ## Build

@@ -4,15 +4,19 @@
 import argparse
 import base64
 import hashlib
+import io
 import json
 from pathlib import Path
 import struct
 
-from cartridge import ROOT, prune_artwork_resources, read_model
+from PIL import Image
+
+from cartridge import ROOT, prune_artwork_resources, read_model, resource_bytes
 from gltf_resources import compact_buffers
 
 
-def neutralize(document):
+def neutralize(document, model):
+    """Replace game artwork with tiny neutral images while preserving UV contracts."""
     slots = []
     for material in document.get("materials", []):
         name = material.get("name", "")
@@ -20,8 +24,25 @@ def neutralize(document):
             continue
         slots.append(name)
         pbr = material.setdefault("pbrMetallicRoughness", {})
-        pbr.pop("baseColorTexture", None)
-        pbr["baseColorFactor"] = [0.72, 0.72, 0.68, 1.0]
+        texture_info = pbr.get("baseColorTexture")
+        if texture_info is None:
+            raise ValueError(f"Artwork material has no texture/UV binding: {name}")
+        old_texture = document["textures"][texture_info["index"]]
+        old_image = document["images"][old_texture["source"]]
+        with Image.open(io.BytesIO(resource_bytes(document, old_image, model))) as source:
+            width, height = source.size
+        neutral = Image.new("RGBA", (width, height), (184, 184, 174, 255))
+        encoded = io.BytesIO()
+        neutral.save(encoded, "PNG", optimize=True)
+        document.setdefault("images", []).append({
+            "uri": "data:image/png;base64," + base64.b64encode(encoded.getvalue()).decode(),
+        })
+        replacement = {"source": len(document["images"]) - 1}
+        if "sampler" in old_texture:
+            replacement["sampler"] = old_texture["sampler"]
+        document.setdefault("textures", []).append(replacement)
+        texture_info["index"] = len(document["textures"]) - 1
+        pbr["baseColorFactor"] = [1.0, 1.0, 1.0, 1.0]
         material.pop("alphaMode", None)
         material.pop("alphaCutoff", None)
     if not slots:
@@ -61,7 +82,7 @@ def build(source, output, version="0.1.0"):
     for model in sorted(source.glob("*/model.glb")):
         model_id = model.parent.name
         document = read_model(model)
-        slots = neutralize(document)
+        slots = neutralize(document, model)
         target = output / "models" / f"{model_id}.glb"
         data = write_glb(document, target)
         models.append({"id": model_id, "path": target.relative_to(output).as_posix(),

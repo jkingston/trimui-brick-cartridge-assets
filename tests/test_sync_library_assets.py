@@ -26,7 +26,8 @@ class LibrarySyncTests(unittest.TestCase):
         (pack / "artwork-000.pack").write_bytes(data)
         (pack / "models.pack").write_bytes(model_data)
         model_ids = sorted({game["model"] for game in games} |
-                           set(syncer.DEFAULT_MODELS.values()))
+                           set(syncer.DEFAULT_MODELS.values()) |
+                           set(syncer.REGIONAL_MODELS.values()))
         model_index = {"schema_version": 1, "version": "test-1", "models": [
             {"id": model_id, "sha256": model_digest, "pack": "models.pack",
              "offset": 0, "bytes": len(model_data)} for model_id in model_ids
@@ -113,6 +114,8 @@ class LibrarySyncTests(unittest.TestCase):
             self.assertEqual(len(missing), 1)
             self.assertEqual(manifest["games"][0]["match"], "missing")
             self.assertEqual(manifest["games"][0]["model"], "gb")
+            self.assertEqual(manifest["games"][0]["model_match"], "platform")
+            self.assertEqual(manifest["games"][0]["artwork_match"], "generated")
             self.assertEqual(manifest["games"][0]["surfaces"], {})
             texture_path = manifest["games"][0]["textures"]["artwork.front"]
             texture = (root / "Assets/Brick" / texture_path).read_bytes()
@@ -186,6 +189,18 @@ class LibrarySyncTests(unittest.TestCase):
             manifest, missing = syncer.sync(root, index, cache=root / "cache")
             self.assertFalse(missing)
             self.assertEqual(manifest["games"][0]["game_id"], "gold-jp")
+
+    def test_unknown_game_uses_region_specific_standard_shell(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            (root / "Roms/SFC").mkdir(parents=True)
+            (root / "Roms/SFC/Unknown (Japan).sfc").write_bytes(b"unknown")
+            index, _ = self.fixture(root, [])
+            manifest, missing = syncer.sync(root, index, cache=root / "cache")
+            self.assertEqual(len(missing), 1)
+            self.assertEqual(manifest["games"][0]["model"], "snes-jp")
+            self.assertEqual(manifest["games"][0]["model_match"], "regional")
+            self.assertEqual(manifest["games"][0]["artwork_match"], "generated")
 
 
 if __name__ == "__main__":

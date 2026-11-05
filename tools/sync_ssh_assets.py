@@ -11,10 +11,11 @@ import tarfile
 import tempfile
 
 from sync_library_assets import sync
+from render_runtime_sprites import render
 
 DEFAULT_TARGET = "root@192.168.7.2"
 DEFAULT_INDEX = ("https://github.com/jkingston/trimui-brick-cartridge-assets/"
-                 "releases/download/v0.2.1/artwork-index.json")
+                 "releases/download/v0.2.2/artwork-index.json")
 
 
 def command(ssh, options, target, remote):
@@ -22,7 +23,7 @@ def command(ssh, options, target, remote):
 
 
 def synchronise(target, index, remote_root="/data", cache=None, dry_run=False,
-                ssh="ssh", ssh_options=(), models_index=None):
+                ssh="ssh", ssh_options=(), models_index=None, render_sprites=True):
     scan = subprocess.run(command(ssh, ssh_options, target,
                                   f"brick-shell --scan-library {shlex.quote(remote_root)}"),
                           check=True, stdout=subprocess.PIPE, stderr=None)
@@ -34,6 +35,8 @@ def synchronise(target, index, remote_root="/data", cache=None, dry_run=False,
                                  models_index_source=models_index)
         if dry_run:
             return manifest, missing
+        if render_sprites:
+            render(staging / "Brick")
         archive = staging / "brick-assets.tar"
         with tarfile.open(archive, "w") as output:
             for path in sorted((staging / "Brick").rglob("*")):

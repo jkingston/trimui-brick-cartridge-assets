@@ -49,6 +49,13 @@ DEFAULT_MODELS = {
     "megadrive": "megadrive", "snes": "snes", "psx": "psx",
     "neogeo": "neogeo", "ngpc": "ngpc",
 }
+REGIONAL_MODELS = {
+    ("nes", "JP"): "famicom",
+    ("snes", "EU"): "snes-pal",
+    ("snes", "JP"): "snes-jp",
+    ("megadrive", "EU"): "md-pal",
+    ("megadrive", "JP"): "md-jp",
+}
 
 
 def normal_name(value):
@@ -364,14 +371,18 @@ def sync(root, index_source, output=None, cache=None, dry_run=False, prune=False
         row = {"rom": rom["path"], "platform": rom["platform"], "match": method}
         if game:
             row.update({"game_id": game["id"], "title": game["title"],
-                        "model": game["model"], "surfaces": game["surfaces"]})
+                        "model": game["model"], "model_match": "exact",
+                        "surfaces": game["surfaces"]})
             required.update(game["surfaces"].values())
             required_models.add(game["model"])
         else:
             row.update({"title": rom["title"], "note": rom["scan_note"]})
-            model = DEFAULT_MODELS.get(rom["platform"])
+            model = REGIONAL_MODELS.get(
+                (rom["platform"], rom.get("region")), DEFAULT_MODELS.get(rom["platform"]))
             if model:
-                row.update({"model": model, "surfaces": {}})
+                model_match = ("regional" if (rom["platform"], rom.get("region")) in REGIONAL_MODELS
+                               else "platform")
+                row.update({"model": model, "model_match": model_match, "surfaces": {}})
                 required_models.add(model)
             missing.append(row)
         rows.append(row)
@@ -410,6 +421,7 @@ def sync(root, index_source, output=None, cache=None, dry_run=False, prune=False
             source_surfaces = row["surfaces"]
             row["surfaces"] = {slot: object_paths[digest] for slot, digest in source_surfaces.items()}
             row["textures"] = {slot: texture_paths[digest] for slot, digest in source_surfaces.items()}
+            row["artwork_match"] = "curated" if source_surfaces else "generated"
             if not source_surfaces:
                 data = runtime_texture(generated_label(row["title"], row["platform"]))
                 digest = hashlib.sha256(data).hexdigest()

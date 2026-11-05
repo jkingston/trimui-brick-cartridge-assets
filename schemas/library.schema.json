@@ -20,7 +20,10 @@
           "game_id": {"type": "string"},
           "title": {"type": "string"},
           "model": {"type": "string"},
+          "model_match": {"enum": ["exact", "regional", "platform"]},
+          "artwork_match": {"enum": ["curated", "generated"]},
           "surfaces": {"type": "object", "additionalProperties": {"type": "string"}},
+          "textures": {"type": "object", "additionalProperties": {"type": "string"}},
           "note": {"type": ["string", "null"]}
         }
       }
